@@ -30,7 +30,7 @@ Failed to start telnet.socket: Unit telnet.socket not found
 
 ...maar na het installeren van xinetd met 'sudo apt-get install xinetd' lukte het wel
 
-Het PID nummer was niet zichtbaar na de eerste opstart, maar na het stoppen en opnieuw opstarten wel.
+Het PID nummer was niet zichtbaar na de eerste opstart, maar na het stoppen en opnieuw opstarten wel.  
 
 ### Resultaat
 
