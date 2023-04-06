@@ -12,7 +12,9 @@ Hint: although there are no file extensions in Linux, it’s easier for humans t
 
 mkdir ; make directory
 which bash ; laat zien wat het pad is naar de bash interpreter
-
+export PATH=$PATH:/home/jon/scripts ; voegt de 'scripts' directory toe aan de $PATH variabel
+echo $PATH ; controle of bovenstaande is gelukt
+nano ~/.bashrc ; opent de ~/.bashrc file in de nano editor
 
 ## Opdracht
 ### Gebruikte bronnen
@@ -36,6 +38,13 @@ Add the scripts directory to the PATH variable.
 
 ![Alt text](../00_includes/Bashex1.1.PNG)
 
+To make the above permanent i added the scripts directory path to $PATH: 
+
+![Alt text](../00_includes/Bashex1.2.PNG)
+
+test:
+
+![Alt text](../00_includes/Bash1.test.PNG)
 
 Create a script that appends a line of text to a text file whenever it is executed.
 Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
