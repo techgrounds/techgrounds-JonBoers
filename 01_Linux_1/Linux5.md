@@ -13,9 +13,13 @@ chmod go-rwx this command removes read, write, and execute permission for group 
 
 chmod o+w this command adds write permission for others.
 
+ls -l generates a list in long format
+
 ## Opdracht
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+https://sites.google.com/site/tipsandtricksforubuntu/executable-files
+
+https://www.linuxlinks.com/linux-starters-guide-linux-files-permissions/2/
 
 ### Ervaren problemen
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
