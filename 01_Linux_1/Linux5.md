@@ -13,9 +13,15 @@ chmod go-rwx this command removes read, write, and execute permission for group 
 
 chmod o+w this command adds write permission for others.
 
-chmod +x <filename> this command adds executable permission to the file
+chmod +x "filename" this command adds executable permission to the file
 
 ls -l generates a list in long format
+
+addgroup adds a group
+
+chgrp "filename" changes the group
+
+chgrp <g>
 
 ## Opdracht
 ### Gebruikte bronnen
