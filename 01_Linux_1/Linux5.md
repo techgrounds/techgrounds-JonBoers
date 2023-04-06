@@ -46,3 +46,5 @@ Change the owner of the file to a different user. If everything went well, you s
 ![Alt text](../00_includes/permissions4.PNG)
 
 Change the group ownership of the file to a different group.
+
+![Alt text](../00_includes/permissions5.PNG)
