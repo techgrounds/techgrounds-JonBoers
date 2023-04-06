@@ -8,14 +8,16 @@ Some actions require specific permissions like root permissions.
 Users, passwords, and groups are all stored in different files across the system.
 
 ## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+
+sudo grep &lt;username&gt; /etc/passwd /etc/shadow /etc/group  
+[sudo] is alleen nodig voor /etc/shadow, maar zo staat het in 1 regel
 
 ## Opdracht
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+
+https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-located-in-linux/#:~:text=All%20modern%20Linux%20operating,the%20%2Fetc%2Fpasswd%20file.
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
 
@@ -24,7 +26,9 @@ The new user should be part of an admin group.
 The new user should have a password.  
 The new user should be able to use ‘sudo’  
 
-![Alt text](../00_includes/linux4.PNG)
+![vraag1tm4](../00_includes/linux4.PNG)
 
 Locate the files that store users, passwords, and groups. See if you can find your newly created user’s data in there.
+
+![vraag5](../00_includes/linux4xtra.PNG)
 
