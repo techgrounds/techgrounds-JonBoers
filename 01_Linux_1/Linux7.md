@@ -30,6 +30,9 @@ https://youtube.com/playlist?list=PLtK75qxsQaMLZSo7KL-PmiRarU7hrpnwK
 
 Exercise 1:
 Create a directory called ‘scripts’. Place all the scripts you make in this directory.
+
+![Alt text](../00_includes/Bashex1.1.PNG)
+
 Add the scripts directory to the PATH variable.
 Create a script that appends a line of text to a text file whenever it is executed.
 Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
