@@ -1,4 +1,5 @@
 # File Permissions
+
 Every file in Linux contains a set of permissions. There are separate permissions for reading, writing, and executing files (rwx). There’s also three types of entities that can have different permissions: the owner of the file, a group, and everyone else. Root does not need permissions to read, write or execute a file.
 
 You can view a file’s permissions by creating a long listing. A file’s permissions, as well as its owner and group, can be changed as well.
