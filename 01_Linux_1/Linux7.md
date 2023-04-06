@@ -26,16 +26,17 @@ https://linuxhint.com/bash_conditional_statement/
 https://youtube.com/playlist?list=PLtK75qxsQaMLZSo7KL-PmiRarU7hrpnwK
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
+
 
 ### Resultaat
 
 Exercise 1:
 Create a directory called ‘scripts’. Place all the scripts you make in this directory.
-
-
-
 Add the scripts directory to the PATH variable.
+
+![Alt text](../00_includes/Bashex1.1.PNG)
+
+
 Create a script that appends a line of text to a text file whenever it is executed.
 Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
 
