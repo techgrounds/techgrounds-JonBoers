@@ -6,10 +6,25 @@
 
 ## Opdracht
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+https://linuxhint.com/find-process-id-ubuntu/
+
+https://askubuntu.com/questions/439574/telnet-server-not-starting
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
+
+Het starten van telnet lukte niet met 'sudo systemctl start telnet.socket';
+Failed to start telnet.socket: Unit telnet.socket not found
+
+...maar na het installeren van xinetd met 'sudo apt-get install xinetd' lukte het wel
+
 
 ### Resultaat
-[Omschrijf hoe je weet dat je opdracht gelukt is (gebruik screenshots waar nodig).]
+
+Start the telnet daemon.
+
+
+
+Find out the PID of the telnet daemon.
+Find out how much memory telnetd is using.
+Stop or kill the telnetd process.
+
