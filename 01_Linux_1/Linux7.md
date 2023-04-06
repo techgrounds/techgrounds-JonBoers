@@ -10,11 +10,11 @@ Hint: although there are no file extensions in Linux, it’s easier for humans t
 
 ## Key-terms
 
-mkdir ; make directory
-which bash ; laat zien wat het pad is naar de bash interpreter
-export PATH=$PATH:/home/jon/scripts ; voegt de 'scripts' directory toe aan de $PATH variabel
-echo $PATH ; controle of bovenstaande is gelukt
-nano ~/.bashrc ; opent de ~/.bashrc file in de nano editor
+mkdir ; make directory  
+which bash ; laat zien wat het pad is naar de bash interpreter  
+export PATH=$PATH:/home/jon/scripts ; voegt de 'scripts' directory toe aan de $PATH variabel  
+echo $PATH ; controle of bovenstaande is gelukt  
+nano ~/.bashrc ; opent de ~/.bashrc file in de nano editor  
 
 ## Opdracht
 ### Gebruikte bronnen
