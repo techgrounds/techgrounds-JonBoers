@@ -9,11 +9,14 @@ Users, passwords, and groups are all stored in different files across the system
 
 ## Key-terms
 
-sudo grep &lt;username&gt; /etc/passwd /etc/shadow /etc/group  
-[sudo] is alleen nodig voor /etc/shadow, maar zo staat het in 1 regel
+udo adduser &lt;username&gt; adds a new user  
+sudo grep &lt;username&gt; /etc/passwd /etc/shadow /etc/group    
+[sudo] is alleen nodig voor /etc/shadow, maar zo staat het in 1 regel  
 
 ## Opdracht
 ### Gebruikte bronnen
+
+https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-located-in-linux/#:~:text=All%20modern%20Linux%20operating,the%20%2Fetc%2Fpasswd%20file.
 
 https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-located-in-linux/#:~:text=All%20modern%20Linux%20operating,the%20%2Fetc%2Fpasswd%20file.
 
