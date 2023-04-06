@@ -22,9 +22,12 @@ Failed to start telnet.socket: Unit telnet.socket not found
 
 Start the telnet daemon.
 
-
+![vraag1](../00_includes/Processes1.PNG)
 
 Find out the PID of the telnet daemon.
+
+
+
 Find out how much memory telnetd is using.
 Stop or kill the telnetd process.
 

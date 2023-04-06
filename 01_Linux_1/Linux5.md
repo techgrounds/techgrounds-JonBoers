@@ -43,17 +43,17 @@ Make a long listing to view the file’s permissions. Who is the file’s owner 
 
 Make the file executable by adding the execute permission (x).
 
-![Alt text](../00_includes/permissions2.PNG)
+![vraag3](../00_includes/permissions2.PNG)
 
 Remove the read and write permissions (rw) from the file for the group and everyone else, but not for the owner. Can you still read it?
 
-![Alt text](../00_includes/permissions3.PNG)
+![vraag4](../00_includes/permissions3.PNG)
 
 Change the owner of the file to a different user. If everything went well, you shouldn’t be able to read the file unless you assume root privileges with ‘sudo’.
 
-![Alt text](../00_includes/permissions4.PNG)
+![vraag5](../00_includes/permissions4.PNG)
 
 Change the group ownership of the file to a different group.
 
-![Alt text](../00_includes/permissions5.PNG)
+![vraag6](../00_includes/permissions5.PNG)
 
