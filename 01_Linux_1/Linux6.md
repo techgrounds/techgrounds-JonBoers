@@ -9,12 +9,12 @@ A process is an instance of running code. All code is stored in files somewhere 
 
 ## Key-terms
 
-sudo apt-get install telnetd; installeert telnetd
-sudo apt-get install xinetd; installeert xinetd
-sudo systemctl start xinetd; start xinetd 
-sudo systemctl status xinetd; checkt de status van xinetd zodat je kan zien of het actief is
-sudo systemctl stop xinetd; stopt xinetd
-sudo kill [PID nummer]; 'kills' xinetd
+sudo apt-get install telnetd; installeert telnetd  
+sudo apt-get install xinetd; installeert xinetd  
+sudo systemctl start xinetd; start xinetd  
+sudo systemctl status xinetd; checkt de status van xinetd zodat je kan zien of het actief is  
+sudo systemctl stop xinetd; stopt xinetd  
+sudo kill [PID nummer]; 'kills' xinetd  
 
 ## Opdracht
 ### Gebruikte bronnen
