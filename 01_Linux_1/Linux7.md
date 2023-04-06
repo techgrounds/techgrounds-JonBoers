@@ -9,11 +9,19 @@ Linux will only be able to find the script if you specify the path name, or if y
 Hint: although there are no file extensions in Linux, it’s easier for humans to understand if you end your script names with ‘.sh’.
 
 ## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+
+mkdir ; make directory
 
 ## Opdracht
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+
+https://www.redhat.com/sysadmin/create-delete-files-directories-linux#:~:text=Create%20a%20directory&text=The%20basic%20syntax%20for%20using,Linux%20filesystems%20are%20case%2Dsensitive.
+
+https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/
+
+https://linuxhint.com/bash_conditional_statement/
+
+https://youtube.com/playlist?list=PLtK75qxsQaMLZSo7KL-PmiRarU7hrpnwK
 
 ### Ervaren problemen
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
