@@ -23,8 +23,10 @@ https://sites.google.com/site/tipsandtricksforubuntu/executable-files
 
 https://www.linuxlinks.com/linux-starters-guide-linux-files-permissions/2/
 
+Mijn team
+
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
+
 
 ### Resultaat
 
