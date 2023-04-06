@@ -38,7 +38,7 @@ Add the scripts directory to the PATH variable.
 
 ![Alt text](../00_includes/Bashex1.1.PNG)
 
-To make the above permanent i added the scripts directory path to $PATH: 
+To make the above permanent i added the scripts directory path to $PATH in the ~/.bashrc file in the nano editor  : 
 
 ![Alt text](../00_includes/Bashex1.2.PNG)
 
