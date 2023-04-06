@@ -7,7 +7,11 @@ Any group listed in /etc/group can be assigned as the group of a file.
 
 
 ## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+chmod g-w this command removes write permission for group.
+
+chmod go-rwx this command removes read, write, and execute permission for group and others.
+
+chmod o+w this command adds write permission for others.
 
 ## Opdracht
 ### Gebruikte bronnen
