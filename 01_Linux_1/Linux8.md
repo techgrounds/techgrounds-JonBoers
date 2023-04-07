@@ -1,4 +1,4 @@
-# [Cron Jobs]
+# Cron Jobs
 There might be processes that you want to execute on a regular schedule. For example, you might want to write the available disk space to a log file every hour. Or maybe you want to check for system updates every 2nd day of the month.
 
 These kinds of jobs can be automated using Cron jobs.
