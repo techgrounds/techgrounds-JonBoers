@@ -4,7 +4,7 @@ There might be processes that you want to execute on a regular schedule. For exa
 These kinds of jobs can be automated using Cron jobs.
 
 ## Key-terms
-echo $(date) >> ../date.txt ; schrijft de datum naar een tekstbestand in mijn homefolder
+echo $(date) >> ../date.txt ; schrijft de datum naar een tekstbestand in mijn homefolder  
 $ crontab -e ; opent een editor voor mijn gebruikers crontab  
 
 
