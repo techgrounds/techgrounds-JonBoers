@@ -16,6 +16,8 @@ https://www.baeldung.com/linux/create-crontab-script
 
 ### Ervaren problemen
 
+Het registreren van het script in mijn crontab lukte maar niet omdat het pad in mijn script niet
+klopte. Dit opgelost met hulp van Curt, Akram, Quincy, Sjoerd, Anj en uiteindelijk Casper. 
 
 ### Resultaat
 
@@ -28,6 +30,15 @@ output:
 ![Alt text](../00_includes/Cronjobs1output.PNG)
 
 Register the script in your crontab so that it runs every minute.
+
+![Alt text](../00_includes/Cronjobs2.PNG)
+
+output using "cat date.txt":
+
+![Alt text](../00_includes/Cronjobs2output.PNG)
+
+notice the identical lines caused by the fact that i also created a sudo crontab because of the
+trouble-shooting. Eventually removed the sudo crontab cause the list is long enough as it is.
 
 
 Create a script that writes available disk space to a log file in ‘/var/logs’. Use a cron job so that it runs weekly.
