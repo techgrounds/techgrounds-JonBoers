@@ -51,9 +51,7 @@ test:
 Create a script that appends a line of text to a text file whenever it is executed.
 
 ![Alt text](../00_includes/Bashex1.3.PNG)
-![
-    
-](../00_includes/Bashex1.3a.PNG)
+![..]](../00_includes/Bashex1.3a.PNG)
 Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
 
 Variables:
