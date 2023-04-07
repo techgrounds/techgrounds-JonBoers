@@ -42,7 +42,7 @@ output using "cat date.txt":
 
 ![Alt text](../00_includes/Cronjobs2output.PNG)
 
-notice the identical lines caused by the fact that i also created a sudo crontab because of the
+notice the identical lines because i also created a sudo crontab because of the
 trouble-shooting. Eventually removed the sudo crontab cause the list is long enough as it is.
 
 
