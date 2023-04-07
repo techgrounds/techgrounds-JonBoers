@@ -25,6 +25,11 @@ Create a Bash script that writes the current date and time to a file in your hom
 
 ![Alt text](../00_includes/Cronjobs1script.PNG)
 
+The above works fine as long as I'm in the home directory, but an absolute path had to be added
+in order to work also in a crontab therefore:   
+
+![Alt text](../00_includes/Cronjobs1correction.PNG)
+
 output:
 
 ![Alt text](../00_includes/Cronjobs1output.PNG)
