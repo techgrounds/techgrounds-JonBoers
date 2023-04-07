@@ -4,14 +4,17 @@ There might be processes that you want to execute on a regular schedule. For exa
 These kinds of jobs can be automated using Cron jobs.
 
 ## Key-terms
-echo $(date) >> ../date.txt ; schrijft de datum naar een tekstbestand in mijn homefolder  
-$ crontab -e ; opent een editor voor mijn gebruikers crontab  
+echo $(date) >> /home/jon/date.txt ; schrijft de datum naar een tekstbestand in mijn homefolder  
+crontab -e ; opent een editor voor mijn gebruikers crontab  
 
 
 ## Opdracht
 ### Gebruikte bronnen
+
 https://crontab.guru/  
 https://www.baeldung.com/linux/create-crontab-script
+https://serverfault.com/questions/449651/why-is-my-crontab-not-working-and-how-can-i-troubleshoot-it
+
 
 
 ### Ervaren problemen
@@ -26,7 +29,7 @@ Create a Bash script that writes the current date and time to a file in your hom
 ![Alt text](../00_includes/Cronjobs1script.PNG)
 
 The above works fine as long as I'm in the home directory, but an absolute path had to be added
-in order to work also in a crontab therefore:   
+in order to  also work in my crontab therefore this correction:   
 
 ![Alt text](../00_includes/Cronjobs1correction.PNG)
 
