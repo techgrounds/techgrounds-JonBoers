@@ -95,3 +95,11 @@ A check for a condition can be done using ‘if’, ‘elif’, and/or ‘else�
 
 Exercise 3:
 Create a script that generates a random number between 1 and 10, stores it in a variable, and then appends the number to a text file only if the number is bigger than 5. If the number is 5 or smaller, it should append a line of text to that same text file instead.
+
+script:
+
+![Alt text](../00_includes/Bashex3.PNG)
+
+output:
+
+![Alt text](../00_includes/Bashex3output.PNG)
