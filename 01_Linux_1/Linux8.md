@@ -9,6 +9,7 @@ These kinds of jobs can be automated using Cron jobs.
 ## Opdracht
 ### Gebruikte bronnen
 https://crontab.guru/
+https://www.baeldung.com/linux/create-crontab-script
 
 ### Ervaren problemen
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
@@ -16,5 +17,12 @@ https://crontab.guru/
 ### Resultaat
 
 Create a Bash script that writes the current date and time to a file in your home directory.
+
+![Alt text](../00_includes/Cronjobs1script.PNG)
+
+output:
+
+![Alt text](../00_includes/Cronjobs1output.PNG)
+
 Register the script in your crontab so that it runs every minute.
 Create a script that writes available disk space to a log file in ‘/var/logs’. Use a cron job so that it runs weekly.
