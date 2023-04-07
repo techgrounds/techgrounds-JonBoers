@@ -15,8 +15,6 @@ https://crontab.guru/
 https://www.baeldung.com/linux/create-crontab-script
 https://serverfault.com/questions/449651/why-is-my-crontab-not-working-and-how-can-i-troubleshoot-it
 
-
-
 ### Ervaren problemen
 
 Het registreren van het script in mijn crontab lukte maar niet omdat het pad in mijn script niet
