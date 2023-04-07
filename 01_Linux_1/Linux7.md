@@ -14,7 +14,9 @@ mkdir ; make directory
 which bash ; laat zien wat het pad is naar de bash interpreter  
 export PATH=$PATH:/home/jon/scripts ; voegt de 'scripts' directory toe aan de $PATH variabel  
 echo $PATH ; controle of bovenstaande is gelukt  
-nano ~/.bashrc ; opent de ~/.bashrc file in de nano editor  
+nano ~/.bashrc ; opent de ~/.bashrc file in de nano editor 
+touch firstscript.txt ; maakt een tekstbestand aan in dit geval voor mijn eerste script ooit
+ 
 
 ## Opdracht
 ### Gebruikte bronnen
@@ -47,6 +49,11 @@ test:
 ![Alt text](../00_includes/Bash1.test.PNG)
 
 Create a script that appends a line of text to a text file whenever it is executed.
+
+![Alt text](../00_includes/Bashex1.3.PNG)
+![
+    
+](../00_includes/Bashex1.3a.PNG)
 Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
 
 Variables:
