@@ -16,6 +16,8 @@ export PATH=$PATH:/home/jon/scripts ; voegt de 'scripts' directory toe aan de $P
 echo $PATH ; controle of bovenstaande is gelukt  
 nano ~/.bashrc ; opent de ~/.bashrc file in de nano editor 
 touch firstscript.sh ; maakt mijn eerste script ooit
+$RANDOM ; genereert een random nummer 
+
  
 
 ## Opdracht
