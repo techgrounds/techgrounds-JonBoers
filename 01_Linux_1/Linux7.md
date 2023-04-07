@@ -15,7 +15,7 @@ which bash ; laat zien wat het pad is naar de bash interpreter
 export PATH=$PATH:/home/jon/scripts ; voegt de 'scripts' directory toe aan de $PATH variabel  
 echo $PATH ; controle of bovenstaande is gelukt  
 nano ~/.bashrc ; opent de ~/.bashrc file in de nano editor 
-touch firstscript.txt ; maakt een tekstbestand aan in dit geval voor mijn eerste script ooit
+touch firstscript.sh ; maakt mijn eerste script ooit
  
 
 ## Opdracht
@@ -29,7 +29,18 @@ https://linuxhint.com/bash_conditional_statement/
 
 https://youtube.com/playlist?list=PLtK75qxsQaMLZSo7KL-PmiRarU7hrpnwK
 
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04
+
 ### Ervaren problemen
+vergeten .sh achter mijn scriptnaam te zetten  
+vergeten .txt file aan te maken waar het script naartoe moest schrijven  
+script file in de verkeerde locatie gezet, opgelost met 'mv'  
+vergeten script executable te maken  
+
+Failed to start httpd.service: Unit httpd.service not found.
+Failed to enable unit: Unit file httpd.service does not exist.
+Unit httpd.service could not be found. Kortom vertrouw chatgpt niet tenzij je genoeg tijd hebt.
+
 
 
 ### Resultaat
@@ -51,8 +62,15 @@ test:
 Create a script that appends a line of text to a text file whenever it is executed.
 
 ![Alt text](../00_includes/Bashex1.3.PNG)
-![..](../00_includes/Bashex1.3a.PNG)
+![..](../00_includes/Bashex1.3a.PNG)  
+
 Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
+
+![Alt text](../00_includes/Bashex1.4apachescript.PNG)
+
+outcome:
+
+![Alt text](../00_includes/Bashex1.4.PNG)
 
 Variables:
 You can assign a value to a string of characters so that the value can be read somewhere else in the script.
