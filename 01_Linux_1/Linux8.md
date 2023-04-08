@@ -22,7 +22,7 @@ klopte. Dit opgelost met hulp van Curt, Akram, Quincy, Sjoerd, Anj en uiteindeli
 
 Bij de laatste opdracht moest ik de write permissie van de /var/log directory voor 'others' nog toevoegen  
 dmv chmod o+w log.
- 
+
 ### Resultaat
 
 Create a Bash script that writes the current date and time to a file in your home directory.
@@ -55,3 +55,7 @@ Create a script that writes available disk space to a log file in â€˜/var/logsâ€
 ![Alt text](../00_includes/Cronjobs3.PNG)
 
 ![Alt text](../00_includes/Cronjobs3crontabe.PNG)
+
+De output na 1 minuut testen (crontab tijdelijk op 1min gezet):
+
+![Alt text](../00_includes/Cronjobs3output&test.PNG)
