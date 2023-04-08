@@ -20,6 +20,9 @@ https://serverfault.com/questions/449651/why-is-my-crontab-not-working-and-how-c
 Het registreren van het script in mijn crontab lukte maar niet omdat het pad in mijn script niet
 klopte. Dit opgelost met hulp van Curt, Akram, Quincy, Sjoerd, Anj en uiteindelijk Casper. 
 
+Bij de laatste opdracht moest ik de write permissie van de /var/log directory voor 'others' nog toevoegen  
+dmv chmod o+w log.
+ 
 ### Resultaat
 
 Create a Bash script that writes the current date and time to a file in your home directory.
@@ -48,3 +51,7 @@ trouble-shooting. Eventually removed the sudo crontab cause the list is long eno
 Also set original crontab to once a year.
 
 Create a script that writes available disk space to a log file in ‘/var/logs’. Use a cron job so that it runs weekly.
+
+![Alt text](../00_includes/Cronjobs3.PNG)
+
+![Alt text](../00_includes/Cronjobs3crontabe.PNG)
