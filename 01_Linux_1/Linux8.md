@@ -45,6 +45,6 @@ output using "cat date.txt":
 
 notice the identical lines because i also created a sudo crontab because of the
 trouble-shooting. Eventually removed the sudo crontab cause the list is long enough as it is.
-
+Also set original crontab to once a year.
 
 Create a script that writes available disk space to a log file in ‘/var/logs’. Use a cron job so that it runs weekly.
