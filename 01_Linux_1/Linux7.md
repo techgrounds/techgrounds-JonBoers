@@ -37,7 +37,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-s
 vergeten .sh achter mijn scriptnaam te zetten  
 vergeten .txt file aan te maken waar het script naartoe moest schrijven  
 script file in de verkeerde locatie gezet, opgelost met 'mv'  
-vergeten script executable te maken  
+vergeten script executable te maken; opgelost met chmod  
 
 Failed to start httpd.service: Unit httpd.service not found.
 Failed to enable unit: Unit file httpd.service does not exist.
