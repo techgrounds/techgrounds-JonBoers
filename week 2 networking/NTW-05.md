@@ -37,6 +37,7 @@ https://www.whatismyip.com/
 
 ### Ervaren problemen
 
+Kwam er maar niet achter waar ik mijn ip adres op mijn telefoon kon veranderen, maar na wat zoeken bleek dat ik moest tappen en vasthouden voordat geavanceerde wifi opties zichtbaar werden.
 
 ### Resultaat
 
