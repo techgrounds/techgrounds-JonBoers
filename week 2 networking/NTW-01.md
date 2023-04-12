@@ -42,5 +42,4 @@ The TCP/IP model and its uses. (TCP = Transmission Control Protocol) / (IP = Int
 
 4 (7). Application; network services for applications such as e-mail, webbrowsers, Filer sharing apps.  
 3. Transport; transmission control protocol (TCP) & user datagram protocol (UDP).   
-2. Internet Layer; Internet Protocol (IP).  
-1. Link Layer; Ethernet en Wifi >>> HUB, cables
+2. Internet Layer; Internet Protocol (IP).
