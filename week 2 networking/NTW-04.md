@@ -30,8 +30,11 @@ https://www.youtube.com/watch?v=XdZqk8BXPwg
 https://www.youtube.com/watch?v=QJW6qnfhC70
 https://www.youtube.com/watch?v=VLflTjd3lWA
 https://www.youtube.com/watch?v=pg-HEGBpCQk
+Sjoerd
 
 ### Ervaren problemen
+
+Grootste probleem was hoe ik de tabelletjes netjes in m'n github kreeg, maar de markdown cheatsheet hielp na een tip van Sjoerd.
 
 ### Resultaat
 
