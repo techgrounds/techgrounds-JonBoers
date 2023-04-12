@@ -50,7 +50,7 @@ Translate the following decimal numbers into binary:
 Translate the following binary numbers into decimal:
 
 | Binair | decimaal |
-| ----- | ------ |
+| ------ | ------ |
 | 1010 1010 |170     |
 | 1111 0000 |240     |
 | 1101 1011 |219     |
