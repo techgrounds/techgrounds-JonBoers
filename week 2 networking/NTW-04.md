@@ -25,9 +25,9 @@ Counting in base 2 and base 16
 Exercise:
 Translate the following decimal numbers into binary:
 
-Decimal
-Binary
-16      
+Decimal     Binary
+
+16          0001 0000      
 
 
 128
