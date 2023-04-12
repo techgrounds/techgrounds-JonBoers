@@ -20,24 +20,18 @@ There are many tools and charts that will do the hard work for you when you’re
 Study:
 Counting in base 2 and base 16
 
-
-
-
-
-
-
-
-
-
 ## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+
+Alles handmatig gedaan, maar wel nagekeken met de calculator of ik het goed had begrepen.
 
 ## Opdracht
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+https://www.youtube.com/watch?v=XdZqk8BXPwg
+https://www.youtube.com/watch?v=QJW6qnfhC70
+https://www.youtube.com/watch?v=VLflTjd3lWA
+https://www.youtube.com/watch?v=pg-HEGBpCQk
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
 
@@ -62,19 +56,23 @@ Translate the following binary numbers into decimal:
 | 1101 1011 |219     |
 | 1010 0000 |160     |
 | 0011 1010 |58     |
-Decimaal > Hex
+
+Translate the following decimal numbers into hexadecimal:
+
 | Decimaal | Hex |
 | ----- | ------- |
-| 15 | |
-| 37 | |
-| 246 | |
-| 125 | |
-| 209 |
-Hex > Decimaal
+| 15 |f |
+| 37 |25 |
+| 246 |f6 |
+| 125 |7d |
+| 209 |d1
+
+Translate the following hexadecimal numbers into decimal:
+
 | Hex | Decimaal |
 | -----| ------ |
-| 88 | |
-| e0 | |
-| cb | |
-| 2f | |
-| d8 | |
+| 88 |136 |
+| e0 |224 |
+| cb |203 |
+| 2f |47 |
+| d8 |216 |
