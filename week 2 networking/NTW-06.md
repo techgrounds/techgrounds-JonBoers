@@ -25,6 +25,7 @@ CIDR is important for internet routing because it enables more efficient use of 
 https://www.dnsstuff.com/subnet-ip-subnetting-guide#what-are-subnets-used-for
 https://davidbombal.com/subnetting-concepts-calculator/
 
+
 ### Ervaren problemen
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
