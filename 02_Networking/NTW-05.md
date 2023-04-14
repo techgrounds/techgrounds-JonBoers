@@ -1,4 +1,4 @@
-# [IP adressen]
+# IP adressen
 
 Introductie:
 Een IP adres is een logisch adres dat aan een netwerkapparaat toegewezen kan worden. De netwerkapparaten kunnen dan vervolgens met dit IP adres elkaar vinden op het netwerk.

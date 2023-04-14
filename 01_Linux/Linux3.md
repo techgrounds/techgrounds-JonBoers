@@ -1,4 +1,4 @@
-# [Working with text (CLI)]
+# Working with text (CLI)
 
 Introduction:
 Every command in Linux has a standard input and output.

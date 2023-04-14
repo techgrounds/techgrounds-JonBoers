@@ -1,4 +1,4 @@
-# [Setting up]
+# Setting up
 
 Introduction:
 Linux, like Windows or MacOS, is an operating system. It manages the communication between the physical device (hardware) and all computer programs (software).

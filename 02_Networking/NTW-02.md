@@ -1,4 +1,4 @@
-# [Network Devices]
+# Network Devices
 
 Introductie:
 Er bestaat geen netwerk zonder netwerkapparatuur als je meer dan twee computers aan elkaar wilt schakelen. 

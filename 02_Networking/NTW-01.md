@@ -1,4 +1,4 @@
-# [OSI STack]
+# OSI STack
 
 Introduction:
 The Open Systems Interconnection model (OSI model) is a model primarily used for troubleshooting of telecommunication or computing systems.

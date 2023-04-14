@@ -1,4 +1,4 @@
-# [Protocols]
+# Protocols
 
 Introduction:
 A network protocol is an agreement about how to communicate. There are protocols on every layer of the OSI stack.

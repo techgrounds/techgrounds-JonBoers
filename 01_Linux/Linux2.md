@@ -1,4 +1,4 @@
-# [Files and Directories]
+# Files and Directories
 
 Introduction:
 Linux uses files and folders, like you’re used to with any OS you’ve used. Folders in Linux are called directories, so use that word when looking for commands or information.

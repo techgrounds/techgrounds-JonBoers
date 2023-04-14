@@ -1,4 +1,4 @@
-# [Counting in Binary and Hex]
+# Counting in Binary and Hex
 
 
 Introduction:
