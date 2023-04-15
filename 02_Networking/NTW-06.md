@@ -27,7 +27,9 @@ https://davidbombal.com/subnetting-concepts-calculator/
 
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
+
+een rabit hole met vele gangen. Ben er nog steeds niet uit.
+
 
 ### Resultaat
 
