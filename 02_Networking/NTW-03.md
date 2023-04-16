@@ -32,13 +32,13 @@ Chatgpt
 Exercise :
 **Identify several other protocols and their associated OSI layer. Name at least one for each layer.**
 
-7.  Application layer;      DHCP Dynamic Host Configuration Protocol, FTP File Transfer Protocol
-6.  Presentation layer;     TLS Transport Layer Security
-5.  Session layer;          NetBIOS, File Sharing and Name Resolution protocol - the basis of file sharing with Windows.
-4.  Transport layer;        TCP Transmission Control Protocol, UDP User Datagram Protocol
-3.  Network layer;          SCCP Signalling Connection Control Part, VRRP Virtual Router Redundancy Protocol       
-2.  Data link layer;        ARP Address Resolution Protocol, MAC Media Access Control
-1.  Physical layer;         USB Universal Serial Bus, IrDa, ISDN
+7  Application layer;      DHCP Dynamic Host Configuration Protocol, FTP File Transfer Protocol
+6  Presentation layer;     TLS Transport Layer Security
+5  Session layer;          NetBIOS, File Sharing and Name Resolution protocol - the basis of file sharing with Windows.  
+4 Transport layer;        TCP Transmission Control Protocol, UDP User Datagram Protocol 
+3  Network layer;          SCCP Signalling Connection Control Part, VRRP Virtual Router Redundancy Protocol        
+2 Data link layer;        ARP Address Resolution Protocol, MAC Media Access Control  
+1  Physical layer;         USB Universal Serial Bus, IrDa, ISDN
 
 **Figure out who determines what protocols we use and what is needed to introduce your own protocol.**
 
