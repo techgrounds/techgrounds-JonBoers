@@ -3,10 +3,10 @@
 Introductie:
 Er bestaat geen netwerk zonder netwerkapparatuur als je meer dan twee computers aan elkaar wilt schakelen. 
 
-Een korte, en zeker niet complete, lijst van netwerkapparatuur volgt:
-router
-switch
-repeaters
+Een korte, en zeker niet complete, lijst van netwerkapparatuur volgt:  
+router  
+switch  
+repeaters  
 access point 
 
 Elk apparaat in de lijst draagt eraan bij dat je data bezorgd wordt bij de juiste computer. En vaak zijn ze slim genoeg om samen te onderhandelen zodat jij, als gebruiker, geen zorgen hoeft te maken over de instellingen. Je netwerkapparaten blijven het doen zelfs als je computers toevoegt of verwijdert van je netwerk. Protocollen spelen hierin een belangrijke rol.
