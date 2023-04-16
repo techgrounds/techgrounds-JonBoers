@@ -28,13 +28,13 @@ Study:
 
 The OSI model and its uses. (OSI = Open System Interconnection)
 
-7. Application; network services for applications
-6. Presentation; data translation and encrytion
-5. Session; establishes and manages communication sessions between devices
-4. Transport; reliable and efficient data transmission between devices
-3. Network; routing of data packets. IP-Addresses
-2. Data Link; transmissions of data frames, error detection and correction. >>> Switches, mac-addresses,  ethernet II
-1. Physical; >>> cables, HUB, connectors, EthernetI
+7 Application; network services for applications  
+6 Presentation; data translation and encrytion  
+5 Session; establishes and manages communication sessions between devices  
+4 Transport; reliable and efficient data transmission between devices  
+3 Network; routing of data packets. IP-Addresses  
+2 Data Link; transmissions of data frames, error detection and correction. >>> Switches, mac-addresses,  ethernet II  
+1 Physical; >>> cables, HUB, connectors, EthernetI
 
 All(7) People(6) Seem(5) To(4) Need(3) Data(2) Processing(1)
 
