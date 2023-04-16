@@ -27,18 +27,15 @@ NOOT: Als je geen admin-toegang hebt, bijvoorbeeld omdat je in een appartementen
 ## Key-terms
 DHCP; (Dynamic Host Configuration Protocol) A network management protocol used to automate the process of configuring devices on IP networks. It dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks.
 
-MAC-address; 
-IP-address
-Connected type 
-RSSI
-Remaining lease time
+MAC-address;het unieke identificatiegetal van de netwerkadapter in jouw apparaat. Dat is het onderdeel van je apparaat, waarmee je met internet kunt verbinden. Het MAC-adres zorgt ervoor dat je apparaat herkenbaar is voor andere apparaten in een netwerk. Zo weet een router bijvoorbeeld naar welk apparaat bepaalde data verstuurd moet worden.
 
-
+IP-address; waarin IP staat voor Internet Protocol, is in een computernetwerk een adres waarmee een netwerkinterface (network interface) van een host in het netwerk eenduidig geadresseerd kan worden binnen het TCP/IP-model, de standaard van "het" internet.
 ## Opdracht
 ### Gebruikte bronnen
 
 https://www.youtube.com/watch?v=9eH16Fxeb9o&list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P&index=2
-https://www.efficientip.com/what-is-dhcp-and-why-is-it-important/
+https://www.efficientip.com/what-is-dhcp-and-why-is-it-important/  
+wikipedia
 
 ### Ervaren problemen
 
