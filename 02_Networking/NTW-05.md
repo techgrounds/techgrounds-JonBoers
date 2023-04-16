@@ -72,6 +72,8 @@ Als experiment met mijn terminal gepingd en er wordt een 50% verlies gemeld door
 
 ![Alt text](../00_includes/Week2/IP4.PNG)
 
+Waarschijnlijk wordt de packet-loss veroorzaakt door congestion. Als er teveel informatie wordt doorgestuurd dan dat er verwerkt kan worden, worden de packet's 'gedropped'.
+
 Beide apparaten werden ook zeer traag in de browsers.
 
 **Probeer het privé IP adres van je mobiel te veranderen naar een adres buiten je netwerk. Wat gebeurt er dan?**
