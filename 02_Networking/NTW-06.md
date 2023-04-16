@@ -45,7 +45,7 @@ https://www.calculator.net/ip-subnet-calculator.html?cclass=c&csubnet=29&cip=192
 
 ### Ervaren problemen
 
-Er ging tijd zitten om de juiste diagram vormen te vinden in https://app.diagrams.net/ ,maar na het downloaden van de app kon ik meer vinden.
+Er ging tijd zitten in het vinden van de juiste diagram vormen in https://app.diagrams.net/, maar na het downloaden van de app kon vond ik wat ik zocht.
 
 Ook is er veel informatie te vinden van verschillende bronnen, maar omdat sommige content gedateerder is dan andere was het zoeken naar wat betrouwbaar was. Voor nu vertrouw ik op Network Chuck.
 
