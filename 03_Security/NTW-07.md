@@ -35,7 +35,7 @@ https://en.wikipedia.org/wiki/Active_Directory
 Het was even zoeken naar de betekenis en gebruik van de Active Directory Server of waar de AD server gepositioneerd moet worden in deze case study.
 
 ### Resultaat
-Ik gekozen voor 2 subnets; 1 voor de servers en directories en 1 voor het de office users met printer.
+Ik heb gekozen voor 2 subnets; 1 voor de servers en directories en 1 voor het de office users met printer.
 De AD directory heb ik centraal geplaats voor de databases en servers. De firewall plaatste ik voor de router en tussen het internet:
 
 ![Alt text](../00_includes/Week3/NTW-07.PNG)
