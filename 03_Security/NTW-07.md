@@ -39,3 +39,6 @@ Ik heb gekozen voor 2 subnets; 1 voor de servers en directories en 1 voor de off
 De AD directory heb ik centraal geplaats voor de databases en servers. De firewall plaatste ik voor de router en tussen het internet:
 
 ![Alt text](../00_includes/Week3/NTW-07.PNG)
+
+https://youtu.be/oopkClg1kxM
+
