@@ -44,7 +44,7 @@ https://nmap.org/download.html#linux-rpm
 Study:
 Scan the network of your Linux machine using nmap. What do you find?
 
-Eerst het nmap geinstalleerd met de commands:
+Eerst nmap geinstalleerd met de commands:
 
 sudo apt-get update
 sudo apt-get install nmap
