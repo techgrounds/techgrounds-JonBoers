@@ -29,7 +29,8 @@ The encryption step performed by a Caesar cipher is often incorporated as part o
 Wikipedia
 https://interestingengineering.com/innovation/11-cryptographic-methods-that-marked-history-from-the-caesar-cipher-to-enigma-code-and-beyond  
 https://www.simplilearn.com/data-encryption-methods-article
-https://www.javainuse.com/aesgenerator
+https://www.javainuse.com/aesgenerator  
+https://www.devglan.com/online-tools/aes-encryption-decryption
 
 
 ### Ervaren problemen
