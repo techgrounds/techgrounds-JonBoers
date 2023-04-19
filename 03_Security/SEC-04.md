@@ -60,6 +60,6 @@ A primary example of this 'code arms race' was the different phases of the succe
 
 Het was iets te makkelijk te ontcijferen en ik had het mensen moeilijker kunnen maken, maar uiteindelijk zou het worden gekraakt omdat boodschap en sleutel beide public verkrijgbaar zijn, maar leuk was het wel:
 Quincy:
-![Alt text](../00_includes/Week3/SEC-04.2.PNG)
+![Alt text](../00_includes/Week3/SEC-04.2.PNG)  
 Younes:
 ![Alt text](../00_includes/Week3/SEC-04.3.PNG)
