@@ -51,7 +51,9 @@ https://www.fortinet.com/resources/cyberglossary/stateful-vs-stateless-firewall
 https://www.geeksforgeeks.org/difference-between-hardware-and-software/  
 https://www.checkpoint.com/cyber-hub/network-security/what-is-firewall/what-is-a-hardware-firewall/#:~:text=The%20main%20difference%20between%20a,systems%20like%20Windows%20and%20macOS
 https://www.linuxcapable.com/upgrade-apache-on-ubuntu-linux/
+https://www.cyberciti.biz/faq/how-to-configure-firewall-with-ufw-on-ubuntu-20-04-lts/#Turn_on_ufw_firewall
 
+Mijn team
 
 ### Ervaren problemen
 
@@ -59,6 +61,7 @@ Ubuntu en apache 2 geupdate, daarna moest ik de poort  (58005) nog veranderen me
 
 sudo nano /etc/apache2/ports.conf
 
+Bleek dat ik al die tijd ook nog een typefout had gemaakt met het ip-adres.
 
 ### Resultaat
 
