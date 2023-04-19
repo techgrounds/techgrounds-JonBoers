@@ -49,10 +49,15 @@ Hardware firewalls, deployed as physical appliances, provide a number of benefit
 ### Gebruikte bronnen
 https://www.fortinet.com/resources/cyberglossary/stateful-vs-stateless-firewall  
 https://www.geeksforgeeks.org/difference-between-hardware-and-software/  
-https://www.checkpoint.com/cyber-hub/network-security/what-is-firewall/what-is-a-hardware-firewall/#:~:text=The%20main%20difference%20between%20a,systems%20like%20Windows%20and%20macOS.
+https://www.checkpoint.com/cyber-hub/network-security/what-is-firewall/what-is-a-hardware-firewall/#:~:text=The%20main%20difference%20between%20a,systems%20like%20Windows%20and%20macOS
+https://www.linuxcapable.com/upgrade-apache-on-ubuntu-linux/
 
 
 ### Ervaren problemen
+
+Ubuntu en apache 2 geupdate
+
+
 
 ### Resultaat
 
@@ -60,6 +65,7 @@ Opdracht:
 
 **Installeer een webserver op je VM.**
 
+![Alt text](../00_includes/Week3/SEC02.PNG)
 
 **Bekijk de standaardpagina die met de webserver geïnstalleerd is.**
 
