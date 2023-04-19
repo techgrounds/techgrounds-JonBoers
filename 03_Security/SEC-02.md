@@ -79,6 +79,8 @@ Ubuntu en Apache geupdate.
 
 Eerst mijn SSH geauthoriseerd met:
 
+sudo ufw allow OpenSSH
+
 ![Alt text](../00_includes/Week3/SEC02.1.PNG)
 
 Controleer of de firewall zijn werk doet.
