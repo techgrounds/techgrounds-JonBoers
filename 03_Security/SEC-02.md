@@ -55,8 +55,9 @@ https://www.linuxcapable.com/upgrade-apache-on-ubuntu-linux/
 
 ### Ervaren problemen
 
-Ubuntu en apache 2 geupdate
+Ubuntu en apache 2 geupdate, daarna moest ik de poort  (58005) nog veranderen met:
 
+sudo nano /etc/apache2/ports.conf
 
 
 ### Resultaat
@@ -65,10 +66,24 @@ Opdracht:
 
 **Installeer een webserver op je VM.**
 
-![Alt text](../00_includes/Week3/SEC02.PNG)
+Ubuntu en Apache geupdate. 
 
 **Bekijk de standaardpagina die met de webserver geïnstalleerd is.**
 
+![Alt text](../00_includes/Week3/SEC02.PNG)
 
-Stel de firewall zo in dat je webverkeer blokkeert, maar wel ssh-verkeer toelaat.
+**Stel de firewall zo in dat je webverkeer blokkeert, maar wel ssh-verkeer toelaat.**
+
+Eerst mijn SSH geauthoriseerd met:
+
+![Alt text](../00_includes/Week3/SEC02.1.PNG)
+
 Controleer of de firewall zijn werk doet.
+
+sudo ufw status verbose: om de status te checken
+sudo ufw enable/disable: Firewall aan/uit
+sudo ufw allow openSSH
+
+![Alt text](../00_includes/Week3/SEC-02.2.PNG)
+
+Vervolgens was de standaard website niet meer bereikbaar in mijn browser.
