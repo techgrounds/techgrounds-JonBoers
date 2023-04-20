@@ -15,16 +15,16 @@ A key pair generator like https://travistidwell.com/jsencrypt/demo/
 
 ## Opdracht
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+https://www.simplilearn.com/tutorials/cryptography-tutorial/rsa-algorithm#:~:text=When%20using%20RSA%20for%20encryption,any%20keys%20in%20this%20scenario  
+https://www.devglan.com/online-tools/rsa-encryption-decryption#:~:text=RSA(Rivest%2DShamir%2DAdleman,to%20decrypt%20the%20encrypted%20message.
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
 
-Exercise:
+**Exercise:**
 
-Generate a key pair.
+**Generate a key pair.**
 
 To be practical i pasted the keys here although I understand that this is unsafe.
 
@@ -51,8 +51,8 @@ cSlNgi30lDNSyfA01C0ByG3i6dmhOy4ktGqUPmyJ7y9oezEZEvcEMAKW7tVnpvkl
 p4ZaHhPrkGZ+6KXhAgMBAAE=
 -----END PUBLIC KEY-----
 
-Send an asymmetrically encrypted message to one of your peers via the public Slack channel. They should be able to decrypt the message using a key. The recipient should be able to read the message, but it should remain a secret to everyone else. You are not allowed to use any private messages or other communication channels besides the public Slack channel. Analyse the difference between this method and symmetric encryption.
+**Send an asymmetrically encrypted message to one of your peers via the public Slack channel. They should be able to decrypt the message using a key. The recipient should be able to read the message, but it should remain a secret to everyone else. You are not allowed to use any private messages or other communication channels besides the public Slack channel. Analyse the difference between this method and symmetric encryption.**
 
 ![Alt text](../00_includes/Week3/SEC-05.PNG)
 
-By posting a public key I'm still only able to receive and decrypt messages. In order to be able to send and encrypt I need to use the public key if posted earlier by the receiver. This can get a bit cumbersome if you want to converse back and forth. One way to make this a bit easier is to encrypt a symmetric key in the initial messages so that the following messaging will be smoother and less time consuming.
+This method is much safer because only the recipient of a message will be able to decrypt it because the private key will never be send. However by posting a public key I'm still only able to receive and decrypt messages. In order to be able to send and encrypt I need to use the public key if posted earlier by the receiver. This can get a bit cumbersome if you want to converse back and forth. One way to make this a bit easier is to encrypt a symmetric key in the initial messages so that the following messaging will be smoother and less time consuming.
