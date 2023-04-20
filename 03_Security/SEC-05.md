@@ -11,7 +11,13 @@ A peer
 A key pair generator like https://travistidwell.com/jsencrypt/demo/
 
 ## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+RSA: Rivest-Shamir-Adleman, which are the last names of the three mathematicians who first proposed the algorithm in 1977: Ron Rivest, Adi Shamir, and Leonard Adleman.
+
+ECB: Electronic Code Book is a block cipher mode where the plaintext is divided into fixed-size blocks and each block is encrypted independently using the same key.
+
+PKCS1Padding: a padding scheme used to add extra bits to the plaintext before encryption to ensure that each block is of the required size.
+
+OAEPWithSHA-1AndMGF1Padding: OAEP (Optimal Asymmetric Encryption Padding) with SHA-1 (Secure Hash Algorithm-1) and MGF1 (Mask Generation Function-1) padding. OAEP is a more secure padding scheme than PKCS1Padding, and it provides better resistance against chosen-ciphertext attacks. SHA-1 is a cryptographic hash function used in the padding scheme, and MGF1 is a mask generation function used to generate the padding. 
 
 ## Opdracht
 ### Gebruikte bronnen
