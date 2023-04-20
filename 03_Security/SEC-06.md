@@ -40,7 +40,8 @@ certification path: A chain of trusted public-key certificates that begins with 
 ### Gebruikte bronnen
 
 https://devopscube.com/create-self-signed-certificates-openssl/
-https://documentation.observeit.com/installation_guide/  finding_the_path_to_the_trusted_certificates.htm
+https://documentation.observeit.com/installation_guide/finding_the_path_to_the_trusted_certificates.html
+
 
 ### Ervaren problemen
 
