@@ -59,7 +59,7 @@ The term rainbow tables was first used in Oechslin's initial paper. The term ref
 
 
 **Below are two MD5 password hashes. One is a weak password, the other is a string of 16 randomly generated** **characters. Try to look up both hashes in a Rainbow Table.**
-**03F6D7D1D9AAE7160C05F71CE485AD31**
+**03F6D7D1D9AAE7160C05F71CE485AD31**  
 **03D086C9B98F90D628F2D1BD84CFA6CA**
 
 Resultaat:
