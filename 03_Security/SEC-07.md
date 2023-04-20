@@ -62,6 +62,23 @@ The term rainbow tables was first used in Oechslin's initial paper. The term ref
 **03F6D7D1D9AAE7160C05F71CE485AD31**
 **03D086C9B98F90D628F2D1BD84CFA6CA**
 
-Create a new user in Linux with the password 12345. Look up the hash in a Rainbow Table.
-Despite the bad password, and the fact that Linux uses common hashing algorithms, you won’t get a match in the Rainbow Table. This is because the password is salted. To understand how salting works, find a peer who has the same password in /etc/shadow, and compare hashes.
+Resultaat:
+
+![Alt text](../00_includes/Week3/SEC07.2.PNG)
+
+First one was found because it was a common one and therefore likely to be included in the rainbow table. The second one was randomly generated and not included in the table.
+
+**Create a new user in Linux with the password 12345. Look up the hash in a Rainbow Table.**
+
+![Alt text](../00_includes/Week3/SEC-07.3.PNG)
+![Alt text](../00_includes/Week3/SEC-07.4.PNG)
+![Alt text](../00_includes/Week3/SEC-07.5.PNG)
+
+**Despite the bad password, and the fact that Linux uses common hashing algorithms, you won’t get a match in the Rainbow Table. This is because the password is salted. To understand how salting works, find a peer who has the same password in /etc/shadow, and compare hashes.**
+
+![Alt text](../00_includes/Week3/SEC-07.6.PNG)
+![Alt text](../00_includes/Week3/SEC-07.7.PNG)
+
+Although the passwords were both 12345 the hashes were different because of the added salts.
+
 

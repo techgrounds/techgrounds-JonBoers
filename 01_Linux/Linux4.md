@@ -9,7 +9,7 @@ Users, passwords, and groups are all stored in different files across the system
 
 ## Key-terms
 
-udo adduser &lt;username&gt; adds a new user  
+sudo adduser &lt;username&gt; adds a new user  
 sudo grep &lt;username&gt; /etc/passwd /etc/shadow /etc/group    
 [sudo] is alleen nodig voor /etc/shadow, maar zo staat het in 1 regel  
 
