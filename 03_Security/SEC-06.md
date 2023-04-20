@@ -40,7 +40,7 @@ certification path: A chain of trusted public-key certificates that begins with 
 ### Gebruikte bronnen
 
 https://devopscube.com/create-self-signed-certificates-openssl/
-chaptgpt
+https://documentation.observeit.com/installation_guide/  finding_the_path_to_the_trusted_certificates.htm
 
 ### Ervaren problemen
 
@@ -89,6 +89,10 @@ Door dit in te voeren in de zoekbalk in het start menu: " certmgr.msc "
 Kreeg ik de volgende lijst te zien:
 
 ![Alt text](../00_includes/Week3/SEC-06.11.PNG)
+
+VM:
+
+![Alt text](../00_includes/Week3/SEC-06bonus.PNG)
 
 
 
