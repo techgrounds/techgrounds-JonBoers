@@ -64,7 +64,7 @@ The term rainbow tables was first used in Oechslin's initial paper. The term ref
 
 Resultaat:
 
-![Alt text](../00_includes/Week3/SEC07.2.PNG)
+![Alt text](../00_includes/Week3/SEC-07.2.PNG)
 
 First one was found because it was a common one and therefore likely to be included in the rainbow table. The second one was randomly generated and not included in the table.
 
