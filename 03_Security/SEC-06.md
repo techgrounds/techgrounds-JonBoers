@@ -34,9 +34,7 @@ req: specifies that the command is for certificate requests.
 -2048: specifies the key size, which is the number of bits in the key. In this case, the key size is set to 2048 bits.  
 *When you run this command, OpenSSL generates a new private key for the server and saves it to the specified file, server.key. This private key can be used in combination with a public key (e.g., a certificate) to enable secure communication with the server using protocols like HTTPS or SSH.*
 
-certification path
-
-  A chain of trusted public-key certificates that begins with a certificate whose signature can be verified by a relying party using a trust anchor, and ends with the certificate of the entity whose trust needs to be established.
+certification path: A chain of trusted public-key certificates that begins with a certificate whose signature can be verified by a relying party using a trust anchor, and ends with the certificate of the entity whose trust needs to be established.
 
 ## Opdracht
 ### Gebruikte bronnen
