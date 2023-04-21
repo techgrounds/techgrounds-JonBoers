@@ -78,8 +78,8 @@ RPO: Recovery Point Objective is the goal for the maximum amount of data the org
 ### Gebruikte bronnen
 https://www.checkpoint.com/cyber-hub/network-security/what-is-an-intrusion-detection-system-ids/#:~:text=An%20Intrusion%20Detection%20System%20(IDS)%20is%20a%20monitoring%20system%20that,actions%20to%20remediate%20the%20threat  
 https://www.exabeam.com/incident-response/cyber-attribution-essential-component-of-incident-response-or-optional-extra/  
-https://www.rubrik.com/insights/rto-rpo-whats-the-difference#:~:text=These%20are%20the%20Recovery%20Time,the%20organization%20can%20tolerate%20losing   
-
+https://www.rubrik.com/insights/rto-rpo-whats-the-difference#:~:text=These%20are%20the%20Recovery%20Time,the%20organization%20can%20tolerate%20losing    
+https://securityboulevard.com/2019/11/5-tips-for-responding-to-cyber-attacks/
 
 ### Ervaren problemen
 
