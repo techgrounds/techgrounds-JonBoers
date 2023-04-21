@@ -72,7 +72,7 @@ When selecting an IDS solution, it is important to carefully consider the deploy
 </details>
 
 
-RTO: Recovery Time Objective is the goal an organization sets for the maximum length of time it should take to restore normal operations following an outage or data loss.
+RTO: Recovery Time Objective is the goal an organization sets for the maximum length of time it should take to restore normal operations following an outage or data loss.  
 RPO: Recovery Point Objective is the goal for the maximum amount of data the organization can tolerate losing. This parameter is measured in time: from the moment a failure occurs to your last valid data backup. For example, if you experience a failure now and your last full data backup was 24 hours ago, the RPO is 24 hours
 
 <details>
