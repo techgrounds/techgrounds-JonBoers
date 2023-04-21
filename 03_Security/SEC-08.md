@@ -38,7 +38,7 @@ In addition to access control, NGFWs can block modern threats such as advanced m
 * Techniques to address evolving security threats
 
 <details>
-<summary>This Article describes IDS versus IPS and NGFW (Next Generation Firewalls):</summary>  
+<summary>This Article describes IDS versus IPS and Next Generation Firewalls (click):</summary>  
 
 ### Classification of Intrusion Detection Systems
 Intrusion detection systems are designed to be deployed in different environments. And like many cybersecurity solutions, an IDS can either be host-based or network-based. 
