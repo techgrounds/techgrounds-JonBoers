@@ -71,8 +71,31 @@ An IDS is a valuable component of any organization’s cybersecurity deployment.
 When selecting an IDS solution, it is important to carefully consider the deployment scenario. In some cases, an IDS may be the best choice for the job, while, in others, the integrated protection of an IPS may be a better option. Using a NGFW that has built-in IDS/IPS functionality provides an integrated solution, simplifying threat detection and security management.
 </details>
 
+
 RTO: Recovery Time Objective is the goal an organization sets for the maximum length of time it should take to restore normal operations following an outage or data loss.
 RPO: Recovery Point Objective is the goal for the maximum amount of data the organization can tolerate losing. This parameter is measured in time: from the moment a failure occurs to your last valid data backup. For example, if you experience a failure now and your last full data backup was 24 hours ago, the RPO is 24 hours
+
+<details>
+<summary>hack response strategies (click): </summary>
+
+1. Follow a communication plan.
+Figuring out who to inform after a hacking attack is critical. What does the attack mean? Who should you tell? How do you tell them? When do you tell them? Implement a communication plan before the hacking attack occurs to carry it out once the attack takes place. 
+
+2. Secure IT systems.
+As soon as you realize the breach, secure your IT systems to limit the scope of the attack. 
+
+3. Launch backups.
+Hopefully, you’ve developed a good crash plan for your website. Now is the time to launch that crash plan and deploy your backups to protect your data from further harm. 
+
+4. Notify authorities.
+Let the authorities know about the cyber attack on your organization. This will help protect your customers and make a record of the attack so that authorities can respond. 
+
+5. Create redundancy in your data.
+This is a critical part of data security and protecting your assets. Data redundancy is a condition created within a database or data storage technology where the same piece of data is held in two separate places.
+
+</details>  
+
+
 
 ## Opdracht
 ### Gebruikte bronnen
