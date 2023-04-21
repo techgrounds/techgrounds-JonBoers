@@ -23,9 +23,9 @@ Different types of disaster recovery options.
 
 ## Key-terms
 
-IDS: An Intrusion Detection System (IDS) is a monitoring system that detects suspicious activities and generates alerts when they are detected. Based upon these alerts, a security operations center (SOC) analyst or incident responder can investigate the issue and take the appropriate actions to remediate the threat.
+IDS: An Intrusion Detection System is a monitoring system that detects suspicious activities and generates alerts when they are detected. Based upon these alerts, a security operations center (SOC) analyst or incident responder can investigate the issue and take the appropriate actions to remediate the threat.
 
-IPS: An intrusion prevention system works by actively scanning forwarded network traffic for malicious activities and known attack patterns. The IPS engine analyzes network traffic and continuously compares the bitstream with its internal signature database for known attack patterns.
+IPS: An Intrusion Prevention System works by actively scanning forwarded network traffic for malicious activities and known attack patterns. The IPS engine analyzes network traffic and continuously compares the bitstream with its internal signature database for known attack patterns.
 
 NGFW: Next generation Firewall
 In addition to access control, NGFWs can block modern threats such as advanced malware and application-layer attacks. According to Gartner's definition, a next-generation firewall must include:
@@ -71,17 +71,26 @@ An IDS is a valuable component of any organization’s cybersecurity deployment.
 When selecting an IDS solution, it is important to carefully consider the deployment scenario. In some cases, an IDS may be the best choice for the job, while, in others, the integrated protection of an IPS may be a better option. Using a NGFW that has built-in IDS/IPS functionality provides an integrated solution, simplifying threat detection and security management.
 </details>
 
+RTO: Recovery Time Objective is the goal an organization sets for the maximum length of time it should take to restore normal operations following an outage or data loss.
+RPO: Recovery Point Objective is the goal for the maximum amount of data the organization can tolerate losing. This parameter is measured in time: from the moment a failure occurs to your last valid data backup. For example, if you experience a failure now and your last full data backup was 24 hours ago, the RPO is 24 hours
+
 ## Opdracht
 ### Gebruikte bronnen
 https://www.checkpoint.com/cyber-hub/network-security/what-is-an-intrusion-detection-system-ids/#:~:text=An%20Intrusion%20Detection%20System%20(IDS)%20is%20a%20monitoring%20system%20that,actions%20to%20remediate%20the%20threat  
 https://www.exabeam.com/incident-response/cyber-attribution-essential-component-of-incident-response-or-optional-extra/  
+https://www.rubrik.com/insights/rto-rpo-whats-the-difference#:~:text=These%20are%20the%20Recovery%20Time,the%20organization%20can%20tolerate%20losing   
 
 
 ### Ervaren problemen
 
 ### Resultaat
 
-Exercise:
+**Exercise:**  
+
 **A Company makes daily backups of their database. The database is automatically recovered when a failure happens using the most recent available backup. The recovery happens on a different physical machine than the original database, and the entire process takes about 15 minutes. What is the RPO of the database?**  
 
+Since RPO is defined in time "from the moment a failure occurs to your last valid data backup" and there's a 'daily backup' the RPO is 24 hours.
+
 **An automatic failover to a backup web server has been configured for a website. Because the backup has to be powered on first and has to pull the newest version of the website from GitHub, the process takes about 8 minutes. What is the RTO of the website?**
+
+Since RTO is defined as the "maximum length of time it should take to restore normal operations following an outage or data loss" the RTO is likely to be 8 minutes in reality, although it's not sure whether this was the set objective. It might be slower or faster as intended, but this is just symantics.
