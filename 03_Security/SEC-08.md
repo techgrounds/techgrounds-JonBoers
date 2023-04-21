@@ -28,8 +28,17 @@ IDS: An Intrusion Detection System (IDS) is a monitoring system that detects sus
 IPS: An intrusion prevention system works by actively scanning forwarded network traffic for malicious activities and known attack patterns. The IPS engine analyzes network traffic and continuously compares the bitstream with its internal signature database for known attack patterns.
 
 NGFW: Next generation Firewall
+In addition to access control, NGFWs can block modern threats such as advanced malware and application-layer attacks. According to Gartner's definition, a next-generation firewall must include:
 
-*Article below describes IDS versus IPS and NGFW (Next Generation Firewalls):*
+* Standard firewall capabilities like stateful inspection  
+* Integrated intrusion prevention
+* Application awareness and control to see and block risky apps
+* Threat intelligence sources
+* Upgrade paths to include future information feeds
+* Techniques to address evolving security threats
+
+<details>
+<summary>This Article describes IDS versus IPS and NGFW (Next Generation Firewalls):</summary>  
 
 ### Classification of Intrusion Detection Systems
 Intrusion detection systems are designed to be deployed in different environments. And like many cybersecurity solutions, an IDS can either be host-based or network-based. 
@@ -64,7 +73,8 @@ When selecting an IDS solution, it is important to carefully consider the deploy
 ## Opdracht
 ### Gebruikte bronnen
 https://www.checkpoint.com/cyber-hub/network-security/what-is-an-intrusion-detection-system-ids/#:~:text=An%20Intrusion%20Detection%20System%20(IDS)%20is%20a%20monitoring%20system%20that,actions%20to%20remediate%20the%20threat  
-https://www.exabeam.com/incident-response/cyber-attribution-essential-component-of-incident-response-or-optional-extra/
+https://www.exabeam.com/incident-response/cyber-attribution-essential-component-of-incident-response-or-optional-extra/  
+
 
 ### Ervaren problemen
 
