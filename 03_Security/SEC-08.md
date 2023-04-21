@@ -69,6 +69,7 @@ Since a firewall is an active protective device, it is more like an Intrusion Pr
 An IDS is a valuable component of any organization’s cybersecurity deployment. A simple firewall provides the foundation for network security, but many advanced threats can slip past it. An IDS adds an additional line of defense, making it more difficult for an attacker to gain access to an organization’s network undetected.
 
 When selecting an IDS solution, it is important to carefully consider the deployment scenario. In some cases, an IDS may be the best choice for the job, while, in others, the integrated protection of an IPS may be a better option. Using a NGFW that has built-in IDS/IPS functionality provides an integrated solution, simplifying threat detection and security management.
+</details>
 
 ## Opdracht
 ### Gebruikte bronnen
