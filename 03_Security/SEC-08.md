@@ -16,9 +16,9 @@ Response, and analysis are part of a disaster recovery plan. This plan is an imp
 For these strategies it is always important to keep track of the following metrics: How much data is lost on incident (Recovery Point Objective; RPO), how long it takes to be back online (Recovery Time Objective; RTO), and cost.
 
 Study:
-IDS and IPS.
-Hack response strategies.
-The concept of systems hardening.
+IDS and IPS.  
+Hack response strategies.  
+The concept of systems hardening.  
 Different types of disaster recovery options.
 
 ## Key-terms
