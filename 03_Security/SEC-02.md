@@ -36,7 +36,7 @@ The main difference between a hardware firewall and a software firewall is that 
 
 However, these OS firewalls are not the only options for software firewalls. Like hardware firewalls, software firewalls are also offered as standalone solutions. An organization can purchase and deploy these firewalls in locations where a hardware firewall may not be a viable option, such as in cloud environments.
 
-Key Benefits of Hardware Firewalls
+Key Benefits of Hardware Firewalls:  
 Hardware firewalls, deployed as physical appliances, provide a number of benefits compared to software firewalls, including:
 
 *Consistent Security:* Software firewalls installed on different computers can all be configured differently. Unless an organization can implement and enforce a consistent security configuration, software firewalls may be disabled or have varying levels of security. A hardware firewall, on the other hand, provides consistent protection to all devices protected by it.  
