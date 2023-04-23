@@ -20,6 +20,8 @@ Je unieke poortnummer voor http-verkeer
 
 ## Key-terms
 
+
+
 **What is a Stateful Firewall?** A stateful firewall inspects everything inside data packets, the characteristics of the data, and its channels of communication. Stateful firewalls examine the behavior of data packets, and if anything seems off, they can filter out the suspicious data. Also, a stateful firewall can track how the data behaves, cataloging patterns of behavior. 
 
 If a data packet examination reveals suspicious behavior—even if that kind of behavior has not been manually inputted by an administrator—the firewall can recognize it and address the threat. A stateful firewall can be used at the edge of a network or within, as is the case with an internal segmentation firewall (ISFW), which protects specific segments of the network in the event malicious code gets inside.
@@ -52,6 +54,10 @@ https://www.geeksforgeeks.org/difference-between-hardware-and-software/
 https://www.checkpoint.com/cyber-hub/network-security/what-is-firewall/what-is-a-hardware-firewall/#:~:text=The%20main%20difference%20between%20a,systems%20like%20Windows%20and%20macOS
 https://www.linuxcapable.com/upgrade-apache-on-ubuntu-linux/
 https://www.cyberciti.biz/faq/how-to-configure-firewall-with-ufw-on-ubuntu-20-04-lts/#Turn_on_ufw_firewall
+
+https://www.youtube.com/watch?v=5juUB09V9E8  
+
+https://www.youtube.com/watch?v=aUPoA3MSajU
 
 Mijn team
 
