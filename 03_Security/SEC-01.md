@@ -25,11 +25,12 @@ Nmap (Network Mapper) is een opensource-netwerkscanner, oorspronkelijk geschreve
 Functionaliteit
 De functionaliteit bestaat onder meer uit:
 
-Host-discovery: het ontdekken van op een netwerk aanwezige hosts. Dit kan onder meer gebeuren door zogenoemde ping- of arpscans
-Port-scanning: het ontdekken welke poorten op een of meerdere doelcomputers luisteren.
-Versiedetectie: het door ondervraging van het doelsysteem ontdekken welke services inclusief de versie daarvan het systeem aanbiedt
-OS (besturingssysteem)-detectie: het bepalen welk besturingssysteem de doelcomputer gebruikt.
-Nmap Scripting Engine (NSE): een op Lua gebaseerd scriptingsysteem waarmee functionaliteit vrij eenvoudig uit te breiden is met bijvoorbeeld het testen op aanwezige kwetsbaarheden in het doelsysteem.
+Host-discovery: het ontdekken van op een netwerk aanwezige hosts. Dit kan onder meer gebeuren door zogenoemde ping- of arpscans  
+Port-scanning: het ontdekken welke poorten op een of meerdere doelcomputers luisteren.  
+Versiedetectie: het door ondervraging van het doelsysteem ontdekken welke services inclusief de versie daarvan het systeem aanbiedt  
+OS (besturingssysteem)-detectie: het bepalen welk besturingssysteem de doelcomputer gebruikt.  
+Nmap Scripting Engine (NSE): een op Lua gebaseerd scriptingsysteem waarmee functionaliteit vrij eenvoudig uit te breiden is met bijvoorbeeld het testen op aanwezige kwetsbaarheden in het doelsysteem.  
+
 Nmap wordt veelal gebruikt voor het inventariseren van computersystemen en netwerken en het testen van de beveiliging daarvan. Zoals veel computerbeveiligingsgereedschappen kan het door zowel beheerders van systemen als door kwaadwillenden gebruikt worden.
 
 Quic protocol: (wiki)
@@ -46,7 +47,7 @@ https://www.youtube.com/watch?v=YGotjq3gxis
 https://www.comparitech.com/net-admin/decrypt-ssl-with-wireshark/#:~:text=Configure%20Wireshark%20to%20decrypt%20SSL&text=Open%20Wireshark%20and%20click%20Edit,)%2DMaster%2DSecret%20log%20filename.
 
 ### Ervaren problemen
-Voor Wireshark was het lastig om te zien wat real-time gebeurde op het moment dat ik m'n browser opende en websites bezocht. Echter door een protocol filter 'Quic' te gebruiken kon ik wel de packets die relateerd waren daaraan onderscheiden. Ook zie ik dat er verschillende manieren zijn om de captures te analyseren en te filteren en zelfs decrypten SSL. Er valt nog veel over te leren.
+Voor Wireshark was het lastig om te zien wat real-time gebeurde op het moment dat ik m'n browser opende en websites bezocht. Echter door een protocol filter 'Quic' te gebruiken kon ik wel de packets die gerelateerd waren onderscheiden. Ook zie ik dat er verschillende manieren zijn om de captures te analyseren en te filteren en zelfs decrypten. Er valt nog veel over te leren.
 
 ### Resultaat
 
@@ -81,4 +82,4 @@ Ik heb gefilterd op het 'Quic' protocol zodat realtime zichtbaar werd welke pack
 
 ![Alt text](../00_includes/Week3/SEC-01.3.PNG)
 
-Zo zie ik dat er meerdere 'handshakes' worden gedaan om destination en source aan elkaar voor te stellen (TCP2 of Quic dus), dat er packets worden verzonden die encrypted zijn met als doel om de verbinding veilig en snel te houden. Ook zijn de IP-adressen van mijn host en de website zichtbaar. Er zijn filters, analyses en encrypties mogelijk om e.a.a. te ontcijferen en zichtbaar te maken. Een voorbeeld hiervan wordt omschreven in: https://www.youtube.com/watch?v=YGotjq3gxis.
+Zo zie ik dat er meerdere 'handshakes' worden gedaan om destination en source aan elkaar voor te stellen (TCP2 of Quic dus), dat er packets worden verzonden die encrypted zijn met als doel om de verbinding veilig en snel te houden. Ook zijn de IP-adressen van mijn host en de website zichtbaar. Er zijn filters, analyses en encrypties mogelijk om e.e.a. te ontcijferen en zichtbaar te maken. Een voorbeeld hiervan wordt omschreven in: https://www.youtube.com/watch?v=YGotjq3gxis.
