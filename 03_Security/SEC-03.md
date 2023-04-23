@@ -15,9 +15,9 @@ What the principle of least privilege is and how it improves security.
 
 Authentication: verifies the identity of a user or service  
 Authorization: the security process that determines a user or service's level of access  
-The three factors of authentication: something you know, something you have, something you are.
-MFA: Multi-factor authentication a combination of the above adds another layer if one of the factors is stolen or breached.
-Access Control Lists (ACLs): determine which users or services can access a particular digital environment.
+The three factors of authentication: something you know, something you have, something you are.  
+MFA: Multi-factor authentication a combination of the above adds another layer if one of the factors is stolen or breached.  
+Access Control Lists (ACLs): determine which users or services can access a particular digital environment.  
 Least privilege: (PoLP) is an information security concept which maintains that a user or entity should only have access to the specific data, resources and applications needed to complete a required task.
 
 
@@ -33,9 +33,10 @@ https://www.paloaltonetworks.com/cyberpedia/what-is-the-principle-of-least-privi
 ### Resultaat
 
 **Authentication and authorization** are two vital information security processes that administrators use to protect systems and information. Authentication verifies the identity of a user or service, and authorization determines their access rights. Although the two terms sound alike, they play separate but equally essential roles in securing applications and data. Understanding the difference is crucial. Combined, they determine the security of a system. You cannot have a secure solution unless you have configured both authentication and authorization correctly.
-What is Authentication (AuthN)?
-Authentication (AuthN) is a process that verifies that someone or something is who they say they are. Technology systems typically use some form of authentication to secure access to an application or its data. For example, when you need to access an online site or service, you usually have to enter your username and password. Then, behind the scenes, it compares the username and password you entered with a record it has on its database. If the information you submitted matches, the system assumes you are a valid user and grants you access. System authentication in this example presumes that only you would know the correct username and password. It, therefore, authenticates you by using the principle of something only you would know.
-What is the Purpose of Authentication?
+
+*What is Authentication (AuthN)?*
+Authentication (AuthN) is a process that verifies that someone or something is who they say they are. Technology systems typically use some form of authentication to secure access to an application or its data. For example, when you need to access an online site or service, you usually have to enter your username and password. Then, behind the scenes, it compares the username and password you entered with a record it has on its database. If the information you submitted matches, the system assumes you are a valid user and grants you access. System authentication in this example presumes that only you would know the correct username and password. It, therefore, authenticates you by using the principle of something only you would know.  
+*What is the Purpose of Authentication?*
 The purpose of authentication is to verify that someone or something is who or what they claim to be. There are many forms of authentication. For example, the art world has processes and institutions that confirm a painting or sculpture is the work of a particular artist. Likewise, governments use different authentication techniques to protect their currency from counterfeiting. Typically, authentication protects items of value, and in the information age, it protects systems and data.
 What is Identity Authentication?
 Identity authentication is the process of verifying the identity of a user or service. Based on this information, a system then provides the user with the appropriate access. For example, let's say we have two people working in a coffee shop, Lucia and Rahul. Lucia is the coffee shop manager while Rahul is the barista. The coffee shop uses a Point of Sale (POS) system where waiters and baristas can place orders for preparation. In this example, the POS would use some process to verify Lucia or Rahul's identity before allowing them access to the system. For instance, it may ask them for a username and password, or they may need to scan their thumb on a fingerprint reader. As the coffee shop needs to secure access to its POS, employees using the system need to verify their identity via an authentication process.
@@ -96,13 +97,14 @@ The principle of least privilege is an important information security construct 
 The principle of least privilege strikes a balance between usability and security to safeguard critical data and systems by minimizing the attack surface, limiting cyberattacks, enhancing operational performance and reducing the impact of human error.
 
 What Are the Benefits of the Principle of Least Privilege?
-The principle of least privilege:
 
+The principle of least privilege;  
 Minimizes the attack surface, diminishing avenues a malicious actor can use to access sensitive data or carry out an attack by protecting superuser and administrator privileges.
 Reduces malware propagation by not allowing users to install unauthorized applications. The principle of least privilege also stops lateral network movement that can launch an attack against other connected devices by limiting malware to the entry point.
 Improves operational performance with reductions in system downtime that might otherwise occur as a result of a breach, malware spread or incompatibility issues between applications.
 Safeguards against human error that can happen through mistake, malice or negligence.
-The benefits of PoLP for modern applications
+
+*The benefits of PoLP for modern applications*  
 The principle of least privilege is all about providing the minimum amount of privilege possible for users to get their work done. Unfortunately, legacy security solutions require organizations to allow access to a broad range of IP addresses, port ranges and protocols in order to use SaaS and other modern apps that use dynamic IPs and ports. This approach violates the principle of least privilege, creating a huge security gap that can be exploited by an attacker or malware.
 
 ZTNA 2.0 enables comprehensive usage of the principle of least privilege with Prisma Access and its patented App-ID functionality to provide dynamic identification of all users, devices and applications as well as application functions across any and all protocols and ports. For administrators, this enables very fine-grained access control to finally implement true least-privileged access.
@@ -126,6 +128,3 @@ VPN replacement initiatives are driven by a number of factors:
 Applications moving to a true hybrid model, taking advantage of on-premises, cloud and multicloud environments. Legacy VPN technology that trombones or backhauls traffic to an on-premises “concentrator” doesn’t scale or deliver the best possible user experience in this new model.
 Changes in enterprise app access requirements. Traditionally, employees used managed devices to complete work-related tasks. However, more and more unmanaged devices have made their way onto corporate networks and can access corporate applications.
 Organizations looking for consistent and universal protection and a security model for all apps, not just web or legacy applications.
-VPN Replacement
-
-While there are a number of solutions that can address some of those needs, only ZTNA 2.0 with Prisma Access helps transform networking and security to support both managed and unmanaged devices while delivering consistent security protection across the entire organization.
