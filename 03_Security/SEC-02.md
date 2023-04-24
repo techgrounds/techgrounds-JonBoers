@@ -9,9 +9,9 @@ Firewalls kunnen stateful of stateless zijn. Stateful firewalls onthouden de ver
 
 In een cloud omgeving zal je firewalls veel tegenkomen als een van de vele verdedigingslinies tegen het publieke internet. 
 
-Bestudeer:
-De verschillende types firewall
-stateful / stateless
+Bestudeer:  
+De verschillende types firewall  
+stateful / stateless  
 hardware / software
 
 Benodigdheden:
