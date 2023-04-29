@@ -28,8 +28,9 @@ Benodigdheden:
 Je Azure Cloud omgeving (link)
 
 ## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+NIC: Network Interface Card. Hierin worden de diverse netwerk routes gespecificeerd.
 
+Route table: 
 ## Opdracht
 
 Opdracht 1:
@@ -44,6 +45,29 @@ Opdracht 1:
 * Vereisten voor subnet 2:
     * Name: Subnet-2
     * IP Range: 10.0.1.0/24
+
+De 2 subnets zoals gevraagd:
+![Alt text](../00_includes/Week4/AZ10.4.PNG)
+
+En de VM die gekoppeld is aan subnet1 voor de aanpassingen. SHH en HTTP staan op allowed en de site was bereikbaar via de browser:
+![Alt text](../00_includes/Week4/AZ10.5.PNG)
+
+De effectieve routes van subnet1 met route naar het internet: 
+![Alt text](../00_includes/Week4/AZ10.6.PNG)
+
+Om dit te wijzigen heb ik een route table aangemaakt met 'blockinternet' met als address prefix: 0.0.0.0/0 en next hop type 'none' oftewel nergens heen en deze gekoppeld aan subnet1:
+![Alt text](../00_includes/Week4/AZ10.7.PNG)
+![Alt text](../00_includes/Week4/AZ10.8.PNG)
+
+Vervolgens zagen de effectieve routes in de NIC er zo uit:
+![Alt text](../00_includes/Week4/AZ10.9.PNG)
+
+En de test erna mislukte succesvol:
+![Alt text](../00_includes/Week4/AZ10.10.PNG)
+
+Voor subnet2 hoefden de effectieve routes niet te worden aangepast. Ook hier blijkt dat de route naar het internet gedefinieerd is voor de laagste range IP adressen. M.a.w. alle ip adressen die gezocht worden die niet gespecificeerd zijn, worden geroute naar het internet.:
+
+![Alt text](../00_includes/Week4/AZ10.3.PNG)
 
 Opdracht 2:
 Maak een VM met de volgende vereisten:
@@ -64,12 +88,21 @@ systemctl restart apache2
      * Subnet: Subnet-2
      * Public IP: Enabled
 
-Controleer of je website bereikbaar is
+![Alt text](../00_includes/Week4/AZ10.1.PNG)
+
+Controleer of je website bereikbaar is:
+![Alt text](../00_includes/Week4/AZ10.2.PNG)
 ### Gebruikte bronnen
 https://learn.microsoft.com/en-us/azure/virtual-network/quick-create-portal
+https://learn.microsoft.com/en-us/answers/questions/427589/how-to-block-internet-access-in-azure-virtual-netw
+https://learn.microsoft.com/en-us/azure/virtual-network/manage-route-table
+
+Peers
+Live demo in de les
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
+
+Dacht het probleem gevonden te hebben door een NSG toe te wijzen met een servicetag "internet", maar in de les dit bleek niet genoeg en niet de achterliggende gedachte van de opdracht. We moesten een routetable aanmaken en die koppelen aan een subnet.  Door in de NIC te duiken werden de effectieve routes zichtbaar. De NIC wordt automatisch aangemaakt als je een VM creeert. Ik moet zeggen dat ik alleen door de live demo in de les begreep wat de bedoeling was en was ik hier zelf nooit achter gekomen. Wel blij dat ik het eindresultaat kon namaken en ik heb wat meer inzicht gekregen in hoe NSG werken. Hoe Azure het een en ander al geautomatiseerd heeft en vooral hoe routetables werken. 
 
 ### Resultaat
-[Omschrijf hoe je weet dat je opdracht gelukt is (gebruik screenshots waar nodig).]
+zie boven
