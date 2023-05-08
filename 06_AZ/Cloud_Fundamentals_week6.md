@@ -22,23 +22,35 @@ Waar kan ik deze dienst vinden in de console?
 Hoe zet ik deze dienst aan?
 Hoe kan ik deze dienst koppelen aan andere resources?
 
-Bestudeer:
-Containers					/ ECS
-Azure Support Plans				/ AWS Support Plans
-Azure Advisor					/ Trusted Advisor
-Azure App Configuration			/ AWS Config
-Azure Activity Log				/ AWS Cloud Trail
-Benodigdheden:
-Je Azure omgeving				/ AWS omgeving
-
-
 
 ## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+
+----
+**Containers**: Een standaardpakket van software bundelt de code van een toepassing samen met de bijbehorende configuratiebestanden, bibliotheken en afhankelijkheden die nodig zijn om de app uit te voeren. Op die manier kunnen ontwikkelaars en IT-professionals toepassingen naadloos in verschillende omgevingen implementeren.
+[Documentatie over containers](https://azure.microsoft.com/nl-nl/resources/cloud-computing-dictionary/what-is-a-container)  
+
+**Azure Support Plans**: (4 niveaus)
+*Basic*: Gratis, geen actieve Azure support.
+
+*Developer*: eur29/mnd, actieve support via email, 8hr response-tijd, voor test- en niet-productie omgevingen.
+
+*Standard*: eur100/mnd, 24/7 support, 1hr response-tijd, voor productieomgevingen.
+
+*Professional Direct*: eur1000/mnd, 24/7 support + operational support + training + proactieve hulp, 1hr response-tijd, noodzakelijk voor zakelijk kritieke omgevingen.  
+[Documentatie over Azure Support Plans](https://azure.microsoft.com/nl-nl/support/plans)  
+
+**Azure Advisor**: Gratis 'handleiding' of 'gids' die adviseert op basis van het 'Well-Architected Framework' van Azure. Beschikbaar in de portal.
+[Documentatie over Azure Advisor](https://azure.microsoft.com/nl-nl/products/advisor#features)
+
+**Azure APP Configuration**:  
+
+
+**Azure Activity Log**:  
+
+-----
 
 ## Opdracht
 
-Opdracht:
 Azure Active Directory			/ IAM
 Azure Monitor					/ AWS Cloudwatch
 CosmosDB 					/ DynamoDB
