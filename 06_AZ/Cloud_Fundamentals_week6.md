@@ -104,14 +104,61 @@ Azure Functions is a serverless solution that allows you to write less code, mai
 
 [Documentatie over Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview)
 
-**Event Grid, Queue Storage, Service Bus** 	/ SNS, SQS, Event Bridge
+**Event Grid, Queue Storage, Service Bus** 	/ SNS, SQS, 
 
-Event Grid is a highly scalable, serverless event broker that you can use to integrate applications using events. Events are delivered by Event Grid to subscriber destinations such as applications, Azure services, or any endpoint to which Event Grid has network access. The source of those events can be other applications, SaaS services and Azure services.
+*Event Grid* is a highly scalable, serverless event broker that you can use to integrate applications using events. Events are delivered by Event Grid to subscriber destinations such as applications, Azure services, or any endpoint to which Event Grid has network access. The source of those events can be other applications, SaaS services and Azure services.
 
 With Event Grid you connect solutions using event-driven architectures.  
 ![Alt text](../00_includes/Week6/functional-model.png)  
 
 [Documentatie over Event grid](https://learn.microsoft.com/en-us/azure/event-grid/overview)
+
+Azure *Queue Storage* is a service for storing large numbers of messages. You access messages from anywhere in the world via authenticated calls using HTTP or HTTPS. A queue message can be up to 64 KB in size. A queue may contain millions of messages, up to the total capacity limit of a storage account. Queues are commonly used to create a backlog of work to process asynchronously.
+
+Queue Storage contains the following components:
+
+Diagram showing the relationship between a storage account, queues, and messages.
+
+![Alt text](../00_includes/Week6/queue1.png)
+
+* URL format: Queues are addressable using the following URL format:
+
+https://<storage account>.queue.core.windows.net/<queue>
+
+The following URL addresses a queue in the diagram:
+
+https://myaccount.queue.core.windows.net/images-to-download
+
+* Storage account: All access to Azure Storage is done through a storage account. For information about storage account capacity, see Scalability and performance targets for standard storage accounts.
+
+* Queue: A queue contains a set of messages. The queue name must be all lowercase. For information on naming queues, see Naming queues and metadata.
+
+* Message: A message, in any format, of up to 64 KB. Before version 2017-07-29, the maximum time-to-live allowed is seven days. For version 2017-07-29 or later, the maximum time-to-live can be any positive number, or -1 indicating that the message doesn't expire. If this parameter is omitted, the default time-to-live is seven days.
+
+[Documentatie over queue storage](https://learn.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction)  
+
+Azure Service Bus is a fully managed enterprise message broker with message queues and publish-subscribe topics (in a namespace). Service Bus is used to decouple applications and services from each other, providing the following benefits:
+
+* Load-balancing work across competing workers
+* Safely routing and transferring data and control across service and application boundaries
+* Coordinating transactional work that requires a high-degree of reliability
+
+Queues:  
+
+Messages are sent to and received from queues. Queues store messages until the receiving application is available to receive and process them.  
+![Alt text](../00_includes/Week6/about-service-bus-queue.png)  
+
+Messages in queues are ordered and timestamped on arrival. Once the broker accepts the message, the message is always held durably in triple-redundant storage, spread across availability zones if the namespace is zone-enabled. Service Bus keeps messages in memory or volatile storage until they've been reported by the client as accepted.
+
+Topics:  
+
+You can also use topics to send and receive messages. While a queue is often used for point-to-point communication, topics are useful in publish/subscribe scenarios.
+
+![Alt text](../00_includes/Week6/about-service-bus-topic.png)
+
+Topics can have multiple, independent subscriptions, which attach to the topic and otherwise work exactly like queues from the receiver side. A subscriber to a topic can receive a copy of each message sent to that topic.  
+
+[Documentatie over service bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview)  
 
 ### Gebruikte bronnen
 
