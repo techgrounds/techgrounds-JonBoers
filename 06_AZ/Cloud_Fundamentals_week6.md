@@ -28,7 +28,7 @@ Hoe kan ik deze dienst koppelen aan andere resources?
 **Containers**: Een standaardpakket van software bundelt de code van een toepassing samen met de bijbehorende configuratiebestanden, bibliotheken en afhankelijkheden die nodig zijn om de app uit te voeren. Op die manier kunnen ontwikkelaars en IT-professionals toepassingen naadloos in verschillende omgevingen implementeren.
 [Documentatie over containers](https://azure.microsoft.com/nl-nl/resources/cloud-computing-dictionary/what-is-a-container)  
 
-**Azure Support Plans**: (4 niveaus)
+**Azure Support Plans**: (4 niveaus)  
 *Basic*: Gratis, geen actieve Azure support.
 
 *Developer*: eur29/mnd, actieve support via email, 8hr response-tijd, voor test- en niet-productie omgevingen.
