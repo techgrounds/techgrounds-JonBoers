@@ -87,9 +87,31 @@ Feature flags (also known as feature toggles) are if-statements in the code base
 
 **Azure Active Directory**			/ IAM
 
+Azure Active Directory (Azure AD) is a cloud-based identity and access management service.(IDaaS)  
+
+[Documentatie over Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis)  
+
+[Compare Active Directory to Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-compare-azure-ad-to-ad)  
+
+
 **Azure Monitor**					/ AWS Cloudwatch
 
 **CosmosDB** 					/ DynamoDB
+
+Azure Cosmos DB is a fully managed NoSQL and relational database for modern app development. Azure Cosmos DB offers single-digit millisecond response times, automatic and instant scalability, along with guarantee speed at any scale. Business continuity is assured with SLA-backed availability and enterprise-grade security.
+
+(wiki:) It is designed to provide high availability, scalability, and low-latency access to data for mission-critical applications. Unlike traditional relational databases, Cosmos DB is a NoSQL database, which means it can handle unstructured and semi-structured data types.
+
+App development is faster and more productive thanks to:
+
+* Turnkey multi region data distribution anywhere in the world
+* Open source APIs
+* SDKs for popular languages.  
+
+As a fully managed service, Azure Cosmos DB takes database administration off your hands with automatic management, updates and patching. It also handles capacity management with cost-effective serverless and automatic scaling options that respond to application needs to match capacity with demand.
+
+[Documentatie over Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction)  
+
 
 **Azure Functions** 				/ AWS Lambda
 
