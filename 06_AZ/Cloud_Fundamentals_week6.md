@@ -22,7 +22,21 @@ Waar kan ik deze dienst vinden in de console?
 Hoe zet ik deze dienst aan?
 Hoe kan ik deze dienst koppelen aan andere resources?
 
-## Key-terms
+## Key-terms  
+
+*Event-driven architecture style*   
+
+An event-driven architecture consists of event producers that generate a stream of events, and event consumers that listen for the events.  
+![Alt text](../00_includes/Week6/event-driven.svg)
+
+An event driven architecture can use a publish/subscribe (also called pub/sub) model or an event stream model.
+
+* Pub/sub: The messaging infrastructure keeps track of subscriptions. When an event is published, it sends the event to each subscriber. After an event is received, it can't be replayed, and new subscribers don't see the event.
+
+* Event streaming: Events are written to a log. Events are strictly ordered (within a partition) and durable. Clients don't subscribe to the stream, instead a client can read from any part of the stream. The client is responsible for advancing its position in the stream. That means a client can join at any time, and can replay events.
+
+[Documentatie over event driven architectures](https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven)  
+
 
 ----
 **Containers**: Een standaardpakket van software bundelt de code van een toepassing samen met de bijbehorende configuratiebestanden, bibliotheken en afhankelijkheden die nodig zijn om de app uit te voeren. Op die manier kunnen ontwikkelaars en IT-professionals toepassingen naadloos in verschillende omgevingen implementeren.
@@ -78,6 +92,9 @@ Feature flags (also known as feature toggles) are if-statements in the code base
 **CosmosDB** 					/ DynamoDB
 
 **Azure Functions** 				/ AWS Lambda
+
+Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running.
+
 * Serverless coding platform (Functions as a Service, FaaS)
 * Designed for nano-service architectures and event-based applications
 * Scales up and down very quickly 
@@ -85,10 +102,16 @@ Feature flags (also known as feature toggles) are if-statements in the code base
 * Supports popular languages and frameworks  
 (.NET & .NET Core, Java, Node.js, Python, Powershell, etc.)
 
-
+[Documentatie over Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview)
 
 **Event Grid, Queue Storage, Service Bus** 	/ SNS, SQS, Event Bridge
 
+Event Grid is a highly scalable, serverless event broker that you can use to integrate applications using events. Events are delivered by Event Grid to subscriber destinations such as applications, Azure services, or any endpoint to which Event Grid has network access. The source of those events can be other applications, SaaS services and Azure services.
+
+With Event Grid you connect solutions using event-driven architectures.  
+![Alt text](../00_includes/Week6/functional-model.png)  
+
+[Documentatie over Event grid](https://learn.microsoft.com/en-us/azure/event-grid/overview)
 
 ### Gebruikte bronnen
 
