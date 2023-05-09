@@ -78,7 +78,7 @@ Feature flags (also known as feature toggles) are if-statements in the code base
 **CosmosDB** 					/ DynamoDB
 
 **Azure Functions** 				/ AWS Lambda
-* Serverless cloding platform (Functions as a Service, FaaS)
+* Serverless coding platform (Functions as a Service, FaaS)
 * Designed for nano-service architectures and event-based applications
 * Scales up and down very quickly 
 * Highly scalable
@@ -92,12 +92,11 @@ Feature flags (also known as feature toggles) are if-statements in the code base
 
 ### Gebruikte bronnen
 
-learn.microsoft
-wiki
+learn.microsoft  
+wiki  
 
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
-[Omschrijf hoe je weet dat je opdracht gelukt is (gebruik screenshots waar nodig).]
+
