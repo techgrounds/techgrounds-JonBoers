@@ -39,10 +39,11 @@ An event driven architecture can use a publish/subscribe (also called pub/sub) m
 
 
 ----
-**Containers**: Een standaardpakket van software bundelt de code van een toepassing samen met de bijbehorende configuratiebestanden, bibliotheken en afhankelijkheden die nodig zijn om de app uit te voeren. Op die manier kunnen ontwikkelaars en IT-professionals toepassingen naadloos in verschillende omgevingen implementeren.
+**Containers**: Een standaardpakket van software bundelt de code van een toepassing samen met de bijbehorende configuratiebestanden, bibliotheken en afhankelijkheden die nodig zijn om de app uit te voeren. Op die manier kunnen ontwikkelaars en IT-professionals toepassingen naadloos in verschillende omgevingen implementeren.  
 [Documentatie over containers](https://azure.microsoft.com/nl-nl/resources/cloud-computing-dictionary/what-is-a-container)  
 
-**Azure Support Plans**: (4 niveaus)  
+**Azure Support Plans**: (4 niveaus) 
+
 *Basic*: Gratis, geen actieve Azure support.
 
 *Developer*: eur29/mnd, actieve support via email, 8hr response-tijd, voor test- en niet-productie omgevingen.
@@ -50,6 +51,7 @@ An event driven architecture can use a publish/subscribe (also called pub/sub) m
 *Standard*: eur100/mnd, 24/7 support, 1hr response-tijd, voor productieomgevingen.
 
 *Professional Direct*: eur1000/mnd, 24/7 support + operational support + training + proactieve hulp, 1hr response-tijd, noodzakelijk voor zakelijk kritieke omgevingen.  
+
 [Documentatie over Azure Support Plans](https://azure.microsoft.com/nl-nl/support/plans)  
 
 **Azure Advisor**: Gratis 'handleiding' of 'gids' die adviseert op basis van het 'Well-Architected Framework' van Azure. Beschikbaar in de portal.
@@ -94,7 +96,24 @@ Azure Active Directory (Azure AD) is a cloud-based identity and access managemen
 [Compare Active Directory to Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-compare-azure-ad-to-ad)  
 
 
-**Azure Monitor**					/ AWS Cloudwatch
+**Azure Monitor**					/ AWS Cloudwatch  
+
+Azure Monitor is a comprehensive monitoring solution for collecting, analyzing, and responding to telemetry from your cloud and on-premises environments. You can use Azure Monitor to maximize the availability and performance of your applications and services.
+
+High level architecture:  
+
+The following diagram gives a high-level view of Azure Monitor.
+
+![Alt text](../00_includes/Week6/overview_2023_02.png)
+
+The diagram depicts the Azure Monitor system components:
+
+* The data sources are the types of data collected from each monitored resource. The data is collected and routed to the data platform.
+* The data platform is made up of the data stores for collected data. Azure Monitor's data platform has stores for metrics, logs, traces, and changes.
+* The functions and components that consume data include analysis, visualizations, insights, and responses.
+* Services that integrate with Azure Monitor and provide additional functionality are marked with an asterisk * in the diagram.
+
+[Documentatie over Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
 
 **CosmosDB** 					/ DynamoDB
 
