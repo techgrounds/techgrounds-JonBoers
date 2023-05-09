@@ -22,7 +22,6 @@ Waar kan ik deze dienst vinden in de console?
 Hoe zet ik deze dienst aan?
 Hoe kan ik deze dienst koppelen aan andere resources?
 
-
 ## Key-terms
 
 ----
@@ -42,23 +41,60 @@ Hoe kan ik deze dienst koppelen aan andere resources?
 **Azure Advisor**: Gratis 'handleiding' of 'gids' die adviseert op basis van het 'Well-Architected Framework' van Azure. Beschikbaar in de portal.
 [Documentatie over Azure Advisor](https://azure.microsoft.com/nl-nl/products/advisor#features)
 
-**Azure APP Configuration**:  
+**Azure APP Configuration**: 
 
+*provides a service to centrally manage application settings and feature flags*. Modern programs, especially programs running in a cloud, generally have many components that are distributed in nature. Spreading configuration settings across these components can lead to hard-to-troubleshoot errors during an application deployment. Use App Configuration to store all the settings for your application and secure their accesses in one place.
 
-**Azure Activity Log**:  
+The [Twelve-Factor App](https://12factor.net/) describes many well-tested architectural patterns and best practices for use with cloud applications. One key recommendation from this guide is to *separate configuration from code*. 
+
+Examples that benefit from the use of it:
+* containerized apps
+* serverless apps which include event-driven stateless compute app
+* continuous deployment pipeline (CD, as in CI/CD)
+
+[Documentatie over Azure Ap Configuration](https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview)
+
+*Feature flags* are a software development concept that allow you to enable or disable a feature without modifying the source code or requiring a redeploy. They are also commonly referred to as feature toggles, release toggles or feature flippers. Feature flags determine at runtime which portions of code are executed.
+
+Feature flags (also known as feature toggles) are if-statements in the code base that enable teams to turn features on or off.
+
+**Azure Activity Log**: is a platform log in Azure that provides insight into subscription-level events. The activity log includes information like when a resource is modified or a virtual machine is started. You can view the activity log in the Azure portal or retrieve entries with PowerShell and the Azure CLI. 
+
+* Retained for 90 days and then deleted. 
+* Entries in the Activity Log are system generated and can't be changed or deleted.
+* Entries in the Activity Log are representing control plane changes like a virtual machine restart, any non related entries should be written into Azure Resource Logs
+* You can access the activity log from most menus in the Azure portal.
+
+[Documentatie over Azure Activity Log](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log?tabs=powershell)
 
 -----
 
 ## Opdracht
 
-Azure Active Directory			/ IAM
-Azure Monitor					/ AWS Cloudwatch
-CosmosDB 					/ DynamoDB
-Azure Functions 				/ AWS Lambda
-Event Grid, Queue Storage, Service Bus 	/ SNS, SQS, Event Bridge
+**Azure Active Directory**			/ IAM
+
+**Azure Monitor**					/ AWS Cloudwatch
+
+**CosmosDB** 					/ DynamoDB
+
+**Azure Functions** 				/ AWS Lambda
+* Serverless cloding platform (Functions as a Service, FaaS)
+* Designed for nano-service architectures and event-based applications
+* Scales up and down very quickly 
+* Highly scalable
+* Supports popular languages and frameworks  
+(.NET & .NET Core, Java, Node.js, Python, Powershell, etc.)
+
+
+
+**Event Grid, Queue Storage, Service Bus** 	/ SNS, SQS, Event Bridge
+
 
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+
+learn.microsoft
+wiki
+
 
 ### Ervaren problemen
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
