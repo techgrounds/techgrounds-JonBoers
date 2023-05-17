@@ -84,5 +84,9 @@ Op dit moment kunt u met Azure Arc de volgende resourcetypen beheren die buiten 
 * SQL Server: Azure-services uitbreiden naar SQL Server instanties die buiten Azure worden gehost.
 * Virtuele machines (preview): virtuele machines inrichten, het formaat ervan wijzigen, verwijderen en beheren op basis van VMware vSphere of Azure Stack HCI en selfservice voor VM's inschakelen via toegang op basis van rollen.
 
+[Link naar dit onderwerp](https://learn.microsoft.com/nl-nl/azure/azure-arc/overview)
+
+
+
 
 
