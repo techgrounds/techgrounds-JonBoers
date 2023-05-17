@@ -159,8 +159,7 @@ Azure *Queue Storage* is a service for storing large numbers of messages. You ac
 Queue Storage contains the following components:
 
 Diagram showing the relationship between a storage account, queues, and messages.
-
-![Alt text](../00_includes/Week6/queue1.png)
+![Alt text](../00_includes/Week6-9/queue1.png)
 
 * URL format: Queues are addressable using the following URL format:
 
@@ -187,7 +186,7 @@ Azure Service Bus is a fully managed enterprise message broker with message queu
 Queues:  
 
 Messages are sent to and received from queues. Queues store messages until the receiving application is available to receive and process them.  
-![Alt text](../00_includes/Week6/about-service-bus-queue.png)  
+![Alt text](../00_includes/Week6-9/about-service-bus-queue.png)
 
 Messages in queues are ordered and timestamped on arrival. Once the broker accepts the message, the message is always held durably in triple-redundant storage, spread across availability zones if the namespace is zone-enabled. Service Bus keeps messages in memory or volatile storage until they've been reported by the client as accepted.
 
@@ -195,7 +194,7 @@ Topics:
 
 You can also use topics to send and receive messages. While a queue is often used for point-to-point communication, topics are useful in publish/subscribe scenarios.
 
-![Alt text](../00_includes/Week6/about-service-bus-topic.png)
+![Alt text](../00_includes/Week6-9/about-service-bus-topic.png)
 
 Topics can have multiple, independent subscriptions, which attach to the topic and otherwise work exactly like queues from the receiver side. A subscriber to a topic can receive a copy of each message sent to that topic.  
 
