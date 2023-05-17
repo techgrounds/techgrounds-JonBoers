@@ -28,7 +28,7 @@ Hoe kan ik deze dienst koppelen aan andere resources?
 *Event-driven architecture style*   
 
 An event-driven architecture consists of event producers that generate a stream of events, and event consumers that listen for the events.  
-![Alt text](../00_includes/Week6/event-driven.svg)
+![Alt text](../00_includes/Week6-9/event-driven.svg)
 
 An event driven architecture can use a publish/subscribe (also called pub/sub) model or an event stream model.
 
@@ -104,8 +104,7 @@ Azure Monitor is a comprehensive monitoring solution for collecting, analyzing, 
 High level architecture:  
 
 The following diagram gives a high-level view of Azure Monitor.
-
-![Alt text](../00_includes/Week6/overview_2023_02.png)
+![Alt text](../00_includes/Week6-9/overview_2023_02.png)
 
 The diagram depicts the Azure Monitor system components:
 
@@ -151,7 +150,7 @@ Azure Functions is a serverless solution that allows you to write less code, mai
 *Event Grid* is a highly scalable, serverless event broker that you can use to integrate applications using events. Events are delivered by Event Grid to subscriber destinations such as applications, Azure services, or any endpoint to which Event Grid has network access. The source of those events can be other applications, SaaS services and Azure services.
 
 With Event Grid you connect solutions using event-driven architectures.  
-![Alt text](../00_includes/Week6/functional-model.png)  
+![Alt text](../00_includes/Week6-9/functional-model.png)
 
 [Documentatie over Event grid](https://learn.microsoft.com/en-us/azure/event-grid/overview)
 
