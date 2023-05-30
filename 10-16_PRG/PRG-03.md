@@ -65,7 +65,7 @@ d = "18.5"
 
 ### Resultaat
 
-**Exercise 1: **
+**Exercise 1:**
 
 ```
 #this sets variable a to string
