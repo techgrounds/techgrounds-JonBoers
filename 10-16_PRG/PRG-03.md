@@ -32,6 +32,18 @@ Comments are lines that do not get processed as code. This can be used for multi
 * Python
 * VS Code
 
+## Key-terms
+[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
+
+## Opdracht
+### Gebruikte bronnen
+[Plaats hier de bronnen die je hebt gebruikt.]
+
+### Ervaren problemen
+[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
+
+### Resultaat
+
 **Exercise 1:**  
 
 * Create a new script.
@@ -45,27 +57,7 @@ d = "18.5"
 
 * Determine the data types of all four variables (a, b, c, d) using a built in function.
 * Make a new variable x and give it the value b + d. Print the value of x. This will raise an error. Fix it so that print(x) prints a float.
-* Write a comment above every line of code that tells the reader what is going on in your script.
-
-**Exercise 2:**
-
-* Create a new script.
-* Use the input() function to get input from the user. Store that input in a variable.
-* Find out what data type the output of input() is. See if it is different for different kinds of input (numbers, words, etc.).
-
-## Key-terms
-[Schrijf hier een lijst met belangrijke termen met eventueel een korte uitleg.]
-
-## Opdracht
-### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
-
-### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
-
-### Resultaat
-
-**Exercise 1:**
+* Write a comment above every line of code that tells the reader what is going on in your script.   
 
 ```
 #this sets variable a to string
@@ -126,3 +118,41 @@ x is:  25.5
 
 [Done] exited with code=0 in 0.157 seconds
 ```
+**Exercise 2:**
+
+* Create a new script.
+* Use the input() function to get input from the user. Store that input in a variable.
+* Find out what data type the output of input() is. See if it is different for different kinds of input (numbers, words, etc.).
+
+```
+name = input("what is your name")
+age = input("how old are you")
+drink = input("What's your favourite drink?")
+qty = input("how many cups of " + drink + " do you drink daily?")
+
+#this prints the datatypes of the variables
+print()
+print("datatype of <name> is: ",  type(name)) 
+print("datatype of <age> is: ",  type(age)) 
+print("datatype of <drink> is: ",  type(drink)) 
+print("datatype of <qty> is: ",  type(qty)) 
+print()
+
+print("Hi " + name + " WOW! " + age + " is really really old! Drinking " + qty + " cups of " + drink + " a day is too much.")
+```
+*output*
+
+```
+what is your nameJon
+how old are you47
+What's your favourite drink?coffee
+how many cups of coffee do you drink daily?3.5
+
+datatype of <name> is:  <class 'str'>
+datatype of <age> is:  <class 'str'>
+datatype of <drink> is:  <class 'str'>
+datatype of <qty> is:  <class 'str'>
+
+Hi Jon WOW! 47 is really really old! Drinking 3.5 cups of coffee a day is too much.
+```
+Even though the user entered different datatypes (strings, integers, float) they're still all classified as strings 'str'.
