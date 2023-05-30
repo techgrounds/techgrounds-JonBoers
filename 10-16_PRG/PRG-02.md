@@ -50,4 +50,7 @@ Exercise 1:
 ![Alt text](../00_includes/Week10-16/PRG02ex1.PNG)
 
 Exercise 2:
+![Alt text](../00_includes/Week10-16/PRG02ex2.PNG)
 
+Excercise 3:
+![Alt text](../00_includes/Week10-16/PRG02ex3.PNG)
