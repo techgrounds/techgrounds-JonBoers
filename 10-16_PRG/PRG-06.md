@@ -165,6 +165,9 @@ y = 255
 z = avg(x,y)
 print("The average of",x,"and",y,"is",z)
 ```
+sum(args): sum of the arguments
+len(args): count of arguments passed
+
 *output:*
 ```
 python3.11.exe c:/Users/TechGrounds/Documents/GitHub/techgrounds-JonBoers/10-16_PRG/PRG-06ex3.py
