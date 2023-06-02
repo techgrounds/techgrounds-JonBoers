@@ -9,19 +9,19 @@
 import random
 
 # Function to check if the move is valid
-# Create a function that checks whether the move is valid or not.
+
 def is_valid_move(move):
     valid_moves = ['r', 'p', 's', 'rock', 'paper', 'scissors']
     return move.lower() in valid_moves
 
 # Function to generate the computer's move
-# Create another function to create a computer move.
+
 def generate_computer_move():
     moves = ['r', 'p', 's']
     return random.choice(moves)
 
 # Function to check who wins the round
-# Create another function to check who wins the round.
+
 def check_round_winner(player_move, computer_move):
     if player_move == computer_move:
         return 'tie'
@@ -35,7 +35,6 @@ def check_round_winner(player_move, computer_move):
         return 'computer'
 
 
-# Finally, create a function that keeps track of the score.
 # Function to keep track of the score
 def play_game(rounds):
     player_score = 0
