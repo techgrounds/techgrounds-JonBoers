@@ -122,5 +122,54 @@ while foo < 5:
 	foo += 1
 ```
 
-**5py**
+**5.py**
+
+```
+The output should be:
+Star Wars
+
+ls = ['Lord of the rings', 'Star Trek', 'Iron Man', 'Star Wars']
+print(ls[4])
+```
+
+Solution:
+
+```
+ls = ['Lord of the rings', 'Star Trek', 'Iron Man', 'Star Wars']
+
+# changed 4 into 3 because the index starts with 0
+print(ls[3])
+```
+
+**6.py**
+
+```
+The output should be:
+80
+
+foo = 80
+if foo < 30:
+	print(foo)
+else:
+	print('big number wow')
+elif foo < 100:
+	print(foo)
+```
+
+Solution:
+
+```
+foo = 80
+if foo < 30:
+	# adjusted the print message (instead of print so it relates to the number.)
+    print('tiny number meh')
+# switched elif with else so the order is logic
+elif foo > 100:
+    print('big number wow')
+else:
+	# added print command here
+    print(foo)
+```
+
+
 
