@@ -9,13 +9,13 @@
 | 06/06/2023 | Planning project V1.0
 
 |            |                        |
-| 07/06/2023 | [Enter task for Day 3] |
+| 07/06/2023 | Exploratie             |
 
 |            |                        |
-| 08/06/2023 | [Enter task for Day 4] |
+| 08/06/2023 | Exploratie               |
 
 |            |                        |
-| 09/06/2023 | [Enter task for Day 5] |
+| 09/06/2023 | Exploratie               |
 
 | Date       | Task                   |
 |------------|------------------------|
