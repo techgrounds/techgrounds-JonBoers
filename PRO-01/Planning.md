@@ -1,137 +1,51 @@
-## Daily Planning
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 1     |                        |
-| 05/06/2023 | bezoek Uber
-
-|            |                        |
-| 06/06/2023 | Planning project V1.0
-
-|            |                        |
-| 07/06/2023 | Exploratie             |
-
-|            |                        |
-| 08/06/2023 | Exploratie               |
-
-|            |                        |
-| 09/06/2023 | Exploratie               |
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 2     |                        |
-| 12/06/2023 | [Enter task for Day 6] |
-
-|            |                        |
-| 13/06/2023 | [Enter task for Day 7] |
-
-|            |                        |
-| 14/06/2023 | [Enter task for Day 8] |
-
-|            |                        |
-| 15/06/2023 | [Enter task for Day 9] |
-
-|            |                        |
-| 16/06/2023 | [Enter task for Day 10]|
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 3     |                        |
-| 19/06/2023 | [Enter task for Day 11]|
-
-|            |                        |
-| 20/06/2023 | [Enter task for Day 12]|
-
-|            |                        |
-| 21/06/2023 | [Enter task for Day 13]|
-
-|            |                        |
-| 22/06/2023 | [Enter task for Day 14]|
-
-|            |                        |
-| 23/06/2023 | [Enter task for Day 15]|
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 4     |                        |
-| 26/06/2023 | [Enter task for Day 16]|
-
-|            |                        |
-| 27/06/2023 | [Enter task for Day 17]|
-
-|            |                        |
-| 28/06/2023 | [Enter task for Day 18]|
-
-|            |                        |
-| 29/06/2023 | [Enter task for Day 19]|
-
-|            |                        |
-| 30/06/2023 | [Enter task for Day 20]|
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 5     |                        |
-| 03/07/2023 | [Enter task for Day 21]|
-
-|            |                        |
-| 04/07/2023 | [Enter task for Day 22]|
-
-|            |                        |
-| 05/07/2023 | [Enter task for Day 23]|
-
-|            |                        |
-| 06/07/2023 | [Enter task for Day 24]|
-
-|            |                        |
-| 07/07/2023 | [Enter task for Day 25]|
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 6     |                        |
-| 10/07/2023 | [Enter task for Day 26]|
-
-|            |                        |
-| 11/07/2023 | [Enter task for Day 27]|
-
-|            |                        |
-| 12/07/2023 | [Enter task for Day 28]|
-
-|            |                        |
-| 13/07/2023 | [Enter task for Day 29]|
-
-|            |                        |
-| 14/07/2023 | [Enter task for Day 30]|
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 7     |                        |
-| 17/07/2023 | [Enter task for Day 31]|
-
-|            |                        |
-| 18/07/2023 | [Enter task for Day 32]|
-
-|            |                        |
-| 19/07/2023 | [Enter task for Day 33]|
-
-|            |                        |
-| 20/07/2023 | [Enter task for Day 34]|
-
-|            |                        |
-| 21/07/2023 | [Enter task for Day 35]|
-
-| Date       | Task                   |
-|------------|------------------------|
-| Week 8     |                        |
-| 24/07/2023 | [Enter task for Day 36]|
-
-|            |                        |
-| 25/07/2023 | [Enter task for Day 37]|
-
-|            |                        |
-| 26/07/2023 | [Enter task for Day 38]|
-
-|            |                        |
-| 27/07/2023 | [Enter task for Day 39]|
-
-|            |                        |
-| 28/07/2023 | [Enter task for Day 40]|
+| Date       | Task / Epic:                  | User stories:                                                                                                | Beschrijving:                                                                                                                                                                                                                                        | Deliverable:                                               | Important dates:                    |                          |
+| ---------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------- | ------------------------ |
+| Week 1,    |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 05/06/2023 | Bezoek Uber                   |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 06/06/2023 | Planning Project V1.0         |                                                                                                              | Omgevingen klaarzetten, planning lijst maken, trello board aanmaken.                                                                                                                                                                                 |                                                            |                                     |                          |
+|            | Bicep inlezen, video's kijken |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |
+| 07/06/2023 | Exploratie                    | Als team willen wij duidelijk hebben wat de eisen zijn van de applicatie                                     | Je hebt al heel wat informatie gekregen. Er staan al wat eisen in dit document genoemd, maar deze lijst is mogelijk incompleet of onduidelijk. Het is belangrijk om alle onduidelijkheden uitgezocht te hebben voordat je groot werk gaat verzetten. | Een puntsgewijze omschrijving van alle eisen               |                                     |                          |
+|            | Bicep inlezen, video's kijken |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |
+| 08/06/2023 | Exploratie                    | Als team willen wij een duidelijk overzicht van de aannames die wij gemaakt hebben.                          | Je hebt al heel wat informatie gekregen. Mogelijk zijn er vragen die geen van de stakeholders heeft kunnen beantwoorden. Je team moet een overzicht kunnen produceren van de aannames die je daardoor maakt.                                         | Een puntsgewijs overzicht van alle aannames                |                                     |                          |
+|            | Bicep inlezen, video's kijken |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |
+| 09/06/2023 | Exploratie                    | Als team willen wij een duidelijk overzicht hebben van de Cloud Infrastructuur die de applicatie nodig heeft | Je hebt al heel wat informatie gekregen. En al een ontwerp. Alleen in het ontwerp ontbreken nog zaken als IAM/AD. Identificeer deze extra diensten die je nodig zal hebben en maak een overzicht van alle diensten.                                  | Een overzicht van alle diensten die gebruikt gaan worden.  |                                     |                          |
+|            | Bicep inlezen, video's kijken |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |
+|            |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| Week 2,    |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 12/06/2023 | V1.0                          | Als klant wil ik een werkende applicatie hebben waarmee ik een veilig netwerk kan deployen                   | De applicatie moet een netwerk opbouwen dat aan alle eisen voldoet. Een voorbeeld van een genoemde eis is dat alleen verkeer van trusted sources de management server mag benaderen.                                                                 | IaC-code voor het netwerk en alle onderdelen               |                                     |                          |
+| 13/06/2023 | V1.0                          | Als klant wil ik een werkende applicatie hebben waarmee ik een werkende webserver kan deployen               | De applicatie moet een webserver starten en deze beschikbaar maken voor algemeen publiek.                                                                                                                                                            | IaC-code voor en webserver en alle benodigdheden           |                                     |                          |
+| 14/06/2023 | V1.0                          | Als klant wil ik een werkende applicatie hebben waarmee ik een werkende management server kan deployen       | De applicatie moet een management server starten en deze beschikbaar maken voor een beperkt publiek.                                                                                                                                                 | IaC-code voor een management server met alle benodigdheden |                                     |                          |
+| 15/06/2023 | V1.0                          | Als klant wil ik een opslagoplossing hebben waarin bootstrap/post-deployment script opgeslagen kunnen worden | Er moet een locatie beschikbaar zijn waar bootstrap scripts beschikbaar worden. Deze script moeten niet publiekelijk toegankelijk zijn.                                                                                                              | IaC-code voor een opslagoplossing voor scripts             |                                     |                          |
+| 16/06/2023 | V1.0                          | Als klant wil ik dat al mijn data in de infrastructuur is versleuteld                                        | Er wordt veel gehecht aan de veiligheid van de data at rest en in motion. Alle data moet versleuteld zijn.                                                                                                                                           | IaC-code voor versleuteling voorzieningen                  | Sprint 1 Review oplevering app v1.0 |                          |
+| Week 3,    |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 19/06/2023 | V1.0                          | Als klant wil ik iedere dag een backup hebben dat 7 dagen behouden wordt                                     | De klant wil graag dat er een backup beschikbaar is, mocht het nodig zijn om de servers terug te brengen naar een eerdere staat. (Zorg ervoor dat de Backup ook daadwerkelijk werkt)                                                                 | IaC-code voor backup voorzieningen                         |                                     |                          |
+| 20/06/2023 | V1.0 Documentatie             | Als klant wil ik weten hoe ik de applicatie kan gebruiken                                                    | Zorg dat de klant kan begrijpen hoe deze de applicatie kan gebruiken. Zorg dat het duidelijk is wat de klant moet configureren voor de deployment kan starten en welke argumenten het programma nodig heeft.                                         | Documentatie voor het gebruik van de applicatie            |                                     |                          |
+| 21/06/2023 | V1.0 Documentatie             | Als klant wil ik een MVP kunnen deployen om te testen                                                        | De klant wil zelf intern je architectuur testen voordat ze de code gaan gebruiken in productie. Zorg ervoor dat er configuratie beschikbaar is waarmee de klant een MVP kan deployen.                                                                | Configuratie voor een MVP deployment                       |                                     |                          |
+| 22/06/2023 | Open                          | Finetunen                                                                                                    |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+|            |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 23/06/2023 | Open                          | Finetunen                                                                                                    |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+|            | Tandarts 12:30                |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+|            |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| Week 4,    |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 26/06/2023 | Open                          | Finetunen                                                                                                    |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 27/06/2023 | Open                          | Finetunen                                                                                                    |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 28/06/2023 | Presentatie                   | voorbereiden                                                                                                 |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 29/06/2023 | Presentatie                   | voorbereiden                                                                                                 |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 30/06/2023 | Presentatie                   | Presenteren                                                                                                  |                                                                                                                                                                                                                                                      |                                                            | Sprint 2 Review oplevering app v1.0 | Introductie Project v1.1 |
+| Week 5,    |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 03/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 04/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 05/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 06/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 07/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            | Sprint 3 Review progressie app v1.1 |                          |
+| Week 6,    |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 10/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 11/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 12/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 13/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 14/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| Week 7,    |                               |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 17/07/2023 | V1.1                          |                                                                                                              |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 18/07/2023 | Presentatie                   | voorbereiden                                                                                                 |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 19/07/2023 | Presentatie                   | voorbereiden                                                                                                 |                                                                                                                                                                                                                                                      |                                                            |                                     |                          |
+| 20/07/2023 | Presentatie                   | voorbereiden                                                                                                 |                                                                                                                                                                                                                                                      |                                                            | Oplevering- / Eindpresentatie       |                          |
