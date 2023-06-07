@@ -42,9 +42,10 @@ Trello hoe werken kaarten en boards.
 ---
 
 # Log 07/06
-
+Explore epic
 ## Dagverslag (1 zin)
 
+Microsoft learn bicep modules en requirements mvp doorgenomen
 
 ## Obstakels
 
@@ -53,3 +54,5 @@ Trello hoe werken kaarten en boards.
 
 
 ## Learnings
+
+Requirements MvP, werkwijze bicep templates, fout correcties. Azure refreshed.
