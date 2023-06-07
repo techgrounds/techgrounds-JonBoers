@@ -17,19 +17,56 @@ Een puntsgewijze omschrijving van alle eisen:
 * SSH of RDP verbindingen met de webserver mogen alleen tot stand komen vanuit de admin server. 
 * Wees niet bang om verbeteringen in de architectuur voor te stellen of te implementeren, maar maak wel harde keuzes, zodat je de deadline kan halen.
 
+Punten van feedback product owner:
+
+* Er wordt gebruik gemaakt van een nieuwsdienst
+* Er zullen generic workstations gebruikt worden
+* Hoe meer marketing wij doen, hoe meer mensen er naar de website komen.
+* Het is geen webwinkel
+* Netwerksegmentatie is gewenst ivm veiligheid.
+* Klanten zitten voor het grootste gedeelte in NL, maar ook in DE en BE.
+* Admin gebruikers zitten in NL (management server)
+* Principle of least privilege
+* Intrusion dection system wordt door het security team gebouwd.
+
+---
+
 Als team willen wij een duidelijk overzicht van de aannames die wij gemaakt hebben.
-Epic
-Exploratie
-Beschrijving
+
+Epic: Exploratie
+
+Beschrijving:
+
 Je hebt al heel wat informatie gekregen. Mogelijk zijn er vragen die geen van de stakeholders heeft kunnen beantwoorden. Je team moet een overzicht kunnen produceren van de aannames die je daardoor maakt.
 Deliverable
-Een puntsgewijs overzicht van alle aannames
+
+Een puntsgewijs overzicht van alle aannames:
+
+
+
+---
 
 Als team willen wij een duidelijk overzicht hebben van de Cloud Infrastructuur die de applicatie nodig heeft
-Epic
-Exploratie
-Beschrijving
+Epic: Exploratie  
+
+Beschrijving:  
+
 Je hebt al heel wat informatie gekregen. En al een ontwerp. Alleen in het ontwerp ontbreken nog zaken als IAM/AD. Identificeer deze extra diensten die je nodig zal hebben en maak een overzicht van alle diensten.
-Deliverable
+
+Deliverable:
+
 Een overzicht van alle diensten die gebruikt gaan worden.
+
+* VM Scaleset
+* Nic's
+* NSG
+* 2 subnets
+* Storage account
+* webserver
+* admin server
+* active directory
+* conditional access, MFa
+* key vault
+
+
 
