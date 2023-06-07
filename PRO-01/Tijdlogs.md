@@ -56,3 +56,20 @@ Microsoft learn bicep modules en requirements mvp doorgenomen
 ## Learnings
 
 Requirements MvP, werkwijze bicep templates, fout correcties. Azure refreshed.
+
+---
+
+# Log 08/06
+
+
+## Dagverslag (1 zin)
+
+
+
+## Obstakels
+
+
+## Oplossingen
+
+
+## Learnings
