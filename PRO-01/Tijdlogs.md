@@ -60,7 +60,8 @@ Requirements MvP, werkwijze bicep templates, fout correcties. Azure refreshed.
 ---
 
 # Log 08/06
-
+Explore epics
+bicep template
 
 ## Dagverslag (1 zin)
 

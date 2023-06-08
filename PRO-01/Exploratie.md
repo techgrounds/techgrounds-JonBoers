@@ -28,6 +28,11 @@ Punten van feedback product owner:
 * Admin gebruikers zitten in NL (management server)
 * Principle of least privilege
 * Intrusion dection system wordt door het security team gebouwd.
+* Er moet een database worden gebruikt voor de nieuwsdienst
+* Alleen een gratis variant van de AD, premium is te duur.
+* Er wordt geen gebruik gemaakt van reserved instances. Per definitie niet in een development omgeving.
+* Er zullen tussen de 50-100 workstations zijn. IP-adressen hoeven niet gereserveerd te worden.
+* Post deployment scripts zijn voor eenmalig gebruik, maar ze moeten wel ergens kunnen worden opgeslagen.
 
 ---
 
@@ -41,6 +46,11 @@ Je hebt al heel wat informatie gekregen. Mogelijk zijn er vragen die geen van de
 Deliverable
 
 Een puntsgewijs overzicht van alle aannames:
+
+* voor de nieuwsbrief is het gebruik van logicapps het meest voor de hand liggend
+* voor de VM-scaleset is een load-balancer nodig om eventuele pieken te kunnen opvangen
+* 
+
 
 
 
@@ -64,9 +74,11 @@ Een overzicht van alle diensten die gebruikt gaan worden.
 * Storage account
 * webserver
 * admin server
-* active directory
+* active directory (gratis variant)
 * conditional access, MFa
 * key vault
+* database voor nieuwsdienst 
+
 
 
 
