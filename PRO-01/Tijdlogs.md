@@ -65,7 +65,7 @@ bicep template
 
 ## Dagverslag (1 zin)
 
-
+Verder verdiept in Bicep tutorials en explore epics geupdate.
 
 ## Obstakels
 

@@ -1,3 +1,9 @@
+param location string = 'westus3'
+param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+param appServiceAppName string = 'toylaunch${uniqueString(resourceGroup().id)'
+
+var appServicePlanName = 'toy-product-launch-plan'
+
 @minLength(3)
 @maxLength(24)
 @description('Provide a name for the storage account. Use only lower case letters and numbers. The name must be unique across Azure.')
@@ -29,4 +35,11 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   }
 }
 
-resource exampleStorage
+resource exampleStorage 'Microsoft.Storage/storageAccounts@2021-02-01' = {
+  name: storageName
+  location: 'eastus'
+    sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+}
