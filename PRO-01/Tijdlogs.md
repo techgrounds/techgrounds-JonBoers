@@ -74,3 +74,21 @@ Verder verdiept in Bicep tutorials en explore epics geupdate.
 
 
 ## Learnings
+
+---
+
+# Log 08/06
+Explore epics
+bicep template
+
+## Dagverslag (1 zin)
+
+Verder verdiept in Bicep tutorials.
+
+## Obstakels
+
+
+## Oplossingen
+
+
+## Learnings
