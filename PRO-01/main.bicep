@@ -30,3 +30,5 @@ module appService 'modules/appService.bicep' = {
     environmentType: environmentType
   }
 }
+
+output appServiceAppHostName string = appService.outputs.appServiceAppHostName
