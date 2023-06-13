@@ -1,3 +1,9 @@
+param location string = 'westus3'
+param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+param appServiceAppName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+
+var appServicePlanName = 'toy-product-launch-plan'
+
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: 'yodasuitsforcats'
   location: 'westus3'
