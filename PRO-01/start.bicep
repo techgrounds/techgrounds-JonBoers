@@ -227,5 +227,4 @@ resource webServerSubnetNSGAssociation 'Microsoft.Network/virtualNetworks/subnet
 
 output adminServerPublicIP string = adminServerPublicIP.properties.ipAddress
 
-
 output webServerPublicIP string = webServerPublicIP.properties.ipAddress
