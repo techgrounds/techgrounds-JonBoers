@@ -27,7 +27,7 @@ Punten van feedback product owner:
 * Klanten zitten voor het grootste gedeelte in NL, maar ook in DE en BE.
 * Admin gebruikers zitten in NL (management server)
 * Principle of least privilege
-* Intrusion dection system wordt door het security team gebouwd.
+* Intrusion detection system wordt door het security team gebouwd.
 * Er moet een database worden gebruikt voor de nieuwsdienst
 * Alleen een gratis variant van de AD, premium is te duur.
 * Er wordt geen gebruik gemaakt van reserved instances. Per definitie niet in een development omgeving.
