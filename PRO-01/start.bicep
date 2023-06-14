@@ -1,3 +1,6 @@
+@description('Specifies the location for resources.')
+param location string = 'West Europe'
+
 param adminSourceIPRanges array = [
   '10.10.10.0/24'
   '10.20.20.0/24'
@@ -5,7 +8,7 @@ param adminSourceIPRanges array = [
 
 resource vnet 'Microsoft.Network/virtualNetworks@2022-09-01' = {
   name: 'myVNet'
-  location: 'West Europe'
+  location: location
   properties: {
     addressSpace: {
       addressPrefixes: [
@@ -37,7 +40,7 @@ resource adminServerSubnet 'Microsoft.Network/virtualNetworks/subnets@2022-09-01
 
 resource webServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-09-01' = {
   name: 'webServerPublicIP'
-  location: 'West Europe'
+  location: location
   properties: {
     publicIPAllocationMethod: 'Static'
   }
@@ -45,7 +48,7 @@ resource webServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-09-01' = {
 
 resource adminServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-09-01' = {
   name: 'adminServerPublicIP'
-  location: 'West Europe'
+  location: location
   properties: {
     publicIPAllocationMethod: 'Static'
   }
@@ -53,7 +56,7 @@ resource adminServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-09-01' = 
 
 resource webServerNIC 'Microsoft.Network/networkInterfaces@2022-09-01' = {
   name: 'webServerNIC'
-  location: 'West Europe'
+  location: location
   properties: {
     ipConfigurations: [
       {
@@ -73,7 +76,7 @@ resource webServerNIC 'Microsoft.Network/networkInterfaces@2022-09-01' = {
 
 resource adminServerNIC 'Microsoft.Network/networkInterfaces@2022-09-01' = {
   name: 'adminServerNIC'
-  location: 'West Europe'
+  location: location
   properties: {
     ipConfigurations: [
       {
@@ -93,7 +96,7 @@ resource adminServerNIC 'Microsoft.Network/networkInterfaces@2022-09-01' = {
 
 resource webServerVM 'Microsoft.Compute/virtualMachines@2022-09-01' = {
   name: 'webServerVM'
-  location: 'West Europe'
+  location: location
   dependsOn: [
     webServerNIC
   ]
@@ -135,10 +138,7 @@ resource webServerVM 'Microsoft.Compute/virtualMachines@2022-09-01' = {
 
 resource adminServerVM 'Microsoft.Compute/virtualMachines@2022-09-01' = {
   name: 'adminServerVM'
-  location: 'West Europe'
-  dependsOn: [
-    adminServerNIC
-  ]
+  location: location
   properties: {
     hardwareProfile: {
       vmSize: 'Standard_D2s_v3'
@@ -168,7 +168,7 @@ resource adminServerVM 'Microsoft.Compute/virtualMachines@2022-09-01' = {
 
 resource webServerBackupSchedule 'Microsoft.Compute/virtualMachines/extensions@2022-09-01' = {
   name: 'webServerBackupSchedule'
-  location: 'West Europe'
+    location: location
   dependsOn: [
     webServerVM
   ]
@@ -193,7 +193,7 @@ resource webServerBackupSchedule 'Microsoft.Compute/virtualMachines/extensions@2
 
 resource webServerInboundNSGRule 'Microsoft.Network/networkSecurityGroups/securityRules@2022-09-01' = {
   name: 'webServerInboundNSGRule'
-  location: 'West Europe'
+  location: location
   properties: {
     protocol: 'Tcp'
     sourcePortRange: '*'
@@ -208,7 +208,7 @@ resource webServerInboundNSGRule 'Microsoft.Network/networkSecurityGroups/securi
 
 resource webServerNSG 'Microsoft.Network/networkSecurityGroups@2022-09-01' = {
   name: 'webServerNSG'
-  location: 'West Europe'
+  location: location
   properties: {
     securityRules: [
       webServerInboundNSGRule
@@ -225,10 +225,7 @@ resource webServerSubnetNSGAssociation 'Microsoft.Network/virtualNetworks/subnet
   }
 }
 
-output adminServerPublicIP 'Admin Server Public IP' {
-  value: adminServerPublicIP.properties.ipAddress
-}
+output adminServerPublicIP string = adminServerPublicIP.properties.ipAddress
 
-output webServerPublicIP 'Web Server Public IP' {
-  value: webServerPublicIP.properties.ipAddress
-}
+
+output webServerPublicIP string = webServerPublicIP.properties.ipAddress
