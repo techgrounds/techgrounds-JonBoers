@@ -32,6 +32,7 @@ Punten van feedback product owner:
 * Alleen een gratis variant van de AD, premium is te duur.
 * Er wordt geen gebruik gemaakt van reserved instances. Per definitie niet in een development omgeving.
 * Er zullen tussen de 50-100 workstations zijn. IP-adressen hoeven niet gereserveerd te worden.
+Deze workstations (VM's) zullen later door de admin worden toegevoegd via de admin server.
 * Post deployment scripts zijn voor eenmalig gebruik, maar ze moeten wel ergens kunnen worden opgeslagen.
 
 ---
@@ -49,10 +50,8 @@ Een puntsgewijs overzicht van alle aannames:
 
 * voor de nieuwsbrief is het gebruik van logicapps het meest voor de hand liggend
 * voor de VM-scaleset is een load-balancer nodig om eventuele pieken te kunnen opvangen
-* 
-
-
-
+* azure Bastion lijkt een goede optie omdat ip-adressen niet gereserveerd hoeven te worden. Hiermee kan er
+verbinding worden gemaakt met SSH en RDP zonder de ports bloot te stellen.
 
 ---
 
@@ -78,6 +77,8 @@ Een overzicht van alle diensten die gebruikt gaan worden.
 * conditional access, MFa
 * key vault
 * database voor nieuwsdienst 
+
+* firewalls 
 
 
 
