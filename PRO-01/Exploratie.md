@@ -49,10 +49,11 @@ Deliverable
 Een puntsgewijs overzicht van alle aannames:
 
 * voor de nieuwsbrief is het gebruik van logicapps het meest voor de hand liggend
-* voor de VM-scaleset is een load-balancer nodig om eventuele pieken te kunnen opvangen
-* azure Bastion lijkt een goede optie omdat ip-adressen niet gereserveerd hoeven te worden. Hiermee kan er
+* ~~voor de VM-scaleset is een load-balancer nodig om eventuele pieken te kunnen opvangen~~
+15/06: een scaleset lijkt overkill te zijn voor de verwachte pieken dus deze aanname wordt geschrapt.
+* voor de webserver lijkt Azure Bastion een goede optie omdat ip-adressen niet gereserveerd hoeven te worden. Hiermee kan er
 verbinding worden gemaakt met SSH en RDP zonder de ports bloot te stellen.
-* voor de management server is naast de NSG ook een private link gewenst.
+* voor de management server is naast de NSG ook een private link gewenst. (hier nog niet zeker over)
 
 ---
 

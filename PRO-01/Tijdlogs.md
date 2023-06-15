@@ -55,7 +55,7 @@ Microsoft learn bicep modules en requirements mvp doorgenomen
 
 ## Learnings
 
-Requirements MvP, werkwijze bicep templates, fout correcties. Azure refreshed.
+Requirements MvP, werkwijze bicep templates, fout correcties. Azure fundamentals refreshed.
 
 ---
 
@@ -111,4 +111,63 @@ Verder verdiept in Bicep tutorials.
 
 ## Learnings
 
+---
+
+# Log 13/06
+
+bicep template
+
+## Dagverslag (1 zin)
+
+Verder verdiept in Bicep tutorials.
+
+## Obstakels
+
+
+## Oplossingen
+
+
+## Learnings
+
+---
+
+# Log 14/06
+
+bicep template
+
+## Dagverslag (1 zin)
+
+Bezig geweest met de portal, het aanmaken van templates en json transpiled naar bicep om een
+indruk te krijgen van de opbouw.
+
+## Obstakels
+
+Uitkomst was complexer dan ik dacht en niet alle features werden ondersteund.
+
+## Oplossingen
+
+Dit is geen benadering om het project te bouwen, maar er komen goede inzichten en suggesties uit.
+
+## Learnings
+
+---
+
+# Log 15/06
+
+bicep templates en exploration
+
+## Dagverslag (1 zin)
+
+Bezig geweest met transpilen van vnet en vm (json) templates naar bicep en verder onderzoek naar beste opties voor de requirements.
+
+## Obstakels
+
+
+## Oplossingen
+
+
+## Learnings
+
+Het nut van projectmatig werken wordt steeds duidelijker, maar moeilijk om dit toe te passen. 
+Wel wordt het werken er overzichtelijker van.
 ---

@@ -27,14 +27,20 @@ IaC-code voor het netwerk en alle onderdelen
 *   De volgende IP ranges worden gebruikt: 10.10.10.0/24 & 10.20.20.0/24  
 *   Alle subnets moeten beschermd worden door een firewall op subnet niveau.  
 
-Om te voldoen aan de eis dat alleen verkeer van vertrouwde bronnen toegang mag hebben tot de management server (management-prg-vnet) overwoog ik het volgende:
+#### management-prg-vnet
+
+Om te voldoen aan de eis dat alleen verkeer van vertrouwde bronnen toegang mag hebben tot de management server overwoog ik het volgende:
 
 Network Security Group (NSG): Er zullen NSG-regels geconfigureerd dienen te worden om alleen verkeer van vertrouwde bron-IP-adressen of IP-bereiken toe te staan.
 
 Private Link: Private Link maakt het mogelijk om veilig toegang te krijgen tot het storage account en de database via een privéverbinding binnen het VNet. Met Private Link kan alleen verkeer van vertrouwde bronnen binnen het VNet de management server bereiken. [Info over private link](https://learn.microsoft.com/en-us/azure/private-link/private-link-overview)
+15/06 wellicht dat NSG voldoende is om de management server veilig te houden. Meer research is nodig.
 
 Ook overwoog ik om Conditional Access in te bouwen, maar dit is alleen beschikbaar met de premium variant van Azure AD dus deze optie kwam te vervallen.
 
+#### app-prg-vnet
+
+* Het gebruik van Bastion is een goede optie, dit ga ik in ieder geval in V1.0 inbouwen
 
 ---
 ### Als klant wil ik een MVP kunnen deployen om te testen  
