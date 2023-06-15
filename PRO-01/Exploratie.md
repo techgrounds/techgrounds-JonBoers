@@ -52,6 +52,7 @@ Een puntsgewijs overzicht van alle aannames:
 * voor de VM-scaleset is een load-balancer nodig om eventuele pieken te kunnen opvangen
 * azure Bastion lijkt een goede optie omdat ip-adressen niet gereserveerd hoeven te worden. Hiermee kan er
 verbinding worden gemaakt met SSH en RDP zonder de ports bloot te stellen.
+* voor de management server is naast de NSG ook een private link gewenst.
 
 ---
 
