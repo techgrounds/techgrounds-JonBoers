@@ -171,3 +171,19 @@ Bezig geweest met transpilen van vnet en vm (json) templates naar bicep en verde
 Het nut van projectmatig werken wordt steeds duidelijker, maar moeilijk om dit toe te passen. 
 Wel wordt het werken er overzichtelijker van.
 ---
+
+# Log 16/06
+
+bicep templates en exploration
+
+## Dagverslag (1 zin)
+
+Les en bouwen aan app-prd-vnet inclusief 2 vm's en bastion.
+
+## Obstakels
+
+
+## Oplossingen
+
+
+## Learnings

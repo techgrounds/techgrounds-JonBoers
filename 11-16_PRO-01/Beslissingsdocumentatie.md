@@ -35,6 +35,7 @@ Network Security Group (NSG): Er zullen NSG-regels geconfigureerd dienen te word
 
 Private Link: Private Link maakt het mogelijk om veilig toegang te krijgen tot het storage account en de database via een privéverbinding binnen het VNet. Met Private Link kan alleen verkeer van vertrouwde bronnen binnen het VNet de management server bereiken. [Info over private link](https://learn.microsoft.com/en-us/azure/private-link/private-link-overview)
 15/06 wellicht dat NSG voldoende is om de management server veilig te houden. Meer research is nodig.
+16/06 NSG is voldoende het idee van Private link geschrapt.
 
 Ook overwoog ik om Conditional Access in te bouwen, maar dit is alleen beschikbaar met de premium variant van Azure AD dus deze optie kwam te vervallen.
 
