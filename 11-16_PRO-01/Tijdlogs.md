@@ -187,3 +187,22 @@ Les en bouwen aan app-prd-vnet inclusief 2 vm's en bastion.
 
 
 ## Learnings
+
+# Log 19/06
+
+vnet 1 deployed en diagram
+
+## Dagverslag (1 zin)
+
+Ontwerp diagram gemaakt en trello board aangepast.
+
+## Obstakels
+
+
+## Oplossingen
+
+
+## Learnings
+
+diagram tekenen
+trello board
