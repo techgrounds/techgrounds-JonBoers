@@ -51,14 +51,14 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.0.0.0/16'
+        '10.10.0.0/16'
       ]
     }
     subnets: [
       {
         name: subnetName
         properties: {
-          addressPrefix: '10.0.2.0/24'
+          addressPrefix: '10.10.2.0/24'
         }
       }
     ]
@@ -105,7 +105,7 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
           subnet: {
             id: subnetRef
           }
-          privateIPAddress: '10.0.2.6'
+          privateIPAddress: '10.10.2.6'
           privateIPAllocationMethod: 'Static'
         }
         name: 'LoadBalancerFrontend'
