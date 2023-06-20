@@ -26,6 +26,7 @@ IaC-code voor het netwerk en alle onderdelen
 *   De admin/management server moet alleen bereikbaar zijn van vertrouwde locaties (office/admin’s thuis)  
 *   De volgende IP ranges worden gebruikt: 10.10.10.0/24 & 10.20.20.0/24  
 *   Alle subnets moeten beschermd worden door een firewall op subnet niveau.  
+*   De VM's moeten met Ubuntu OS worden opgezet
 
 #### management-prg-vnet
 
@@ -42,6 +43,7 @@ Ook overwoog ik om Conditional Access in te bouwen, maar dit is alleen beschikba
 #### app-prg-vnet
 
 * Het gebruik van Bastion is een goede optie, dit ga ik in ieder geval in V1.0 inbouwen
+* De regio wordt UK south omdat Azure aangeeft dat dit het goedkoopste is en dichtbij genoeg voor de scope van de klant.
 
 ---
 ### Als klant wil ik een MVP kunnen deployen om te testen  

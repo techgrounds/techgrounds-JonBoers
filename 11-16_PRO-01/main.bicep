@@ -51,14 +51,14 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.10.0.0/16'
+        '10.10.10.0/24'
       ]
     }
     subnets: [
       {
         name: subnetName
         properties: {
-          addressPrefix: '10.10.2.0/24'
+          addressPrefix: '10.10.10.0/26'
         }
       }
     ]
@@ -105,7 +105,7 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
           subnet: {
             id: subnetRef
           }
-          privateIPAddress: '10.10.2.6'
+          privateIPAddress: '10.10.10.10'
           privateIPAllocationMethod: 'Static'
         }
         name: 'LoadBalancerFrontend'
@@ -170,9 +170,9 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = [for i in range(0, 
     }
     storageProfile: {
       imageReference: {
-        publisher: 'MicrosoftWindowsServer'
-        offer: 'WindowsServer'
-        sku: '2019-Datacenter'
+        publisher: 'Canonical'
+        offer: 'Ubuntuserver'
+        sku: '20.04-LTS'
         version: 'latest'
       }
       osDisk: {
