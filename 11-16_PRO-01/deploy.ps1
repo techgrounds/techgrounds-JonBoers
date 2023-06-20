@@ -1,2 +1,2 @@
-New-AzResourceGroup -Name TestRG -Location uksouth
-New-AzResourceGroupDeployment -ResourceGroupName TestRG -TemplateFile main.bicep
+New-AzResourceGroup -Name Project1.0 -Location uksouth
+New-AzResourceGroupDeployment -ResourceGroupName RGProject -TemplateFile main.bicep

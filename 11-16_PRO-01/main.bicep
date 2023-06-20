@@ -6,7 +6,7 @@ param adminUsername string
 param adminPassword string
 
 @description('Prefix to use for VM names')
-param vmNamePrefix string = 'BackendVM'
+param vmNamePrefix string = 'Webserver'
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
@@ -58,7 +58,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
       {
         name: subnetName
         properties: {
-          addressPrefix: '10.10.10.0/26'
+          addressPrefix: '10.10.10.0/24'
         }
       }
     ]
@@ -153,7 +153,7 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
   ]
 }
 
-resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = [for i in range(0, numberOfInstances): {
+resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, numberOfInstances): {
   name: '${vmNamePrefix}${i}'
   location: location
   properties: {
@@ -170,9 +170,9 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = [for i in range(0, 
     }
     storageProfile: {
       imageReference: {
-        publisher: 'Canonical'
-        offer: 'Ubuntuserver'
-        sku: '20.04-LTS'
+        publisher: 'canonical'
+        offer: '0001-com-ubuntu-server-jammy'
+        sku: '22_04-lts-gen2'
         version: 'latest'
       }
       osDisk: {
