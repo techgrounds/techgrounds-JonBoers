@@ -1,5 +1,6 @@
 param location string
 param networkInterfaceName1 string
+param enableAcceleratedNetworking bool
 param networkSecurityGroupName string
 param networkSecurityGroupRules array
 param subnetName string
@@ -19,6 +20,9 @@ param osDiskDeleteOption string
 param virtualMachineSize string
 param nicDeleteOption string
 param adminUsername string
+
+@secure()
+param customData string
 param securityType string
 param secureBoot bool
 param vTPM bool
@@ -50,6 +54,7 @@ resource networkInterface1 'Microsoft.Network/networkInterfaces@2021-08-01' = {
         }
       }
     ]
+    enableAcceleratedNetworking: enableAcceleratedNetworking
     networkSecurityGroup: {
       id: nsgId
     }
@@ -111,8 +116,8 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
       }
       imageReference: {
         publisher: 'canonical'
-        offer: '0001-com-ubuntu-server-jammy'
-        sku: '22_04-lts-gen2'
+        offer: '0001-com-ubuntu-server-focal'
+        sku: '20_04-lts-gen2'
         version: 'latest'
       }
     }
@@ -132,6 +137,7 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
       linuxConfiguration: {
         disablePasswordAuthentication: true
       }
+      customData: customData
     }
     securityProfile: {
       securityType: securityType

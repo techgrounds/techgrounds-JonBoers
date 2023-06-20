@@ -206,3 +206,25 @@ Ontwerp diagram gemaakt en trello board aangepast.
 
 diagram tekenen
 trello board
+
+# Log 20/06
+
+Vorderingen
+
+## Dagverslag (1 zin)
+
+Webserver aangepast naar ubuntu, locatie aangepast, gewerkt aan apache server.
+
+## Obstakels
+
+Nog niet de juiste methodiek kunnen ontdekken om de apache server te deployen.
+
+## Oplossingen
+
+Wel wat goede opties onderzocht, zoals custom script extension of misschien een verwijzing
+naar het bash script via een parameter.
+
+## Learnings
+
+custom scripts
+base64

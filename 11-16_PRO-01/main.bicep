@@ -23,7 +23,9 @@ var loadBalancerName = 'ilb'
 var networkInterfaceName = 'nic'
 var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetworkName, subnetName)
 var numberOfInstances = 2
-
+/* -------------------------------------------------------------------------- */
+/*                               Storage Account                              */
+/* -------------------------------------------------------------------------- */
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
   name: storageAccountName
   location: location
@@ -32,7 +34,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
   }
   kind: 'StorageV2'
 }
-
+/* -------------------------------------------------------------------------- */
+/*                              Availability Set                              */
+/* -------------------------------------------------------------------------- */
 resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
   name: availabilitySetName
   location: location
@@ -44,7 +48,9 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
     platformFaultDomainCount: 2
   }
 }
-
+/* -------------------------------------------------------------------------- */
+/*                              Vnet app-prd-vnet                             */
+/* -------------------------------------------------------------------------- */
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: virtualNetworkName
   location: location
@@ -64,7 +70,9 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
     ]
   }
 }
-
+/* -------------------------------------------------------------------------- */
+/*                                     NIC                                    */
+/* -------------------------------------------------------------------------- */
 resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [for i in range(0, numberOfInstances): {
   name: '${networkInterfaceName}${i}'
   location: location
@@ -91,7 +99,9 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [fo
     loadBalancer
   ]
 }]
-
+/* -------------------------------------------------------------------------- */
+/*                                Loadbalancer                                */
+/* -------------------------------------------------------------------------- */
 resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
   name: loadBalancerName
   location: location
@@ -152,7 +162,9 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
     virtualNetwork
   ]
 }
-
+/* -------------------------------------------------------------------------- */
+/*                                    VM's                                    */
+/* -------------------------------------------------------------------------- */
 resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, numberOfInstances): {
   name: '${vmNamePrefix}${i}'
   location: location
