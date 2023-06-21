@@ -12,7 +12,7 @@ param vmNamePrefix string = 'AdminServer'
 param location string = resourceGroup().location
 
 @description('Size of the virtual machines')
-param virtualMachineSize string
+param virtualMachineSize string = 'Standard_D2ds_v4'
 
 /* -------------------------------------------------------------------------- */
 /*                              imported param's                              */

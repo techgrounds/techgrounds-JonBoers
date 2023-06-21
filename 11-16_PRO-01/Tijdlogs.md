@@ -239,7 +239,7 @@ base64
 
 ## Dagverslag (1 zin)
 
-Gewerkt aan schema (ontwerp)
+Gewerkt aan schema (ontwerp), vnet2, keyvault en webserver.
 
 ## Obstakels
 
