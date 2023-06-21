@@ -26,6 +26,7 @@ Punten van feedback product owner:
 * Netwerksegmentatie is gewenst ivm veiligheid.
 * Klanten zitten voor het grootste gedeelte in NL, maar ook in DE en BE.
 * Admin gebruikers zitten in NL (management server)
+* Admin server moet een windows 2022 VM zijn 
 * Principle of least privilege
 * Intrusion detection system wordt door het security team gebouwd.
 * Er moet een database worden gebruikt voor de nieuwsdienst

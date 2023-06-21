@@ -22,7 +22,9 @@ param nicDeleteOption string
 param adminUsername string
 
 @secure()
-param customData string
+param adminPassword string
+param patchMode string
+param enableHotpatching bool
 param securityType string
 param secureBoot bool
 param vTPM bool
@@ -115,9 +117,9 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
         deleteOption: osDiskDeleteOption
       }
       imageReference: {
-        publisher: 'canonical'
-        offer: '0001-com-ubuntu-server-focal'
-        sku: '20_04-lts-gen2'
+        publisher: 'MicrosoftWindowsServer'
+        offer: 'WindowsServer'
+        sku: '2022-datacenter-azure-edition'
         version: 'latest'
       }
     }
@@ -134,11 +136,17 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
     osProfile: {
       computerName: virtualMachineComputerName1
       adminUsername: adminUsername
-      linuxConfiguration: {
-        disablePasswordAuthentication: true
+      adminPassword: adminPassword
+      windowsConfiguration: {
+        enableAutomaticUpdates: true
+        provisionVMAgent: true
+        patchSettings: {
+          enableHotpatching: enableHotpatching
+          patchMode: patchMode
+        }
       }
-      customData: customData
     }
+    licenseType: 'Windows_Server'
     securityProfile: {
       securityType: securityType
       uefiSettings: {

@@ -188,6 +188,8 @@ Les en bouwen aan app-prd-vnet inclusief 2 vm's en bastion.
 
 ## Learnings
 
+---
+
 # Log 19/06
 
 vnet 1 deployed en diagram
@@ -206,6 +208,7 @@ Ontwerp diagram gemaakt en trello board aangepast.
 
 diagram tekenen
 trello board
+---
 
 # Log 20/06
 
@@ -228,3 +231,22 @@ naar het bash script via een parameter.
 
 custom scripts
 base64
+
+---
+
+# Log 21/06
+
+
+## Dagverslag (1 zin)
+
+Gewerkt aan schema (ontwerp)
+
+## Obstakels
+
+
+
+## Oplossingen
+
+
+
+## Learnings
