@@ -250,3 +250,21 @@ Gewerkt aan schema (ontwerp), vnet2, keyvault en webserver.
 
 
 ## Learnings
+
+---
+# Log 22/06
+
+
+## Dagverslag (1 zin)
+
+Gewerkt aan het moduleren van diverse onderdelen. 
+
+## Obstakels
+
+Sommige parameters worden dubbel gedeclareerd op deze manier dus het is puzzelen om alles opnieuw door te nemen.
+
+## Oplossingen
+
+
+
+## Learnings
