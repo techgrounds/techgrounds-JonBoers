@@ -14,21 +14,16 @@ param location string = resourceGroup().location
 @description('Size of the virtual machines')
 param virtualMachineSize string = 'Standard_D2ds_v4'
 
-/* -------------------------------------------------------------------------- */
-/*                              imported param's                              */
-/* -------------------------------------------------------------------------- */
-param virtualMachineComputerName1 string
-param osDiskType string
-param osDiskDeleteOption string
-param nicDeleteOption string
+param nicDeleteOption string = 'delete'
+param osDiskDeleteOption string = 'delete'
+param osDiskType string = 'Standard_LRS'
 
-@secure()
+@secure() //settings specified in main.bicep
 param patchMode string
 param enableHotpatching bool
 param securityType string
 param secureBoot bool
 param vTPM bool
-param virtualMachine1Zone string
 
 var availabilitySetName = 'AvSetAdminVnet'
 var storageAccountType = 'Standard_LRS'
@@ -147,7 +142,7 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
       ]
     }
     osProfile: {
-      computerName: virtualMachineComputerName1
+      computerName: vmNamePrefix
       adminUsername: adminUsername
       adminPassword: adminPassword
       windowsConfiguration: {
@@ -173,7 +168,4 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
       }
     }
   }
-  zones: [
-    virtualMachine1Zone
-  ]
 }
