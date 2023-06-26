@@ -3,4 +3,4 @@ New-AzResourceGroupDeployment -ResourceGroupName V1.0test -TemplateFile nieuweop
 
 New-AzResourceGroupDeployment -Name testdeploy  -ResourceGroupName V1.0test -TemplateFile nieuweopzet.bicep
 
-New-AzSubscriptionDeployment -Location uksouth -TemplateFile nieuweopzet.bicep
+New-AzSubscriptionDeployment -Location uksouth -TemplateFile main.bicep

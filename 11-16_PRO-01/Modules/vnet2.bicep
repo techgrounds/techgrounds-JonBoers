@@ -13,37 +13,23 @@ param location string = resourceGroup().location
 
 @description('Size of the virtual machines')
 param virtualMachineSize string = 'Standard_D2ds_v4'
-
 param nicDeleteOption string = 'delete'
 param osDiskDeleteOption string = 'delete'
 param osDiskType string = 'Standard_LRS'
 
 @secure() //settings specified in main.bicep
 param patchMode string
-param enableHotpatching bool
-param securityType string
-param secureBoot bool
-param vTPM bool
+// param enableHotpatching bool
+// param securityType string
+// param secureBoot bool
+// param vTPM bool
 
 var availabilitySetName = 'AvSetAdminVnet'
-var storageAccountType = 'Standard_LRS'
-var storageAccountName = uniqueString(resourceGroup().id)
 var virtualNetworkName = 'management-prd-vnet'
 var subnetName = 'AdminSubnet'
 var networkInterfaceName = 'Adminnic'
 var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetworkName, subnetName)
 
-/* -------------------------------------------------------------------------- */
-/*                               Storage Account                              */
-/* -------------------------------------------------------------------------- */
-resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
-  name: storageAccountName
-  location: location
-  sku: {
-    name: storageAccountType
-  }
-  kind: 'StorageV2'
-}
 /* -------------------------------------------------------------------------- */
 /*                              Availability Set                              */
 /* -------------------------------------------------------------------------- */
@@ -146,21 +132,20 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
       adminUsername: adminUsername
       adminPassword: adminPassword
       windowsConfiguration: {
-        enableAutomaticUpdates: true
+        enableAutomaticUpdates: false
         provisionVMAgent: true
-        patchSettings: {
-          enableHotpatching: enableHotpatching
+        patchSettings: {          
           patchMode: patchMode
         }
       }
     }
     licenseType: 'Windows_Server'
     securityProfile: {
-      securityType: securityType
-      uefiSettings: {
-        secureBootEnabled: secureBoot
-        vTpmEnabled: vTPM
-      }
+      // securityType: securityType
+      // uefiSettings: {
+      //   secureBootEnabled: secureBoot
+      //   vTpmEnabled: vTPM
+      // }
     }
     diagnosticsProfile: {
       bootDiagnostics: {
