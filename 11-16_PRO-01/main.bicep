@@ -18,8 +18,8 @@ resource rootgroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 
  @description('deploy vnet1') 
 
-module main 'Modules/vnet1.bicep' = {
-  name: 'testdeployment'
+module webserverVnet 'Modules/vnet1.bicep' = {
+  name: 'webserverVnet'
   scope: rootgroup
   params: {
     adminUsername: adminUsername
@@ -40,4 +40,16 @@ module adminVnet 'Modules/vnet2.bicep' = {
     patchMode: 'manual' //will be done by company admins to avoid unscheduled downtime of vm
      
   }
+
 }
+
+@description('Deploy network peering module')
+// Deploy network peering module
+module peering 'Modules/peering.bicep' = {
+  name: 'peering_deployment'
+  scope: rootgroup
+  params: {
+    vnet1Name : webserverVnet.outputs.vnet1Name
+    vnet2Name : adminVnet.outputs.vnet2Name
+    }
+  }

@@ -1,67 +1,41 @@
-@description('Location for all resources.')
-param location string = resourceGroup().location
+@description('Name for vNet 1')
+param vnet1Name string
 
-param vnet1Name string = 'VNet1'
-param vnet2Name string = 'VNet2'
+@description('Name for vNet 2')
+param vnet2Name string
 
-resource vnet1 'Microsoft.Network/virtualNetworks@2021-05-01' = {
-  name: vnet1Name
-  location: location
+@description('Reference the parent in the peering resource')
+resource vnet_webserver 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
+  name: vnet1Name}
+
+resource VnetPeering1 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2020-05-01' = {
+  parent: vnet_webserver
+  name: '${vnet1Name}-${vnet2Name}'
   properties: {
-    addressSpace: {
-      addressPrefixes: ['10.10.10.0/24']
-    }
-    subnets: [
-      {
-        name: 'Subnet1'
-        properties: {
-          addressPrefix: '10.10.10.0/24'
-        }
-      }
-    ]
-  }
-}
-
-resource vnet2 'Microsoft.Network/virtualNetworks@2021-05-01' = {
-  name: vnet2Name
-  location: location
-  properties: {
-    addressSpace: {
-      addressPrefixes: ['10.20.20.0/24']
-    }
-    subnets: [
-      {
-        name: 'Subnet2'
-        properties: {
-          addressPrefix: '10.20.20.0/24'
-        }
-      }
-    ]
-  }
-}
-
-resource vnet1Peering 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2021-05-01' = {
-  name: '${vnet1.name}/vnetAPeer'
-  properties: {
-    remoteVirtualNetwork: {
-      id: vnet2.id
-    }
     allowVirtualNetworkAccess: true
     allowForwardedTraffic: false
     allowGatewayTransit: false
     useRemoteGateways: false
+    remoteVirtualNetwork: {
+      id: vnet_webserver.id
+    }
   }
 }
 
-resource vnetBPeering 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2021-05-01' = {
-  name: '${vnet2.name}/vnetBPeer'
+@description('Reference the parent in the peering resource')
+resource vmNamePrefix 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
+  name: vnet1Name}
+
+resource vnetPeering2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2020-05-01' = {
+  parent: vmNamePrefix
+  name: '${vnet2Name}-${vnet1Name}'
   properties: {
-    remoteVirtualNetwork: {
-      id: vnet1.id
-    }
     allowVirtualNetworkAccess: true
     allowForwardedTraffic: false
     allowGatewayTransit: false
     useRemoteGateways: false
+    remoteVirtualNetwork: {
+      id: vmNamePrefix.id
+    }
   }
 }

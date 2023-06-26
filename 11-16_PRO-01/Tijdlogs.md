@@ -270,3 +270,24 @@ Sommige parameters worden dubbel gedeclareerd op deze manier dus het is puzzelen
 ## Learnings
 
 modules
+
+---
+
+# Log 26/06
+
+
+## Dagverslag (1 zin)
+
+Foutcodes weggewerkt, beide vnets deployen nu zonder problemen, verder gewerkt aan peering module.
+
+## Obstakels
+
+Problemen met verwijzingen en naamgevingen werden blootgelegd.
+
+## Oplossingen
+
+Logischere naamgeving moet worden gecorrigeerd. Validatie nog fixen.
+
+## Learnings
+
+werken met outputs

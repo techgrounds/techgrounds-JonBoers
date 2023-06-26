@@ -154,3 +154,5 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
     }
   }
 }
+
+output vnet2Name string = virtualNetwork.name
