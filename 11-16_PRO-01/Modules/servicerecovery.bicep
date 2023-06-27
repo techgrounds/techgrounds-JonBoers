@@ -1,6 +1,6 @@
-resource symbolicname 'Microsoft.RecoveryServices/vaults@2023-01-01' = {
+resource RecoverVault 'Microsoft.RecoveryServices/vaults@2023-01-01' = {
   name: 'string'
-  location: 'string'
+  location: location
   tags: {
     tagName1: 'tagValue1'
     tagName2: 'tagValue2'

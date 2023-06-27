@@ -1,9 +1,9 @@
 @description('Admin username')
-param adminUsername string
+param ManadminUsername string = 'Mobywan'
 
 @description('Admin password')
 @secure()
-param adminPassword string
+param ManadminPassword string
 
 @description('Prefix to use for VM name')
 param vmNamePrefix string = 'AdminServer'
@@ -129,8 +129,8 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
     }
     osProfile: {
       computerName: vmNamePrefix
-      adminUsername: adminUsername
-      adminPassword: adminPassword
+      adminUsername: ManadminUsername
+      adminPassword: ManadminPassword
       windowsConfiguration: {
         enableAutomaticUpdates: false
         provisionVMAgent: true

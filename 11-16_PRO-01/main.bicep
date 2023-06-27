@@ -1,11 +1,20 @@
 targetScope = 'subscription'
 
-@description('Admin username')
-param adminUsername string
+@description('Webserver Admin username')
+param webadmin_username string
 
-@description('Admin password')
+@description('Webserver Admin password')
 @secure()
-param adminPassword string
+@minLength(6)
+param webadmin_password string
+
+@description('ManagementServer username')
+param ManadminUsername string
+
+@description('Management server password')
+@secure()
+@minLength(6)
+param ManadminPassword string
 
 @description('Make general resource group for deployment in certain region')
 // Make a general resource group for deployment in a region
@@ -22,8 +31,8 @@ module appVnetName 'Modules/vnet1.bicep' = {
   name: 'webserverVnet'
   scope: rootgroup
   params: {
-    adminUsername: adminUsername
-    adminPassword: adminPassword
+    webadmin_username: webadmin_username
+    webadmin_password: webadmin_password
     location: location
   }
 }
@@ -34,8 +43,8 @@ module ManagementVnetName 'Modules/vnet2.bicep' = {
   name: 'adminvnet'
   scope: rootgroup
   params: {
-    adminUsername: adminUsername
-    adminPassword: adminPassword
+    ManadminPassword: ManadminPassword
+    ManadminUsername: ManadminUsername
     location: location
     patchMode: 'manual' //will be done by company admins to avoid unscheduled downtime of vm
      

@@ -291,3 +291,25 @@ Logischere naamgeving moet worden gecorrigeerd. Validatie nog fixen.
 ## Learnings
 
 werken met outputs
+
+---
+
+# Log 27/06
+
+
+## Dagverslag (1 zin)
+
+Peering gelukt, verder gewerkt aan webserver apache script.
+
+## Obstakels
+
+Problemen met verwijzingen en naamgevingen. param's gewijzigd van webservers en managementservers.
+
+## Oplossingen
+
+Naamgeving na logisch nadenken en hulp aangepast, deployment gelukt. Apache script lijkt te werken, maar
+kan nog niet testen. 
+
+## Learnings
+
+Outputs, Apache script lijkt gelukt, kan nog niet testen zonder publieke ip's. Ook nsg's nog maken.

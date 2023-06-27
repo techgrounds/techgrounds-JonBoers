@@ -1,9 +1,9 @@
 @description('Admin username')
-param adminUsername string
+param webadmin_username string
 
 @description('Admin password')
 @secure()
-param adminPassword string
+param webadmin_password string
 
 @description('Prefix to use for VM names')
 param vmNamePrefix string = 'Webserver'
@@ -13,6 +13,9 @@ param location string = resourceGroup().location
 
 @description('Size of the virtual machines')
 param vmSize string = 'Standard_D2s_v3'
+
+@description('declare apache script')
+var apache_script = loadFileAsBase64('install-apache.sh')
 
 var availabilitySetName = 'AvSet'
 var storageAccountType = 'Standard_LRS'
@@ -169,6 +172,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, 
   name: '${vmNamePrefix}${i}'
   location: location
   properties: {
+    userData: apache_script
     availabilitySet: {
       id: availabilitySet.id
     }
@@ -177,8 +181,8 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, 
     }
     osProfile: {
       computerName: '${vmNamePrefix}${i}'
-      adminUsername: adminUsername
-      adminPassword: adminPassword
+      adminUsername: webadmin_username
+      adminPassword: webadmin_password
     }
     storageProfile: {
       imageReference: {
