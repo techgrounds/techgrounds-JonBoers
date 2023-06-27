@@ -25,10 +25,10 @@ param patchMode string
 // param vTPM bool
 
 var availabilitySetName = 'AvSetAdminVnet'
-var virtualNetworkName = 'management-prd-vnet'
+var ManagementVnetName = 'management-prd-vnet'
 var subnetName = 'AdminSubnet'
 var networkInterfaceName = 'Adminnic'
-var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetworkName, subnetName)
+var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', ManagementVnetName, subnetName)
 
 /* -------------------------------------------------------------------------- */
 /*                              Availability Set                              */
@@ -48,7 +48,7 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
 /*                              Vnet management-prd-vnet                      */
 /* -------------------------------------------------------------------------- */
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
-  name: virtualNetworkName
+  name: ManagementVnetName
   location: location
   properties: {
     addressSpace: {

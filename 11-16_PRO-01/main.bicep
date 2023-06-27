@@ -18,7 +18,7 @@ resource rootgroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 
  @description('deploy vnet1') 
 
-module webserverVnet 'Modules/vnet1.bicep' = {
+module appVnetName 'Modules/vnet1.bicep' = {
   name: 'webserverVnet'
   scope: rootgroup
   params: {
@@ -30,7 +30,7 @@ module webserverVnet 'Modules/vnet1.bicep' = {
 
 @description('deploy vnet2') 
 
-module adminVnet 'Modules/vnet2.bicep' = {
+module ManagementVnetName 'Modules/vnet2.bicep' = {
   name: 'adminvnet'
   scope: rootgroup
   params: {
@@ -49,7 +49,7 @@ module peering 'Modules/peering.bicep' = {
   name: 'peering_deployment'
   scope: rootgroup
   params: {
-    vnet1Name : webserverVnet.outputs.vnet1Name
-    vnet2Name : adminVnet.outputs.vnet2Name
+    vnet1Name : appVnetName.outputs.vnet1Name
+    vnet2Name : ManagementVnetName.outputs.vnet2Name
     }
   }

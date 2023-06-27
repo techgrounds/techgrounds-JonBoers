@@ -17,11 +17,11 @@ param vmSize string = 'Standard_D2s_v3'
 var availabilitySetName = 'AvSet'
 var storageAccountType = 'Standard_LRS'
 var storageAccountName = uniqueString(resourceGroup().id)
-var virtualNetworkName = 'app-prd-vnet'
+var appVnetName = 'app-prd-vnet'
 var subnetName = 'backendSubnet'
 var loadBalancerName = 'ilb'
 var networkInterfaceName = 'nic'
-var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetworkName, subnetName)
+var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', appVnetName, subnetName)
 var numberOfInstances = 2
 /* -------------------------------------------------------------------------- */
 /*                               Storage Account                              */
@@ -52,7 +52,7 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
 /*                              Vnet app-prd-vnet                             */
 /* -------------------------------------------------------------------------- */
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
-  name: virtualNetworkName
+  name: appVnetName
   location: location
   properties: {
     addressSpace: {
