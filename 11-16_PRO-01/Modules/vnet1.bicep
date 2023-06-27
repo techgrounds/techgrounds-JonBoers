@@ -14,21 +14,31 @@ param location string = resourceGroup().location
 @description('Size of the virtual machines')
 param vmSize string = 'Standard_D2s_v3'
 
+@description('Name of webserver Vnet')
+param appVnetName string = 'app-prd-vnet'
+
+@description('Name of public IP Webserver')
+param name_pubip_webserver string = '${appVnetName}-publicIP'
+
+@description('Name of NSG webserver')
+param name_nsg_webserver string = 'nsg_webserver'
+
 @description('declare apache script')
 var apache_script = loadFileAsBase64('install-apache.sh')
 
 var availabilitySetName = 'AvSet'
 var storageAccountType = 'Standard_LRS'
 var storageAccountName = uniqueString(resourceGroup().id)
-var appVnetName = 'app-prd-vnet'
 var subnetName = 'backendSubnet'
 var loadBalancerName = 'ilb'
 var networkInterfaceName = 'nic'
 var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', appVnetName, subnetName)
 var numberOfInstances = 2
+
 /* -------------------------------------------------------------------------- */
 /*                               Storage Account                              */
 /* -------------------------------------------------------------------------- */
+
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
   name: storageAccountName
   location: location
@@ -40,6 +50,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
 /* -------------------------------------------------------------------------- */
 /*                              Availability Set                              */
 /* -------------------------------------------------------------------------- */
+
 resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
   name: availabilitySetName
   location: location
@@ -73,6 +84,63 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
     ]
   }
 }
+/* -------------------------------------------------------------------------- */
+/*                             Public IP Webserver                            */
+/* -------------------------------------------------------------------------- */
+
+resource pub_ip_webserver 'Microsoft.Network/publicIPAddresses@2021-02-01' = {
+  name: name_pubip_webserver
+  location: location
+  tags: {
+    vnet: appVnetName
+    location: location
+  }
+  properties: {
+    publicIPAllocationMethod: 'Static'
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                NSG Webserver                               */
+/* -------------------------------------------------------------------------- */
+
+resource nsg_webserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
+  name: name_nsg_webserver
+  location: location
+  tags: {
+    vnet: appVnetName
+    location: location
+  }
+  properties: {
+    securityRules: [
+      { name: 'https'
+        properties: {
+          access: 'Allow' 
+          direction: 'Inbound' 
+          priority: 100
+          protocol: 'Tcp'
+          sourcePortRange: '*'
+          sourceAddressPrefix: '*'
+          destinationPortRange: '443'
+          destinationAddressPrefix: '*'
+        }
+      } 
+      { name: 'http'
+      properties: {
+        access: 'Allow'
+        direction: 'Inbound'
+        priority: 200
+        protocol: 'Tcp'
+        sourcePortRange: '*'
+        sourceAddressPrefix: '*'
+        destinationPortRange: '80'
+        destinationAddressPrefix: '*'        
+      }
+    }
+    ]
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                     NIC                                    */
 /* -------------------------------------------------------------------------- */
