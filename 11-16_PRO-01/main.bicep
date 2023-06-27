@@ -51,5 +51,8 @@ module peering 'Modules/peering.bicep' = {
   params: {
     vnet1Name : appVnetName.outputs.vnet1Name
     vnet2Name : ManagementVnetName.outputs.vnet2Name
+    vnet1Id : appVnetName.outputs.vnet1Id
+    vnet2Id : ManagementVnetName.outputs.vnet2Id
+
     }
   }

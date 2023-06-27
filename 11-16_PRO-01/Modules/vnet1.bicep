@@ -208,4 +208,4 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, 
 }]
 
 output vnet1Name string = virtualNetwork.name
-
+output vnet1Id string = virtualNetwork.id

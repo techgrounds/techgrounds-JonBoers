@@ -47,7 +47,7 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
 /* -------------------------------------------------------------------------- */
 /*                              Vnet management-prd-vnet                      */
 /* -------------------------------------------------------------------------- */
-resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
+resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: ManagementVnetName
   location: location
   properties: {
@@ -88,7 +88,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = {
     ]
   }
   dependsOn: [
-    virtualNetwork    
+    virtualNetwork2    
   ]
 }
 
@@ -155,4 +155,6 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
   }
 }
 
-output vnet2Name string = virtualNetwork.name
+output vnet2Name string = virtualNetwork2.name
+output vnet2Id string = virtualNetwork2.id
+

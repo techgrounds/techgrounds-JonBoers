@@ -1,8 +1,9 @@
 @description('Name for vNet 1')
 param vnet1Name string 
-
+param vnet1Id string
 @description('Name for vNet 2')
 param vnet2Name string 
+param vnet2Id string
 
 @description('Reference the parent in the peering resource')
 resource appVnetName 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
@@ -17,14 +18,14 @@ resource VnetPeering1 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@
     allowGatewayTransit: false
     useRemoteGateways: false
     remoteVirtualNetwork: {
-      id: ManagementVnetName.id
+      id: vnet2Id
     }
   }
 }
 
 @description('Reference the parent in the peering resource')
 resource ManagementVnetName 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
-  name: vnet1Name}
+  name: vnet2Name}
 
 resource vnetPeering2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@2020-05-01' = {
   parent: ManagementVnetName
@@ -35,7 +36,7 @@ resource vnetPeering2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@
     allowGatewayTransit: false
     useRemoteGateways: false
     remoteVirtualNetwork: {
-      id: appVnetName.id
+      id: vnet1Id
     }
   }
 }
