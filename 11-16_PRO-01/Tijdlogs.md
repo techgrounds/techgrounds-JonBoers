@@ -319,15 +319,15 @@ kan nog niet testen.
 
 ## Dagverslag (1 zin)
 
-
+Apachi script succesvol getest en NSG regels voor webserver toegevoegd, verbonden en deployed.
 
 ## Obstakels
 
-
+Aangenomen dat verbindingen tussen NSG, public ip's en loadbalancer automatisch werden gelegd. Was niet zo.
 
 ## Oplossingen
 
-
+Verwijzingen gelegd voor webserver vnet. Voor management server nog bezig...
 
 ## Learnings
 
