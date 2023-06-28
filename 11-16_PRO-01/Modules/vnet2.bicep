@@ -17,6 +17,18 @@ param nicDeleteOption string = 'delete'
 param osDiskDeleteOption string = 'delete'
 param osDiskType string = 'Standard_LRS'
 
+@description('Name of manserver Vnet')
+param ManagementVnetName string = 'management-prd-vnet'
+
+@description('Name of public IP Manserver')
+param name_pubip_manserver string = '${ManagementVnetName}-publicIP'
+
+@description('Name of NSG manserver')
+param name_nsg_manserver string = 'nsg_manserver'
+
+@description('Declare allowed IP range via SSH and RDP.')
+param allowedIpRange array
+
 @secure() //settings specified in main.bicep
 param patchMode string
 // param enableHotpatching bool
@@ -25,7 +37,7 @@ param patchMode string
 // param vTPM bool
 
 var availabilitySetName = 'AvSetAdminVnet'
-var ManagementVnetName = 'management-prd-vnet'
+
 var subnetName = 'AdminSubnet'
 var networkInterfaceName = 'Adminnic'
 var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', ManagementVnetName, subnetName)
@@ -153,6 +165,69 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
       }
     }
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Public IP Management server                            */
+/* -------------------------------------------------------------------------- */
+
+resource pub_ip_manserver 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
+  name: name_pubip_manserver
+  location: location
+  tags: {
+    vnet: ManagementVnetName
+    location: location
+  }
+  sku: {
+    name: 'standard'    
+  }  
+  properties: {
+    publicIPAllocationMethod: 'Static'
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                NSG Management server                               */
+/* -------------------------------------------------------------------------- */
+
+resource nsg_manserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
+  name: name_nsg_manserver
+  location: location
+  tags: {
+    vnet: ManagementVnetName
+    location: location
+  }
+  properties: {
+    securityRules: [
+      {
+        name: 'ssh'
+        properties: {
+          protocol: 'TCP'
+          sourceAddressPrefix: '${allowedIpRange[0]}/32'
+          destinationAddressPrefix: '*'
+          sourcePortRange: '*'
+          destinationPortRange: '22'
+          access: 'Allow'
+          priority: 100
+          direction: 'Inbound'
+            }
+          }
+            {
+            name: 'RDP'
+            properties: {
+              protocol: 'TCP'
+              sourceAddressPrefix: '${allowedIpRange[0]}/32'
+              destinationAddressPrefix: '*'
+              sourcePortRange: '*'
+              destinationPortRange: '3389'
+              access: 'Allow'
+              priority: 200
+              direction: 'Inbound'
+                }
+              }
+        ]
+      }
+  
 }
 
 output vnet2Name string = virtualNetwork2.name
