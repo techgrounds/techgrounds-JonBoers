@@ -79,6 +79,10 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
         name: subnetName
         properties: {
           addressPrefix: '10.10.10.0/24'
+          networkSecurityGroup: {
+            id: nsg_webserver.id
+          }
+          
         }
       }
     ]
@@ -88,13 +92,16 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
 /*                             Public IP Webserver                            */
 /* -------------------------------------------------------------------------- */
 
-resource pub_ip_webserver 'Microsoft.Network/publicIPAddresses@2021-02-01' = {
+resource pub_ip_webserver 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
   name: name_pubip_webserver
   location: location
   tags: {
     vnet: appVnetName
     location: location
   }
+  sku: {
+    name: 'standard'    
+  }  
   properties: {
     publicIPAllocationMethod: 'Static'
   }
@@ -152,7 +159,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [fo
       {
         name: 'ipconfig1'
         properties: {
-          privateIPAllocationMethod: 'Dynamic'
+          privateIPAllocationMethod: 'Dynamic'          
           subnet: {
             id: subnetRef
           }
@@ -183,11 +190,11 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
     frontendIPConfigurations: [
       {
         properties: {
-          subnet: {
-            id: subnetRef
-          }
-          privateIPAddress: '10.10.10.10'
-          privateIPAllocationMethod: 'Static'
+          publicIPAddress: { //koppeling met publiek-ip
+            id: pub_ip_webserver.id
+          }          
+          // privateIPAddress: '10.10.10.10'
+          // privateIPAllocationMethod: 'Static'
         }
         name: 'LoadBalancerFrontend'
       }

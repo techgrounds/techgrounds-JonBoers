@@ -299,7 +299,7 @@ werken met outputs
 
 ## Dagverslag (1 zin)
 
-Peering gelukt, verder gewerkt aan webserver apache script.
+Peering gelukt, verder gewerkt aan webserver apache script en nsg's en publieke ip's.
 
 ## Obstakels
 
@@ -312,4 +312,22 @@ kan nog niet testen.
 
 ## Learnings
 
-Outputs, Apache script lijkt gelukt, kan nog niet testen zonder publieke ip's. Ook nsg's nog maken.
+---
+
+# Log 28/06
+
+
+## Dagverslag (1 zin)
+
+
+
+## Obstakels
+
+
+
+## Oplossingen
+
+
+
+## Learnings
+

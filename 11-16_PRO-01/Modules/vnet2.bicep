@@ -1,5 +1,5 @@
 @description('Admin username')
-param ManadminUsername string = 'Mobywan'
+param ManadminUsername string
 
 @description('Admin password')
 @secure()

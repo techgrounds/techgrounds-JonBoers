@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
 @description('Webserver Admin username')
-param webadmin_username string
+param webadmin_username string = 'MobyJon'
 
 @description('Webserver Admin password')
 @secure()
@@ -9,7 +9,7 @@ param webadmin_username string
 param webadmin_password string
 
 @description('ManagementServer username')
-param ManadminUsername string
+param ManadminUsername string = 'MobyWan'
 
 @description('Management server password')
 @secure()
