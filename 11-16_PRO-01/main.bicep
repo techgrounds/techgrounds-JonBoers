@@ -16,6 +16,9 @@ param ManadminUsername string = 'MobyWan'
 @minLength(6)
 param ManadminPassword string
 
+@description('Declare allowed IP range via SSH and RDP.')
+param allowedIpRange array = ['77.250.205.204']
+
 @description('Make general resource group for deployment in certain region')
 // Make a general resource group for deployment in a region
 param resourceGroupName string = 'testrgV1.0'
@@ -43,6 +46,7 @@ module ManagementVnetName 'Modules/vnet2.bicep' = {
   name: 'adminvnet'
   scope: rootgroup
   params: {
+    allowedIpRange: allowedIpRange
     ManadminPassword: ManadminPassword
     ManadminUsername: ManadminUsername
     location: location

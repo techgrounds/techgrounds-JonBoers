@@ -82,7 +82,6 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
           networkSecurityGroup: {
             id: nsg_webserver.id
           }
-          
         }
       }
     ]
@@ -124,7 +123,7 @@ resource nsg_webserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
         properties: {
           access: 'Allow' 
           direction: 'Inbound' 
-          priority: 100
+          priority: 1000
           protocol: 'Tcp'
           sourcePortRange: '*'
           sourceAddressPrefix: '*'
@@ -132,18 +131,33 @@ resource nsg_webserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
           destinationAddressPrefix: '*'
         }
       } 
-      { name: 'http'
-      properties: {
-        access: 'Allow'
-        direction: 'Inbound'
-        priority: 200
-        protocol: 'Tcp'
-        sourcePortRange: '*'
-        sourceAddressPrefix: '*'
-        destinationPortRange: '80'
-        destinationAddressPrefix: '*'        
+      {
+        name: 'http'
+        properties: {
+          access: 'Allow'
+          direction: 'Inbound'
+          priority:1100
+          protocol: 'Tcp'
+          sourcePortRange: '*'
+          sourceAddressPrefix: '*'
+          destinationPortRange: '80'
+          destinationAddressPrefix: '*'        
+        }
       }
-    }
+      
+      {
+        name: 'ssh'
+        properties: {
+          protocol: 'TCP'
+          sourceAddressPrefix: '10.20.20.10/32' 
+          sourcePortRange: '*' 
+          destinationAddressPrefix: '*' 
+          destinationPortRange: '22'
+          access: 'Allow'
+          priority: 1200
+          direction: 'Inbound'
+        }
+      }
     ]
   }
 }

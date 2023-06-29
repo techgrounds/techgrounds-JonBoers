@@ -73,7 +73,10 @@ resource virtualNetwork2 'Microsoft.Network/virtualNetworks@2021-05-01' = {
         name: subnetName
         properties: {
           addressPrefix: '10.20.20.0/24'
-        }
+          networkSecurityGroup: {
+            id: nsg_manserver.id
+          }
+        }        
       }
     ]
   }
@@ -87,14 +90,17 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = {
   properties: {
     ipConfigurations: [
       {
-        name: 'ipconfig1'
+        name: 'Manserveripconfig1'
         properties: {
-          privateIPAllocationMethod: 'Dynamic'
+          privateIPAddress: '10.20.20.10'
+          privateIPAddressVersion: 'IPv4'
+          privateIPAllocationMethod: 'Static'          
+          publicIPAddress: { //koppeling met publiek-ip
+            id: pub_ip_manserver.id
+          }
           subnet: {
             id: subnetRef
-          }
-          
-          
+          }         
         }
       }
     ]
@@ -111,6 +117,9 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
   name: vmNamePrefix
   location: location
   properties: {
+    availabilitySet: {
+      id: availabilitySet.id
+    }
     hardwareProfile: {
       vmSize: virtualMachineSize
     }
@@ -187,7 +196,7 @@ resource pub_ip_manserver 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                NSG Management server                               */
+/*                            NSG Management server                           */
 /* -------------------------------------------------------------------------- */
 
 resource nsg_manserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
