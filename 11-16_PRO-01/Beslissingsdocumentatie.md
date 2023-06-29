@@ -42,7 +42,7 @@ Ook overwoog ik om Conditional Access in te bouwen, maar dit is alleen beschikba
 
 #### app-prg-vnet
 
-* Het gebruik van Bastion is een goede optie, dit ga ik in ieder geval in V1.0 inbouwen
+* ~~~~Het gebruik van Bastion is een goede optie, dit ga ik in ieder geval in V1.0 inbouwen.~~~~ 29/06: Dit idee geschrapt omdat de webservers toch alleen maar vanuit de admin vm benaderd hoeven te worden en dit gaat via SSH.
 * De regio wordt UK south omdat Azure aangeeft dat dit het goedkoopste is en dichtbij genoeg voor de scope van de klant.
 
 ---

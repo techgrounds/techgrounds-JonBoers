@@ -51,7 +51,7 @@ module ManagementVnetName 'Modules/vnet2.bicep' = {
     ManadminUsername: ManadminUsername
     location: location
     patchMode: 'manual' //will be done by company admins to avoid unscheduled downtime of vm
-     
+    storageAccountBlobEndpoint: appVnetName.outputs.storageAccountBlobEndpoint 
   }
 
 }

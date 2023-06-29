@@ -29,6 +29,8 @@ param name_nsg_manserver string = 'nsg_manserver'
 @description('Declare allowed IP range via SSH and RDP.')
 param allowedIpRange array
 
+param storageAccountBlobEndpoint string
+
 @secure() //settings specified in main.bicep
 param patchMode string
 // param enableHotpatching bool
@@ -171,6 +173,7 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
     diagnosticsProfile: {
       bootDiagnostics: {
         enabled: true
+        storageUri: storageAccountBlobEndpoint
       }
     }
   }
