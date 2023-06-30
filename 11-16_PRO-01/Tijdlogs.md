@@ -331,3 +331,25 @@ Verwijzingen gelegd voor webserver vnet. Voor management server nog bezig...
 
 ## Learnings
 
+---
+
+# Log 29/06
+
+
+## Dagverslag (1 zin)
+
+NSG regels voltooid, juiste verbindingen gelegd met public ip >> man-prd-vnet en storageaccount >> management vm keyvault en diskencryption verkend en ingelezen alsmede eerste opzet.
+
+## Obstakels
+
+Benamingen met outputs zijn voor mij nog steeds onoverzichtelijk en een puzzel, keyvault een hoofdstuk apart.
+
+## Oplossingen
+
+
+
+## Learnings
+
+Hoe werken outputs.
+Hoe werkt een keyvault.
+Hoe werkt diskencryption.
