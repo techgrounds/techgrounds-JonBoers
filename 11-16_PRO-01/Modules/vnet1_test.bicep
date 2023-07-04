@@ -86,6 +86,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
     ]
   }
 }
+
 /* -------------------------------------------------------------------------- */
 /*                             Public IP Webserver                            */
 /* -------------------------------------------------------------------------- */
@@ -190,116 +191,116 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [fo
     loadBalancer
   ]
 }]
-/* -------------------------------------------------------------------------- */
-/*                                Loadbalancer                                */
-/* -------------------------------------------------------------------------- */
-resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
-  name: loadBalancerName
-  location: location
-  sku: {
-    name: 'Standard'
-  }
-  properties: {
-    frontendIPConfigurations: [
-      {
-        properties: {
-          publicIPAddress: { //koppeling met publiek-ip
-            id: pub_ip_webserver.id
-          }          
-          // privateIPAddress: '10.10.10.10'
-          // privateIPAllocationMethod: 'Static'
-        }
-        name: 'LoadBalancerFrontend'
-      }
-    ]
-    backendAddressPools: [
-      {
-        name: 'BackendPool1'
-      }
-    ]
-    loadBalancingRules: [
-      {
-        properties: {
-          frontendIPConfiguration: {
-            id: resourceId('Microsoft.Network/loadBalancers/frontendIpConfigurations', loadBalancerName, 'LoadBalancerFrontend')
-          }
-          backendAddressPool: {
-            id: resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, 'BackendPool1')
-          }
-          probe: {
-            id: resourceId('Microsoft.Network/loadBalancers/probes', loadBalancerName, 'lbprobe')
-          }
-          protocol: 'Tcp'
-          frontendPort: 80
-          backendPort: 80
-          idleTimeoutInMinutes: 15
-        }
-        name: 'lbrule'
-      }
-    ]
-    probes: [
-      {
-        properties: {
-          protocol: 'Tcp'
-          port: 80
-          intervalInSeconds: 15
-          numberOfProbes: 2
-        }
-        name: 'lbprobe'
-      }
-    ]
-  }
-  dependsOn: [
-    virtualNetwork
-  ]
-}
-/* -------------------------------------------------------------------------- */
-/*                                    VM's                                    */
+// /* -------------------------------------------------------------------------- */
+// /*                                Loadbalancer                                */
+// /* -------------------------------------------------------------------------- */
+// resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
+//   name: loadBalancerName
+//   location: location
+//   sku: {
+//     name: 'Standard'
+//   }
+//   properties: {
+//     frontendIPConfigurations: [
+//       {
+//         properties: {
+//           publicIPAddress: { //koppeling met publiek-ip
+//             id: pub_ip_webserver.id
+//           }          
+//           // privateIPAddress: '10.10.10.10'
+//           // privateIPAllocationMethod: 'Static'
+//         }
+//         name: 'LoadBalancerFrontend'
+//       }
+//     ]
+//     backendAddressPools: [
+//       {
+//         name: 'BackendPool1'
+//       }
+//     ]
+//     loadBalancingRules: [
+//       {
+//         properties: {
+//           frontendIPConfiguration: {
+//             id: resourceId('Microsoft.Network/loadBalancers/frontendIpConfigurations', loadBalancerName, 'LoadBalancerFrontend')
+//           }
+//           backendAddressPool: {
+//             id: resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, 'BackendPool1')
+//           }
+//           probe: {
+//             id: resourceId('Microsoft.Network/loadBalancers/probes', loadBalancerName, 'lbprobe')
+//           }
+//           protocol: 'Tcp'
+//           frontendPort: 80
+//           backendPort: 80
+//           idleTimeoutInMinutes: 15
+//         }
+//         name: 'lbrule'
+//       }
+//     ]
+//     probes: [
+//       {
+//         properties: {
+//           protocol: 'Tcp'
+//           port: 80
+//           intervalInSeconds: 15
+//           numberOfProbes: 2
+//         }
+//         name: 'lbprobe'
+//       }
+//     ]
+//   }
+//   dependsOn: [
+//     virtualNetwork
+//   ]
+// }
+// /* -------------------------------------------------------------------------- */
+// /*                                    VM's                                    */
 
 
-/* -------------------------------------------------------------------------- */
-resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, numberOfInstances): {
-  name: '${vmNamePrefix}${i}'
-  location: location
-  properties: {
-    userData: apache_script
-    availabilitySet: {
-      id: availabilitySet.id
-    }
-    hardwareProfile: {
-      vmSize: vmSize
-    }
-    osProfile: {
-      computerName: '${vmNamePrefix}${i}'
-      adminUsername: webadmin_username
-      adminPassword: webadmin_password
-    }
-    storageProfile: {
-      imageReference: {
-        publisher: 'canonical'
-        offer: '0001-com-ubuntu-server-jammy'
-        sku: '22_04-lts-gen2'
-        version: 'latest'
-      }
-      osDisk: {
-        createOption: 'FromImage'
-      }
-    }
-    networkProfile: {
-      networkInterfaces: [
-        {
-          id: networkInterface[i].id
-        }
-      ]
-    }
-    diagnosticsProfile: {
-      bootDiagnostics: {
-        enabled: true
-        storageUri: storageAccount.properties.primaryEndpoints.blob
-      }
-    }
-  }
-}]
+// /* -------------------------------------------------------------------------- */
+// resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, numberOfInstances): {
+//   name: '${vmNamePrefix}${i}'
+//   location: location
+//   properties: {
+//     userData: apache_script
+//     availabilitySet: {
+//       id: availabilitySet.id
+//     }
+//     hardwareProfile: {
+//       vmSize: vmSize
+//     }
+//     osProfile: {
+//       computerName: '${vmNamePrefix}${i}'
+//       adminUsername: webadmin_username
+//       adminPassword: webadmin_password
+//     }
+//     storageProfile: {
+//       imageReference: {
+//         publisher: 'canonical'
+//         offer: '0001-com-ubuntu-server-jammy'
+//         sku: '22_04-lts-gen2'
+//         version: 'latest'
+//       }
+//       osDisk: {
+//         createOption: 'FromImage'
+//       }
+//     }
+//     networkProfile: {
+//       networkInterfaces: [
+//         {
+//           id: networkInterface[i].id
+//         }
+//       ]
+//     }
+//     diagnosticsProfile: {
+//       bootDiagnostics: {
+//         enabled: true
+//         storageUri: storageAccount.properties.primaryEndpoints.blob
+//       }
+//     }
+//   }
+// }]
 
 output vnet1Name string = virtualNetwork.name
 output vnet1Id string = virtualNetwork.id

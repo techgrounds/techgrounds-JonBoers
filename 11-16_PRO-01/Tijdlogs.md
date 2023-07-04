@@ -390,3 +390,18 @@ health checks
 scalesets
 
 ---
+
+# Log 04/07
+
+## Dagverslag (1 zin)
+
+## Obstakels
+
+## Oplossingen
+
+## Learnings
+
+[TLS1.2:](https://learn.microsoft.com/nl-nl/mem/configmgr/core/plan-design/security/enable-tls-1-2)
+
+[Load balancing vs reverse proxy:](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+---
