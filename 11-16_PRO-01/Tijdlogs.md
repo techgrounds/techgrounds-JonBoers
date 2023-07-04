@@ -346,10 +346,47 @@ Benamingen met outputs zijn voor mij nog steeds onoverzichtelijk en een puzzel, 
 
 ## Oplossingen
 
-
-
 ## Learnings
 
 Hoe werken outputs.
 Hoe werkt een keyvault.
 Hoe werkt diskencryption.
+
+---
+
+# Log 30/06
+
+## Dagverslag (1 zin)
+
+Retrospectives gedaan en verder gewerkt aan keyvault.
+
+## Obstakels
+
+keyvault concepten en hoe het linkt met disk encryption is een moeilijk concept.
+
+## Oplossingen
+
+Veel hulp zoeken bij anderen.
+
+## Learnings
+
+---
+
+# Log 03/07
+
+## Dagverslag (1 zin)
+
+Na nieuwe requirements voor v1.1 verdiept in Application gateway, health checks en listeners en een begin gemaakt met een scaleset.
+
+## Obstakels
+
+## Oplossingen
+
+## Learnings
+
+application gateway
+listeners
+health checks
+scalesets
+
+---

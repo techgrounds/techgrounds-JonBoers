@@ -17,7 +17,7 @@ param DiskEncryptionSetName string
 @description('name of the Keyvault')
 param KeyVaultName string
 
-resource symbolicname 'Microsoft.KeyVault/vaults@2022-07-01' = {
+resource Keyvault 'Microsoft.KeyVault/vaults@2022-07-01' = {
   name: KeyVaultName
   location: location
   tags: {
