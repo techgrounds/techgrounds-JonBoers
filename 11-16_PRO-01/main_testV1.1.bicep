@@ -1,5 +1,12 @@
 targetScope = 'subscription'
 
+@description('The environment name. "dev" and "prod" are valid inputs.')
+@allowed([
+  'dev'
+  'prod'
+])
+param envName string = 'dev'
+
 @description('Webserver Admin username')
 param webadmin_username string = 'MobyJon'
 
@@ -21,14 +28,14 @@ param allowedIpRange array = ['77.250.205.204']
 
 @description('Make general resource group for deployment in certain region')
 // Make a general resource group for deployment in a region
-param resourceGroupName string = 'testrgV1.0'
+param resourceGroupName string = 'testrgV1.1'
 param location string = deployment().location // locate resources at location declared with the deployment command
 resource rootgroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: resourceGroupName
   location: location
 }
 
- @description('deploy vnet1') 
+@description('deploy vnet1') 
 
 module appVnetName 'Modules/vnet1_test.bicep' = {
   name: 'webserverVnet'
@@ -70,4 +77,21 @@ module peering 'Modules/peering.bicep' = {
     }
   }
 
+@description('deploy VMSS webserver')
+module webServer 'modules/webserver.bicep' = {
+  name: 'webServer-${location}'
+  scope: rootgroup
+  params: {
+    envName: envName
+    location: location
+    adminUsername: webadmin_username
+    adminPassword: webadmin_password
+    Vnet1Identity : appVnetName.outputs.vnet1Id
+    vnet1Subnet1Identity: appVnetName.outputs.vnet1Subnet1ID
+    // diskEncryptionSetName: keyvault.outputs.diskEncryptionSetName
+    // storageAccountName: storage.outputs.storageAccountName
+    // StorageAccBlobEndpoint: storage.outputs.storageAccountBlobEndpoint
+  }
+  
+}
   

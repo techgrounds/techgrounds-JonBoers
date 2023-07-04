@@ -8,8 +8,9 @@ param webadmin_password string
 @description('Prefix to use for VM names')
 param vmNamePrefix string = 'Webserver'
 
-@description('Name of webserver Vnet')
+@description('Name of webserver Vnet & subnet')
 param appVnetName string = 'app-prd-vnet'
+param subnetName string = 'backendSubnet'
 
 @description('Name of public IP Webserver')
 param name_pubip_webserver string = '${appVnetName}-publicIP'
@@ -28,7 +29,6 @@ var apache_script = loadFileAsBase64('install-apache.sh')
 var availabilitySetName = 'AvSet'
 var storageAccountType = 'Standard_LRS'
 var storageAccountName = uniqueString(resourceGroup().id)
-var subnetName = 'backendSubnet'
 var loadBalancerName = 'ilb'
 var networkInterfaceName = 'nic'
 var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', appVnetName, subnetName)
@@ -77,7 +77,7 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
       {
         name: subnetName
         properties: {
-          addressPrefix: '10.10.10.0/24'
+          addressPrefix: '10.10.10.0/25'
           networkSecurityGroup: {
             id: nsg_webserver.id
           }
@@ -188,7 +188,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [fo
   }
   dependsOn: [
     virtualNetwork
-    loadBalancer
+    // loadBalancer
   ]
 }]
 // /* -------------------------------------------------------------------------- */
@@ -304,7 +304,12 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [fo
 
 output vnet1Name string = virtualNetwork.name
 output vnet1Id string = virtualNetwork.id
+output vnet1Subnet1ID string = virtualNetwork.properties.subnets[0].name
 
 //output the storage account id
 output storageAccountName string = storageAccount.name
 output storageAccountBlobEndpoint string = storageAccount.properties.primaryEndpoints.blob
+
+
+// vnet1Id : appVnetName.outputs.vnet1Id
+// vnet1Subnet1Identity: networking.outputs.vnet1Subnet1ID
