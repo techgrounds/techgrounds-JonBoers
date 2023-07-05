@@ -146,7 +146,7 @@ resource nsg_webserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
       }
       
       {
-        name: 'ssh from adminServer'
+        name: 'ssh_access_adminServer'
         properties: {
           protocol: 'TCP'
           sourceAddressPrefix: '10.20.20.10/32' //Private IP address nic adminServer (vnet2)
