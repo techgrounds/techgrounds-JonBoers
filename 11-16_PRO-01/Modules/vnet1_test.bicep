@@ -357,7 +357,7 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
 // }]
 
 output vnet1Name string = vnet1.name
-output vnet1Id string = vnet1.name
+output vnet1Id string = vnet1.id
 output vnet1Subnet1ID string = vnet1.properties.subnets[0].name
 
 //output the storage account id
