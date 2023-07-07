@@ -11,12 +11,16 @@ param vmNamePrefix string = 'Webserver'
 @description('Name of webserver Vnet & subnet')
 param appVnetName string = 'app-prd-vnet'
 param subnetName string = 'backendSubnet'
+param agsubnetname string = 'agsubnet'
 
 @description('Name of public IP Webserver')
 param name_pubip_webserver string = '${appVnetName}-publicIP'
 
 @description('Name of NSG webserver')
 param name_nsg_webserver string = 'nsg_webserver'
+
+@description('Name of NSG Application Gateway')
+param name_nsg_AG string = 'nsg_AG'
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
@@ -32,7 +36,6 @@ var storageAccountName = uniqueString(resourceGroup().id)
 var loadBalancerName = 'ilb'
 var networkInterfaceName = 'nic'
 var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', appVnetName, subnetName)
-var numberOfInstances = 2
 
 /* -------------------------------------------------------------------------- */
 /*                               Storage Account                              */
@@ -83,28 +86,37 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
           }
         }
       }
+      {
+        name: agsubnetname
+        properties: {
+          addressPrefix: '10.10.10.128/27'
+          networkSecurityGroup: {
+            id: nsg_AG.id
+          }
+        }
+      }
     ]
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                             Public IP Webserver                            */
-/* -------------------------------------------------------------------------- */
+// /* -------------------------------------------------------------------------- */
+// /*                             Public IP Webserver                            */
+// /* -------------------------------------------------------------------------- */
 
-resource pub_ip_webserver 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
-  name: name_pubip_webserver
-  location: location
-  tags: {
-    vnet: appVnetName
-    location: location
-  }
-  sku: {
-    name: 'standard'    
-  }  
-  properties: {
-    publicIPAllocationMethod: 'Static'
-  }
-}
+// resource pub_ip_webserver 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
+//   name: name_pubip_webserver
+//   location: location
+//   tags: {
+//     vnet: appVnetName
+//     location: location
+//   }
+//   sku: {
+//     name: 'standard'    
+//   }  
+//   properties: {
+//     publicIPAllocationMethod: 'Static'
+//   }
+// }
 
 /* -------------------------------------------------------------------------- */
 /*                                NSG Webserver                               */
@@ -163,34 +175,76 @@ resource nsg_webserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                     NIC                                    */
+/*                                   NSG AG                                   */
 /* -------------------------------------------------------------------------- */
-resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [for i in range(0, numberOfInstances): {
-  name: '${networkInterfaceName}${i}'
+
+resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
+  name: name_nsg_AG
   location: location
+  tags: {
+    vnet: appVnetName
+    location: location
+  }
   properties: {
-    ipConfigurations: [
-      {
-        name: 'ipconfig1'
+    securityRules: [
+      { name: 'https'
         properties: {
-          privateIPAllocationMethod: 'Dynamic'          
-          subnet: {
-            id: subnetRef
-          }
-          loadBalancerBackendAddressPools: [
-            {
-              id: resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, 'BackendPool1')
-            }
-          ]
+          access: 'Allow' 
+          direction: 'Inbound' 
+          priority: 1000
+          protocol: 'Tcp'
+          sourcePortRange: '*'
+          sourceAddressPrefix: '*'
+          destinationPortRange: '443'
+          destinationAddressPrefix: '*'
         }
-      }
+      } 
+      {
+        name: 'http'
+        properties: {
+          access: 'Allow'
+          direction: 'Inbound'
+          priority:1100
+          protocol: 'Tcp'
+          sourcePortRange: '*'
+          sourceAddressPrefix: '*'
+          destinationPortRange: '80'
+          destinationAddressPrefix: '*'        
+        }
+      }      
     ]
   }
-  dependsOn: [
-    virtualNetwork
-    // loadBalancer
-  ]
-}]
+}
+
+// /* -------------------------------------------------------------------------- */
+// /*                                     NIC                                    */
+// /* -------------------------------------------------------------------------- */
+// resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [for i in range(0, numberOfInstances): {
+//   name: '${networkInterfaceName}${i}'
+//   location: location
+//   properties: {
+//     ipConfigurations: [
+//       {
+//         name: 'ipconfig1'
+//         properties: {
+//           privateIPAllocationMethod: 'Dynamic'          
+//           subnet: {
+//             id: subnetRef
+//           }
+//           loadBalancerBackendAddressPools: [
+//             {
+//               id: resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, 'BackendPool1')
+//             }
+//           ]
+//         }
+//       }
+//     ]
+//   }
+//   dependsOn: [
+//     virtualNetwork
+//     // loadBalancer
+//   ]
+// }]
 // /* -------------------------------------------------------------------------- */
 // /*                                Loadbalancer                                */
 // /* -------------------------------------------------------------------------- */
