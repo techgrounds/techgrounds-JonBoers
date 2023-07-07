@@ -35,7 +35,7 @@ var storageAccountType = 'Standard_LRS'
 var storageAccountName = uniqueString(resourceGroup().id)
 var loadBalancerName = 'ilb'
 var networkInterfaceName = 'nic'
-var subnetRef = resourceId('Microsoft.Network/virtualNetworks/subnets', appVnetName, subnetName)
+var subnetRef = resourceId('Microsoft.Network/vnet1s/subnets', appVnetName, subnetName)
 
 /* -------------------------------------------------------------------------- */
 /*                               Storage Account                              */
@@ -67,7 +67,7 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
 /* -------------------------------------------------------------------------- */
 /*                              Vnet app-prd-vnet                             */
 /* -------------------------------------------------------------------------- */
-resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
+resource vnet1 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: appVnetName
   location: location
   properties: {
@@ -241,7 +241,7 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
 //     ]
 //   }
 //   dependsOn: [
-//     virtualNetwork
+//     vnet1
 //     // loadBalancer
 //   ]
 // }]
@@ -305,7 +305,7 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
 //     ]
 //   }
 //   dependsOn: [
-//     virtualNetwork
+//     vnet1
 //   ]
 // }
 // /* -------------------------------------------------------------------------- */
@@ -356,14 +356,10 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
 //   }
 // }]
 
-output vnet1Name string = virtualNetwork.name
-output vnet1Id string = virtualNetwork.id
-output vnet1Subnet1ID string = virtualNetwork.properties.subnets[0].name
+output vnet1Name string = vnet1.name
+output vnet1Id string = vnet1.name
+output vnet1Subnet1ID string = vnet1.properties.subnets[0].name
 
 //output the storage account id
 output storageAccountName string = storageAccount.name
 output storageAccountBlobEndpoint string = storageAccount.properties.primaryEndpoints.blob
-
-
-// vnet1Id : appVnetName.outputs.vnet1Id
-// vnet1Subnet1Identity: networking.outputs.vnet1Subnet1ID

@@ -83,81 +83,81 @@ var launchScript = 'IyEvYmluL2Jhc2gKc3VkbyBzdQphcHQgdXBkYXRlCmFwdCBpbnN0YWxsIGFw
 //   name: diskEncryptionSetName
 // }
 
-// //A load balancer connected to the vmss with a public IP.
-// resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
-//   name: loadBalancerName
-//   location: location
-//   sku: {
-//     name: 'Standard'
-//   }
-//   tags: {
-//     Environment: envName
-//     Location: location
-//   }
-//   properties: {
-//     frontendIPConfigurations: [
-//       {
-//         name: 'LoadBalancerFrontEnd'
-//         properties: {
-//           publicIPAddress: {
-//             id: publicIPAddressID
-//           }
-//         }
-//       }
-//     ]
-//     backendAddressPools: [
-//       {
-//         name: bePoolName
-//       }
-//     ]
-//     inboundNatPools: [
-//       {
-//         name: natPoolName
-//         properties: {
-//           frontendIPConfiguration: {
-//             id: frontEndIPConfigID
-//           }
-//           protocol: 'Tcp'
-//           frontendPortRangeStart: natStartPort
-//           frontendPortRangeEnd: natEndPort
-//           backendPort: natBackendPort
-//         }
-//       }
-//     ]
-//     loadBalancingRules: [
-//       {
-//         name: 'LBRule'
-//         properties: {
-//           frontendIPConfiguration: {
-//             id: frontEndIPConfigID
-//           }
-//           backendAddressPool: {
-//             id: lbPoolID
-//           }
-//           protocol: 'Tcp'
-//           frontendPort: 80
-//           backendPort: 80
-//           enableFloatingIP: false
-//           idleTimeoutInMinutes: 5
-//           probe: {
-//             id: lbProbeID
-//           }
-//         }
-//       }
-//     ]
-//     probes: [
-//       {
-//         name: 'tcpProbe'
-//         properties: {
-//           protocol: 'Tcp'
-//           port: 80
-//           intervalInSeconds: 5
-//           numberOfProbes: 2
-//         }
-//       }
-//     ]
-//   }
-// }
+//A load balancer connected to the vmss with a public IP.
+resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
+  name: loadBalancerName
+  location: location
+  sku: {
+    name: 'Standard'
+  }
+  tags: {
+    Environment: envName
+    Location: location
+  }
+  properties: {
+    frontendIPConfigurations: [
+      {
+        name: 'LoadBalancerFrontEnd'
+        properties: {
+          publicIPAddress: {
+            id: publicIPAddressID
+          }
+        }
+      }
+    ]
+    backendAddressPools: [
+      {
+        name: bePoolName
+      }
+    ]
+    inboundNatPools: [
+      {
+        name: natPoolName
+        properties: {
+          frontendIPConfiguration: {
+            id: frontEndIPConfigID
+          }
+          protocol: 'Tcp'
+          frontendPortRangeStart: natStartPort
+          frontendPortRangeEnd: natEndPort
+          backendPort: natBackendPort
+        }
+      }
+    ]
+    loadBalancingRules: [
+      {
+        name: 'LBRule'
+        properties: {
+          frontendIPConfiguration: {
+            id: frontEndIPConfigID
+          }
+          backendAddressPool: {
+            id: lbPoolID
+          }
+          protocol: 'Tcp'
+          frontendPort: 80
+          backendPort: 80
+          enableFloatingIP: false
+          idleTimeoutInMinutes: 5
+          probe: {
+            id: lbProbeID
+          }
+        }
+      }
+    ]
+    probes: [
+      {
+        name: 'tcpProbe'
+        properties: {
+          protocol: 'Tcp'
+          port: 80
+          intervalInSeconds: 5
+          numberOfProbes: 2
+        }
+      }
+    ]
+  }
+}
 
 // A virtual machine scale set
 resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
@@ -226,9 +226,9 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
       }
     }
   }
-  // dependsOn: [
-  //   loadBalancer
-  // ]
+  dependsOn: [
+    loadBalancer
+  ]
 }
 
 //A public IP for the load balancer.

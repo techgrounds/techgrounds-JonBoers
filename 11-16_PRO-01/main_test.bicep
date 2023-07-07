@@ -63,20 +63,6 @@ module ManagementVnetName 'Modules/vnet2.bicep' = {
 
 }
 
-@description('Deploy network peering module')
-// Deploy network peering module
-module peering 'Modules/peering.bicep' = {
-  name: 'peering_deployment'
-  scope: rootgroup
-  params: {
-    vnet1Name : appVnetName.outputs.vnet1Name
-    vnet2Name : ManagementVnetName.outputs.vnet2Name
-    vnet1Id : appVnetName.outputs.vnet1Id
-    vnet2Id : ManagementVnetName.outputs.vnet2Id
-
-    }
-  }
-
 @description('deploy VMSS webserver')
 module webServer 'modules/webserver.bicep' = {
   name: 'webServer-${location}'
@@ -94,4 +80,17 @@ module webServer 'modules/webserver.bicep' = {
   }
   
 }
-  
+
+@description('Deploy network peering module')
+// Deploy network peering module
+module peering 'Modules/peering.bicep' = {
+  name: 'peering_deployment'
+  scope: rootgroup
+  params: {
+    vnet1Name : appVnetName.outputs.vnet1Name
+    vnet2Name : ManagementVnetName.outputs.vnet2Name
+    vnet1Id : appVnetName.outputs.vnet1Id
+    vnet2Id : ManagementVnetName.outputs.vnet2Id
+
+    }
+  }
