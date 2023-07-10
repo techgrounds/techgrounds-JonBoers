@@ -67,7 +67,7 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
 /* -------------------------------------------------------------------------- */
 /*                              Vnet app-prd-vnet                             */
 /* -------------------------------------------------------------------------- */
-resource vnet1 'Microsoft.Network/virtualNetworks@2021-05-01' = {
+resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: appVnetName
   location: location
   properties: {
@@ -356,9 +356,9 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
 //   }
 // }]
 
-output vnet1Name string = vnet1.name
-output vnet1Id string = vnet1.id
-output vnet1Subnet1ID string = vnet1.properties.subnets[0].name
+output vnet1Name string = virtualNetwork1.name
+output vnet1ID string = virtualNetwork1.id
+output vnet1Subnet1ID string = virtualNetwork1.properties.subnets[0].name
 
 //output the storage account id
 output storageAccountName string = storageAccount.name

@@ -24,7 +24,7 @@ param ManadminUsername string = 'MobyWan'
 param ManadminPassword string
 
 @description('Declare allowed IP range via SSH and RDP.')
-param allowedIpRange array = ['77.250.205.204']
+param allowedIpRange array = ['145.53.122.18']
 
 @description('Make general resource group for deployment in certain region')
 // Make a general resource group for deployment in a region
@@ -72,7 +72,7 @@ module webServer 'modules/webserver.bicep' = {
     location: location
     adminUsername: webadmin_username
     adminPassword: webadmin_password
-    Vnet1Identity : appVnetName.outputs.vnet1Id
+    Vnet1Name : appVnetName.outputs.vnet1Name
     vnet1Subnet1Identity: appVnetName.outputs.vnet1Subnet1ID
     // diskEncryptionSetName: keyvault.outputs.diskEncryptionSetName
     // storageAccountName: storage.outputs.storageAccountName
@@ -89,7 +89,7 @@ module peering 'Modules/peering.bicep' = {
   params: {
     vnet1Name : appVnetName.outputs.vnet1Name
     vnet2Name : ManagementVnetName.outputs.vnet2Name
-    vnet1Id : appVnetName.outputs.vnet1Id
+    vnet1Id : appVnetName.outputs.vnet1ID
     vnet2Id : ManagementVnetName.outputs.vnet2Id
 
     }

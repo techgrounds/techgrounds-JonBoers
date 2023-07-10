@@ -17,7 +17,7 @@ param adminUsername string
 @description('The administrator password.')
 param adminPassword string
 
-param Vnet1Identity string
+param Vnet1Name string
 param vnet1Subnet1Identity string
 // param diskEncryptionSetName string
 // param storageAccountName string
@@ -83,7 +83,9 @@ var launchScript = 'IyEvYmluL2Jhc2gKc3VkbyBzdQphcHQgdXBkYXRlCmFwdCBpbnN0YWxsIGFw
 //   name: diskEncryptionSetName
 // }
 
-//A load balancer connected to the vmss with a public IP.
+/* -------------------------------------------------------------------------- */
+/*           A load balancer connected to the vmss with a public IP.          */
+/* -------------------------------------------------------------------------- */
 resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
   name: loadBalancerName
   location: location
@@ -159,7 +161,9 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
   }
 }
 
-// A virtual machine scale set
+/* -------------------------------------------------------------------------- */
+/*                                    VMSS                                    */
+/* -------------------------------------------------------------------------- */
 resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
   name: webServerName
   location: location
@@ -210,7 +214,7 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
                   name: ipConfigName
                   properties: {
                     subnet: {
-                      id: resourceId('Microsoft.Network/virtualNetworks/subnets', Vnet1Identity, vnet1Subnet1Identity)
+                      id: resourceId('Microsoft.Network/virtualNetworks/subnets', Vnet1Name, vnet1Subnet1Identity)
                     }
                     loadBalancerBackendAddressPools: [
                       {
@@ -231,7 +235,9 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
   ]
 }
 
-//A public IP for the load balancer.
+/* -------------------------------------------------------------------------- */
+/*                           Public IP load balancer                          */
+/* -------------------------------------------------------------------------- */
 resource webServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-11-01' = {
   name: publicIPAddressName
   location: location
@@ -250,7 +256,9 @@ resource webServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-11-01' = {
   }
 }
 
-// Autoscaling resource for the vmss
+/* -------------------------------------------------------------------------- */
+/*                      Autoscaling resource for the vmss                     */
+/* -------------------------------------------------------------------------- */
 resource autoScaleResource 'Microsoft.Insights/autoscalesettings@2022-10-01' = {
   name: autoScaleResourceName
   location: location
