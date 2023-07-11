@@ -404,4 +404,37 @@ scalesets
 [TLS1.2:](https://learn.microsoft.com/nl-nl/mem/configmgr/core/plan-design/security/enable-tls-1-2)
 
 [Load balancing vs reverse proxy:](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
+
+---
+
+# Log 10/07
+
+## Dagverslag (1 zin)
+
+VMSS aan de praat gekregen en verwijzingen gecorrigeerd.
+
+## Obstakels
+
+Outputs kunnen verwarrend zijn als je werkt met modules en foutopsporing daardoor lastig.
+
+## Oplossingen
+
+Team mee laten kijken en een verse ogen helpen.
+
+## Learnings
+
+Vraag om hulp.
+
+---
+
+# Log 11/07
+
+## Dagverslag (1 zin)
+
+## Obstakels
+
+## Oplossingen
+
+## Learnings
+
 ---

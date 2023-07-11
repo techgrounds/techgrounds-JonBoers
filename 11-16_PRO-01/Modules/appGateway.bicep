@@ -116,7 +116,7 @@ resource applicationGateWay 'Microsoft.Network/applicationGateways@2021-05-01' =
     }
   }
   dependsOn: [
-    virtualNetwork
+    virtualNetwork1
     publicIPAddress[0]
   ]
 }

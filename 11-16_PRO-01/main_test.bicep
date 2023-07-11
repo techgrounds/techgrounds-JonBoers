@@ -27,7 +27,6 @@ param ManadminPassword string
 param allowedIpRange array = ['145.53.122.18']
 
 @description('Make general resource group for deployment in certain region')
-// Make a general resource group for deployment in a region
 param resourceGroupName string = 'testrgV1.1'
 param location string = deployment().location // locate resources at location declared with the deployment command
 resource rootgroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
@@ -35,21 +34,30 @@ resource rootgroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   location: location
 }
 
+@description('Param & Var for sqlDB')
+param instanceNumber string = '001'
+param applicationName string = 'mySQL'
+
+var defaultTags = {
+  environment: envName
+  application: applicationName
+}
+
 @description('deploy vnet1') 
 
-module appVnetName 'Modules/vnet1_test.bicep' = {
+module appVnetName 'Modules/vnet1_v1.1.bicep' = {
   name: 'webserverVnet'
   scope: rootgroup
   params: {
-    webadmin_username: webadmin_username
-    webadmin_password: webadmin_password
+    // webadmin_username: webadmin_username
+    // webadmin_password: webadmin_password
     location: location
   }
 }
 
 @description('deploy vnet2') 
 
-module ManagementVnetName 'Modules/vnet2.bicep' = {
+module ManagementVnetName 'Modules/vnet2_v1.1.bicep' = {
   name: 'adminvnet'
   scope: rootgroup
   params: {
@@ -92,5 +100,17 @@ module peering 'Modules/peering.bicep' = {
     vnet1Id : appVnetName.outputs.vnet1ID
     vnet2Id : ManagementVnetName.outputs.vnet2Id
 
+    }
+  }
+
+  module sqlDb 'modules/mysql.bicep' = {
+    name: 'sqldatabase'
+    scope: resourceGroup(rootgroup.name)
+    params: {
+      location: location
+      applicationName: applicationName
+      environment: envName
+      tags: defaultTags
+      instanceNumber: instanceNumber
     }
   }

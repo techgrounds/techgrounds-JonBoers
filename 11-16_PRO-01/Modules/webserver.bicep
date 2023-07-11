@@ -75,7 +75,7 @@ var scaleOutCPUPercentageThreshold = 75
 var scaleInCPUPercentageThreshold = 25
 var scaleOutInterval = '1'
 var scaleInInterval = '1'
-var webServerScriptName = '${vmScaleSetName}Script'
+// var webServerScriptName = '${vmScaleSetName}Script'
 var launchScript = 'IyEvYmluL2Jhc2gKc3VkbyBzdQphcHQgdXBkYXRlCmFwdCBpbnN0YWxsIGFwYWNoZTIgLXkKdWZ3IGFsbG93ICdBcGFjaGUnCnN5c3RlbWN0bCBlbmFibGUgYXBhY2hlMgpzeXN0ZW1jdGwgcmVzdGFydCBhcGFjaGUy'
 ///////
 
@@ -179,7 +179,7 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
   properties: {
     overprovision: true
     upgradePolicy: {
-      mode: 'Automatic'
+      mode: 'Manual'
     }
     singlePlacementGroup: singlePlacementGroup
     platformFaultDomainCount: platformFaultDomainCount

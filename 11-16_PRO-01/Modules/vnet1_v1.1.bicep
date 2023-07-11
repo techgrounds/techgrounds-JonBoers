@@ -1,20 +1,7 @@
-@description('Admin username')
-param webadmin_username string
-
-@description('Admin password')
-@secure()
-param webadmin_password string
-
-@description('Prefix to use for VM names')
-param vmNamePrefix string = 'Webserver'
-
 @description('Name of webserver Vnet & subnet')
 param appVnetName string = 'app-prd-vnet'
 param subnetName string = 'backendSubnet'
 param agsubnetname string = 'agsubnet'
-
-@description('Name of public IP Webserver')
-param name_pubip_webserver string = '${appVnetName}-publicIP'
 
 @description('Name of NSG webserver')
 param name_nsg_webserver string = 'nsg_webserver'
@@ -25,17 +12,10 @@ param name_nsg_AG string = 'nsg_AG'
 @description('Location for all resources.')
 param location string = resourceGroup().location
 
-@description('Size of the virtual machines')
-param vmSize string = 'Standard_D2s_v3'
-
 @description('declare apache script')
-var apache_script = loadFileAsBase64('install-apache.sh')
 var availabilitySetName = 'AvSet'
 var storageAccountType = 'Standard_LRS'
 var storageAccountName = uniqueString(resourceGroup().id)
-var loadBalancerName = 'ilb'
-var networkInterfaceName = 'nic'
-var subnetRef = resourceId('Microsoft.Network/vnet1s/subnets', appVnetName, subnetName)
 
 /* -------------------------------------------------------------------------- */
 /*                               Storage Account                              */
@@ -98,25 +78,6 @@ resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2021-05-01' = {
     ]
   }
 }
-
-// /* -------------------------------------------------------------------------- */
-// /*                             Public IP Webserver                            */
-// /* -------------------------------------------------------------------------- */
-
-// resource pub_ip_webserver 'Microsoft.Network/publicIPAddresses@2022-07-01' = {
-//   name: name_pubip_webserver
-//   location: location
-//   tags: {
-//     vnet: appVnetName
-//     location: location
-//   }
-//   sku: {
-//     name: 'standard'    
-//   }  
-//   properties: {
-//     publicIPAllocationMethod: 'Static'
-//   }
-// }
 
 /* -------------------------------------------------------------------------- */
 /*                                NSG Webserver                               */
