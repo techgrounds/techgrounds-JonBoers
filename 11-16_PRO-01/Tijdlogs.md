@@ -430,11 +430,33 @@ Vraag om hulp.
 # Log 11/07
 
 ## Dagverslag (1 zin)
+Gewerkt aan mySQL database, maar geen resultaat.
 
 ## Obstakels
 
+foutmeldingen en endpoint.
+
 ## Oplossingen
+
+andere methode voor de volgende dag.
 
 ## Learnings
 
+mySQL
 ---
+
+# Log 12/07
+
+## Dagverslag (1 zin)
+
+Verder gewerkt aan mySQL, maar nu met VM en met de groep
+
+## Obstakels
+
+
+
+## Oplossingen
+
+
+
+## Learnings

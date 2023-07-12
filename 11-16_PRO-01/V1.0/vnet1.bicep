@@ -25,6 +25,7 @@ param vmSize string = 'Standard_D2s_v3'
 
 @description('declare apache script')
 var apache_script = loadFileAsBase64('install-apache.sh')
+
 var availabilitySetName = 'AvSet'
 var storageAccountType = 'Standard_LRS'
 var storageAccountName = uniqueString(resourceGroup().id)

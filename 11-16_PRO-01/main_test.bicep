@@ -23,6 +23,17 @@ param ManadminUsername string = 'MobyWan'
 @minLength(6)
 param ManadminPassword string
 
+// @description('Database administrator login name')
+// @minLength(1)
+// param dbAdminLogin string = 'dbAdmin'
+
+@description('Database administrator password')
+@minLength(6)
+@secure()
+param dbAdminLoginPassword string = newGuid()
+
+// param serverName string = 'serverName'
+
 @description('Declare allowed IP range via SSH and RDP.')
 param allowedIpRange array = ['145.53.122.18']
 
@@ -32,15 +43,6 @@ param location string = deployment().location // locate resources at location de
 resource rootgroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: resourceGroupName
   location: location
-}
-
-@description('Param & Var for sqlDB')
-param instanceNumber string = '001'
-param applicationName string = 'mySQL'
-
-var defaultTags = {
-  environment: envName
-  application: applicationName
 }
 
 @description('deploy vnet1') 
@@ -89,6 +91,19 @@ module webServer 'modules/webserver.bicep' = {
   
 }
 
+@description('deploy mySQL server')
+module SQLServer 'modules/mySQLvm.bicep' = {
+  name: 'SQLServer-${location}'
+  scope: rootgroup
+  params: {
+    // envName: envName
+    adminPasswordOrKey : dbAdminLoginPassword
+    location: location
+    Vnet1Name : appVnetName.outputs.vnet1Name
+    vnet1mySqlSubnetIdentity: appVnetName.outputs.vnet1mySqlSubnetID   
+  }  
+}
+
 @description('Deploy network peering module')
 // Deploy network peering module
 module peering 'Modules/peering.bicep' = {
@@ -103,14 +118,27 @@ module peering 'Modules/peering.bicep' = {
     }
   }
 
-  module sqlDb 'modules/mysql.bicep' = {
-    name: 'sqldatabase'
-    scope: resourceGroup(rootgroup.name)
-    params: {
-      location: location
-      applicationName: applicationName
-      environment: envName
-      tags: defaultTags
-      instanceNumber: instanceNumber
-    }
-  }
+  // module mySqlDb 'modules/mysql.bicep' = {
+  //   name: 'mySqldatabase'
+  //   scope: resourceGroup(rootgroup.name)
+  //   // params: {
+  //   //   location: location
+         
+  //     // applicationName: applicationName
+  //     // environment: envName
+  //     // tags: defaultTags
+  //     // instanceNumber: instanceNumber
+  //   }
+  // }
+
+
+  // module mySqlDb 'modules/mysql.bicep' = {
+  //   scope: resourceGroup(rootgroup.name)
+  //   name: 'mySqldatabase'
+  //   params: {
+  //     location: location
+  //     dbAdminLogin: dbAdminLogin
+  //     dbAdminLoginPassword: dbAdminLoginPassword
+  //     serverName: serverName
+  //   }
+  // }

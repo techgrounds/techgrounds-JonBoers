@@ -1,10 +1,14 @@
 @description('Name of webserver Vnet & subnet')
 param appVnetName string = 'app-prd-vnet'
 param subnetName string = 'backendSubnet'
+param sqlsubnetName string = 'mySqlSubnet'
 param agsubnetname string = 'agsubnet'
 
 @description('Name of NSG webserver')
 param name_nsg_webserver string = 'nsg_webserver'
+
+@description('Name of NSG Sqlserver')
+param name_mySql_server string = 'mySql_server'
 
 @description('Name of NSG Application Gateway')
 param name_nsg_AG string = 'nsg_AG'
@@ -60,16 +64,25 @@ resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2021-05-01' = {
       {
         name: subnetName
         properties: {
-          addressPrefix: '10.10.10.0/25'
+          addressPrefix: '10.10.10.0/26'
           networkSecurityGroup: {
             id: nsg_webserver.id
           }
         }
       }
       {
+        name: sqlsubnetName
+        properties: {
+          addressPrefix: '10.10.10.64/26'
+          networkSecurityGroup: {
+            id: nsg_mySqlServer.id
+          }
+        }
+      }
+      {
         name: agsubnetname
         properties: {
-          addressPrefix: '10.10.10.128/27'
+          addressPrefix: '10.10.10.128/26'
           networkSecurityGroup: {
             id: nsg_AG.id
           }
@@ -136,6 +149,50 @@ resource nsg_webserver 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                NSG mySqlServer                             */
+/* -------------------------------------------------------------------------- */
+
+resource nsg_mySqlServer 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
+  name: name_mySql_server
+  location: location
+  tags: {
+    vnet: appVnetName
+    location: location
+  }
+  properties: {
+    securityRules: [      
+      {
+        name: 'http'
+        properties: {
+          access: 'Allow'
+          direction: 'Inbound'
+          priority:1100
+          protocol: 'Tcp'
+          sourcePortRange: '*'
+          sourceAddressPrefix: '*'
+          destinationPortRange: '80'
+          destinationAddressPrefix: '*'        
+        }
+      }
+      
+      {
+        name: 'ssh_access_adminServer'
+        properties: {
+          protocol: 'TCP'
+          sourceAddressPrefix: '10.20.20.10/32' //Private IP address nic adminServer (vnet2)
+          sourcePortRange: '*' 
+          destinationAddressPrefix: '*' 
+          destinationPortRange: '22'
+          access: 'Allow'
+          priority: 1200
+          direction: 'Inbound'
+        }
+      }      
+    ]
+  }
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                   NSG AG                                   */
 /* -------------------------------------------------------------------------- */
 
@@ -177,149 +234,11 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
   }
 }
 
-// /* -------------------------------------------------------------------------- */
-// /*                                     NIC                                    */
-// /* -------------------------------------------------------------------------- */
-// resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = [for i in range(0, numberOfInstances): {
-//   name: '${networkInterfaceName}${i}'
-//   location: location
-//   properties: {
-//     ipConfigurations: [
-//       {
-//         name: 'ipconfig1'
-//         properties: {
-//           privateIPAllocationMethod: 'Dynamic'          
-//           subnet: {
-//             id: subnetRef
-//           }
-//           loadBalancerBackendAddressPools: [
-//             {
-//               id: resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, 'BackendPool1')
-//             }
-//           ]
-//         }
-//       }
-//     ]
-//   }
-//   dependsOn: [
-//     vnet1
-//     // loadBalancer
-//   ]
-// }]
-// /* -------------------------------------------------------------------------- */
-// /*                                Loadbalancer                                */
-// /* -------------------------------------------------------------------------- */
-// resource loadBalancer 'Microsoft.Network/loadBalancers@2021-05-01' = {
-//   name: loadBalancerName
-//   location: location
-//   sku: {
-//     name: 'Standard'
-//   }
-//   properties: {
-//     frontendIPConfigurations: [
-//       {
-//         properties: {
-//           publicIPAddress: { //koppeling met publiek-ip
-//             id: pub_ip_webserver.id
-//           }          
-//           // privateIPAddress: '10.10.10.10'
-//           // privateIPAllocationMethod: 'Static'
-//         }
-//         name: 'LoadBalancerFrontend'
-//       }
-//     ]
-//     backendAddressPools: [
-//       {
-//         name: 'BackendPool1'
-//       }
-//     ]
-//     loadBalancingRules: [
-//       {
-//         properties: {
-//           frontendIPConfiguration: {
-//             id: resourceId('Microsoft.Network/loadBalancers/frontendIpConfigurations', loadBalancerName, 'LoadBalancerFrontend')
-//           }
-//           backendAddressPool: {
-//             id: resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, 'BackendPool1')
-//           }
-//           probe: {
-//             id: resourceId('Microsoft.Network/loadBalancers/probes', loadBalancerName, 'lbprobe')
-//           }
-//           protocol: 'Tcp'
-//           frontendPort: 80
-//           backendPort: 80
-//           idleTimeoutInMinutes: 15
-//         }
-//         name: 'lbrule'
-//       }
-//     ]
-//     probes: [
-//       {
-//         properties: {
-//           protocol: 'Tcp'
-//           port: 80
-//           intervalInSeconds: 15
-//           numberOfProbes: 2
-//         }
-//         name: 'lbprobe'
-//       }
-//     ]
-//   }
-//   dependsOn: [
-//     vnet1
-//   ]
-// }
-// /* -------------------------------------------------------------------------- */
-// /*                                    VM's                                    */
-
-
-// /* -------------------------------------------------------------------------- */
-// resource vm 'Microsoft.Compute/virtualMachines@2022-03-01' = [for i in range(0, numberOfInstances): {
-//   name: '${vmNamePrefix}${i}'
-//   location: location
-//   properties: {
-//     userData: apache_script
-//     availabilitySet: {
-//       id: availabilitySet.id
-//     }
-//     hardwareProfile: {
-//       vmSize: vmSize
-//     }
-//     osProfile: {
-//       computerName: '${vmNamePrefix}${i}'
-//       adminUsername: webadmin_username
-//       adminPassword: webadmin_password
-//     }
-//     storageProfile: {
-//       imageReference: {
-//         publisher: 'canonical'
-//         offer: '0001-com-ubuntu-server-jammy'
-//         sku: '22_04-lts-gen2'
-//         version: 'latest'
-//       }
-//       osDisk: {
-//         createOption: 'FromImage'
-//       }
-//     }
-//     networkProfile: {
-//       networkInterfaces: [
-//         {
-//           id: networkInterface[i].id
-//         }
-//       ]
-//     }
-//     diagnosticsProfile: {
-//       bootDiagnostics: {
-//         enabled: true
-//         storageUri: storageAccount.properties.primaryEndpoints.blob
-//       }
-//     }
-//   }
-// }]
-
 output vnet1Name string = virtualNetwork1.name
 output vnet1ID string = virtualNetwork1.id
 output vnet1Subnet1ID string = virtualNetwork1.properties.subnets[0].name
+output vnet1mySqlSubnetID string = virtualNetwork1.properties.subnets[1].name
+output vnet1AGSubnetID string = virtualNetwork1.properties.subnets[2].name
 
 //output the storage account id
 output storageAccountName string = storageAccount.name
