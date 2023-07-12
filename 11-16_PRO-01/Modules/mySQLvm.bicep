@@ -9,17 +9,17 @@ param mySQLAdminUsername string = 'mySQLadmin'
   'sshPublicKey'
   'password'
 ])
-param authenticationType string = 'sshPublicKey'
+param authenticationType string = 'password'
 
 @description('SSH Key or password for the Virtual Machine. SSH key is recommended.')
 @secure()
-param adminPasswordOrKey string 
+param adminPasswordOrKey string = newGuid()
 
 param Vnet1Name string
 param vnet1mySqlSubnetIdentity string
 
-// @description('Unique DNS Name for the Public IP used to access the Virtual Machine.')
-// param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().id)}')
+@description('Unique DNS Name for the Public IP used to access the Virtual Machine.')
+param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().id)}')
 
 @description('The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version.')
 @allowed([
@@ -41,8 +41,8 @@ param vmSize string = 'Standard_D2s_v3'
 // @description('Name of the subnet in the virtual network')
 // param subnetName string = 'Subnet'
 
-@description('Name of the Network Security Group')
-param networkSecurityGroupName string = 'SecGroupNet'
+// @description('Name of the Network Security Group')
+// param networkSecurityGroupName string = 'SecGroupNet'
 
 @description('Security Type of the Virtual Machine.')
 @allowed([
@@ -73,7 +73,7 @@ var imageReference = {
     version: 'latest'
   }
 }
-// var publicIPAddressName = '${vmName}PublicIP'
+var publicIPAddressName = '${vmName}PublicIP'
 var SqlNicName = '${vmName}NetInt'
 var osDiskType = 'Standard_LRS'
 var ipConfigName = '${vmName}ipconfig'
@@ -117,39 +117,39 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = {
             // id: subnet.id
           }
           privateIPAllocationMethod: 'Dynamic'
-          // publicIPAddress: {
-          //   id: publicIPAddress.id
-          // }
+          publicIPAddress: {
+            id: publicIPAddress.id
+          }
         }
       }
     ]
-    networkSecurityGroup: {
-      id: networkSecurityGroup.id
-    }
+    // networkSecurityGroup: {
+    //   id: networkSecurityGroup.id
+    // }
   }
 }
 
-resource networkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
-  name: networkSecurityGroupName
-  location: location
-  properties: {
-    securityRules: [
-      {
-        name: 'SSH'
-        properties: {
-          priority: 1000
-          protocol: 'Tcp'
-          access: 'Allow'
-          direction: 'Inbound'
-          sourceAddressPrefix: '*'
-          sourcePortRange: '*'
-          destinationAddressPrefix: '*'
-          destinationPortRange: '22'
-        }
-      }
-    ]
-  }
-}
+// resource networkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
+//   name: networkSecurityGroupName
+//   location: location
+//   properties: {
+//     securityRules: [
+//       {
+//         name: 'SSH'
+//         properties: {
+//           priority: 1000
+//           protocol: 'Tcp'
+//           access: 'Allow'
+//           direction: 'Inbound'
+//           sourceAddressPrefix: '*'
+//           sourcePortRange: '*'
+//           destinationAddressPrefix: '*'
+//           destinationPortRange: '22'
+//         }
+//       }
+//     ]
+//   }
+// }
 
 // resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
 //   name: virtualNetworkName
@@ -173,21 +173,21 @@ resource networkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2021-05-0
 //   }
 // }
 
-// resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
-//   name: publicIPAddressName
-//   location: location
-//   sku: {
-//     name: 'Basic'
-//   }
-//   properties: {
-//     publicIPAllocationMethod: 'Dynamic'
-//     publicIPAddressVersion: 'IPv4'
-//     dnsSettings: {
-//       domainNameLabel: dnsLabelPrefix
-//     }
-//     idleTimeoutInMinutes: 4
-//   }
-// }
+resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
+  name: publicIPAddressName
+  location: location
+  sku: {
+    name: 'Basic'
+  }
+  properties: {
+    publicIPAllocationMethod: 'Dynamic'
+    publicIPAddressVersion: 'IPv4'
+    dnsSettings: {
+      domainNameLabel: dnsLabelPrefix
+    }
+    idleTimeoutInMinutes: 4
+  }
+}
 
 resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
   name: vmName
@@ -207,29 +207,30 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
       imageReference: imageReference[ubuntuOSVersion]
     }
     networkProfile: {
+      // networkApiVersion: '2021-05-01'
       networkInterfaces: [        
         {
           id: networkInterface.id
         }        
       ]
-      networkInterfaceConfigurations: [
-        {
-          name: SqlNicName
-          properties: {
-            primary: true
-            ipConfigurations: [
-              {
-                name: ipConfigName
-                properties: {
-                  subnet: {
-                    id: resourceId('Microsoft.Network/virtualNetworks/subnets', Vnet1Name, vnet1mySqlSubnetIdentity)
-                  }                  
-                }
-              }
-            ]
-          }
-        }
-      ]
+      // networkInterfaceConfigurations: [
+      //   {
+      //     name: SqlNicName
+      //     properties: {
+      //       primary: true
+      //       ipConfigurations: [
+      //         {
+      //           name: ipConfigName
+      //           properties: {
+      //             subnet: {
+      //               id: resourceId('Microsoft.Network/virtualNetworks/subnets', Vnet1Name, vnet1mySqlSubnetIdentity)
+      //             }                  
+      //           }
+      //         }
+      //       ]
+      //     }
+      //   }
+      // ]
     }
     osProfile: {
       computerName: vmName
