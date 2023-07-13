@@ -23,6 +23,10 @@ param ManadminUsername string = 'MobyWan'
 @minLength(6)
 param ManadminPassword string = newGuid()
 
+@secure()
+@description('The password for the SSL certificate.')
+param sslPassword string = newGuid()
+
 // @description('Database administrator login name')
 // @minLength(1)
 // param dbAdminLogin string = 'dbAdmin'
@@ -73,8 +77,8 @@ module ManagementVnetName 'Modules/vnet2_v1.1.bicep' = {
 
 }
 
-@description('deploy VMSS webserver')
-module webServer 'modules/webserver.bicep' = {
+@description('deploy VMSS webserver and application gateway')
+module webServer 'modules/webserverAG.bicep' = {
   name: 'webServer-${location}'
   scope: rootgroup
   params: {
@@ -82,6 +86,7 @@ module webServer 'modules/webserver.bicep' = {
     location: location
     adminUsername: webadmin_username
     adminPassword: webadmin_password
+    sslPassword: sslPassword
     Vnet1Name : appVnetName.outputs.vnet1Name
     vnet1Subnet1Identity: appVnetName.outputs.vnet1Subnet1ID
     // diskEncryptionSetName: keyvault.outputs.diskEncryptionSetName
@@ -117,28 +122,3 @@ module peering 'Modules/peering.bicep' = {
 
     }
   }
-
-  // module mySqlDb 'modules/mysql.bicep' = {
-  //   name: 'mySqldatabase'
-  //   scope: resourceGroup(rootgroup.name)
-  //   // params: {
-  //   //   location: location
-         
-  //     // applicationName: applicationName
-  //     // environment: envName
-  //     // tags: defaultTags
-  //     // instanceNumber: instanceNumber
-  //   }
-  // }
-
-
-  // module mySqlDb 'modules/mysql.bicep' = {
-  //   scope: resourceGroup(rootgroup.name)
-  //   name: 'mySqldatabase'
-  //   params: {
-  //     location: location
-  //     dbAdminLogin: dbAdminLogin
-  //     dbAdminLoginPassword: dbAdminLoginPassword
-  //     serverName: serverName
-  //   }
-  // }

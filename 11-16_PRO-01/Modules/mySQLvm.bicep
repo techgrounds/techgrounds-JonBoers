@@ -129,6 +129,9 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+/*                             Template resources:                            */
+/* -------------------------------------------------------------------------- */
 // resource networkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
 //   name: networkSecurityGroupName
 //   location: location

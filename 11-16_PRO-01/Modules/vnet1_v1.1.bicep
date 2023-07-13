@@ -51,6 +51,8 @@ resource availabilitySet 'Microsoft.Compute/availabilitySets@2021-11-01' = {
 /* -------------------------------------------------------------------------- */
 /*                              Vnet app-prd-vnet                             */
 /* -------------------------------------------------------------------------- */
+// Contains 3 subnets, hosting the webserver VMSS, sql database and App Gateway.
+
 resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: appVnetName
   location: location

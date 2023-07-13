@@ -449,14 +449,29 @@ mySQL
 
 ## Dagverslag (1 zin)
 
-Verder gewerkt aan mySQL, maar nu met VM en met de groep
+Verder gewerkt aan mySQL, maar nu met VM en met de groep.
 
 ## Obstakels
 
-
+Foutcodes etc.
 
 ## Oplossingen
 
-
+Geduld hebben
 
 ## Learnings
+
+Deployed nu, maar moet nog getest worden.
+
+# Log 13/07
+
+## Dagverslag (1 zin)
+
+Gestart met opzetten application gateway
+
+## Obstakels
+
+## Oplossingen
+
+## Learnings
+
