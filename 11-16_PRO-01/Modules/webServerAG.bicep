@@ -23,6 +23,10 @@ param sslPassword string
 
 param Vnet1Name string
 param vnet1Subnet1Identity string
+@secure()
+
+// param nsg_AGName string
+
 // param diskEncryptionSetName string
 // param storageAccountName string
 ///////
@@ -100,6 +104,10 @@ var base64EncodedCert = 'MIIKcQIBAzCCCi0GCSqGSIb3DQEHAaCCCh4EggoaMIIKFjCCBg8GCSq
 resource vnet1 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
   name: Vnet1Name
 }
+
+// resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
+//   name: nsg_AGName
+// }
 
 /* -------------------------------------------------------------------------- */
 /*           A load balancer connected to the vmss with a public IP.          */
@@ -332,6 +340,7 @@ resource appGateway 'Microsoft.Network/applicationGateways@2022-11-01' = {
   }
   dependsOn: [
     vnet1
+    // nsg_AG
   ]
 }
 

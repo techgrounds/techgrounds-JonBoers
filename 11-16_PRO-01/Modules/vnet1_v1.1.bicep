@@ -239,7 +239,7 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
       // * V2: Ports 65200-65535
       // * V1: Ports 65503-65534
       // https://learn.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure
-      
+
       {
         name: 'GatewayManager'
         properties: {
@@ -262,6 +262,7 @@ output vnet1ID string = virtualNetwork1.id
 output vnet1Subnet1ID string = virtualNetwork1.properties.subnets[0].name
 output vnet1mySqlSubnetID string = virtualNetwork1.properties.subnets[1].name
 output vnet1AGSubnetID string = virtualNetwork1.properties.subnets[2].name
+// output nsg_AGName string = nsg_AG.name
 
 //output the storage account id
 output storageAccountName string = storageAccount.name
