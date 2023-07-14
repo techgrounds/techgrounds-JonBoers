@@ -495,7 +495,15 @@ these instructions: https://adamtheautomator.com/openssl-windows-10/
 
 ... and then I got stuck.
 
+When deploying the code Azure kept giving me this error messages upon several tries:
 
+{
+  "code": "InternalServerError",
+  "message": "An error occurred.",
+  "details": []
+}
+
+...not much to work with really.
 
 ## Oplossingen
 
