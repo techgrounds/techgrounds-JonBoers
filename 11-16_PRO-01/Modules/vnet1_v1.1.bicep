@@ -238,6 +238,8 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
       // External entities can't initiate changes on those endpoints without appropriate certificates in place).
       // * V2: Ports 65200-65535
       // * V1: Ports 65503-65534
+      // https://learn.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure
+      
       {
         name: 'GatewayManager'
         properties: {
