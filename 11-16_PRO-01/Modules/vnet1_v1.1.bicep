@@ -231,7 +231,26 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
           destinationPortRange: '80'
           destinationAddressPrefix: '*'        
         }
-      }      
+      }
+      // Infrastructure ports - Allow incoming requests from the source as GatewayManager service tag and
+      // any destination. The destination port range differs based on SKU and is required for communicating
+      // the status of the Backend Health. (These ports are protected/locked down by Azure certificates. 
+      // External entities can't initiate changes on those endpoints without appropriate certificates in place).
+      // * V2: Ports 65200-65535
+      // * V1: Ports 65503-65534
+      {
+        name: 'GatewayManager'
+        properties: {
+          protocol: 'TCP'
+          sourceAddressPrefix: 'GatewayManager'
+          sourcePortRange: '*' 
+          destinationAddressPrefix: '*' 
+          destinationPortRange: '65200-65535'
+          access: 'Allow'
+          priority: 1100
+          direction: 'Inbound'
+        }
+      }        
     ]
   }
 }

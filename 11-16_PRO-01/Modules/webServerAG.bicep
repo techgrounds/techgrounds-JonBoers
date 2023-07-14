@@ -19,7 +19,7 @@ param adminPassword string
 
 @secure()
 @description('The password for the SSL certificate.')
-param sslPassword string = newGuid()
+param sslPassword string 
 
 param Vnet1Name string
 param vnet1Subnet1Identity string
@@ -49,6 +49,7 @@ var longvmScaleSet = toLower(webServerName)
 var instanceCount = 1
 var vmssId = webServer.id
 var platformFaultDomainCount = 1
+var launchScript = 'IyEvYmluL2Jhc2gKc3VkbyBzdQphcHQgdXBkYXRlCmFwdCBpbnN0YWxsIGFwYWNoZTIgLXkKdWZ3IGFsbG93ICdBcGFjaGUnCnN5c3RlbWN0bCBlbmFibGUgYXBhY2hlMgpzeXN0ZW1jdGwgcmVzdGFydCBhcGFjaGUy'
 var imageReference = {
     publisher: 'Canonical'
     offer: '0001-com-ubuntu-server-jammy'
@@ -86,10 +87,11 @@ var scaleInCPUPercentageThreshold = 25
 var scaleOutInterval = '1'
 var scaleInInterval = '1'
 
-var base64EncodedCert = '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'
-// var webServerScriptName = '${vmScaleSetName}Script'
-var launchScript = 'IyEvYmluL2Jhc2gKc3VkbyBzdQphcHQgdXBkYXRlCmFwdCBpbnN0YWxsIGFwYWNoZTIgLXkKdWZ3IGFsbG93ICdBcGFjaGUnCnN5c3RlbWN0bCBlbmFibGUgYXBhY2hlMgpzeXN0ZW1jdGwgcmVzdGFydCBhcGFjaGUy'
-///////
+/* -------------------------------------------------------------------------- */
+/*                           Self signed certificate                          */
+/* -------------------------------------------------------------------------- */
+
+var base64EncodedCert = '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'
 
 // resource diskEncryptionSet 'Microsoft.Compute/diskEncryptionSets@2022-07-02' existing = {
 //   name: diskEncryptionSetName
@@ -180,6 +182,7 @@ resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
 /* -------------------------------------------------------------------------- */
 /*   Application Gateway                                                      */
 /* -------------------------------------------------------------------------- */
+
 resource appGateway 'Microsoft.Network/applicationGateways@2022-11-01' = {
   name: appGatewayName
   location: location
@@ -410,6 +413,7 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
 /* -------------------------------------------------------------------------- */
 /*                           Public IP load balancer                          */
 /* -------------------------------------------------------------------------- */
+
 resource webServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-11-01' = {
   name: publicIPAddressName
   location: location

@@ -471,7 +471,39 @@ Gestart met opzetten application gateway
 
 ## Obstakels
 
+Certificates 
+
 ## Oplossingen
 
 ## Learnings
+
+Oefening SEC-06 opgefrist.
+
+# Log 14/07
+
+## Dagverslag (1 zin)
+
+Self signed certificate for HTTP rerouting naar HTTPS.
+
+## Obstakels
+
+Chocolatey not installed
+Open ssl not installed
+
+installed Chocolatey using this link: https://chocolatey.org/install installed Open SSL using
+these instructions: https://adamtheautomator.com/openssl-windows-10/
+
+... and then I got stuck.
+
+
+
+## Oplossingen
+
+Different method: https://jackstromberg.com/2021/03/how-to-generate-base64-encoded-ssl-certificates-via-powershell-for-azure/
+
+..that helped. A LOT!
+
+## Learnings
+
+
 

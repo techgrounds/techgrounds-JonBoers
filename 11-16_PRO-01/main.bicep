@@ -25,7 +25,7 @@ param ManadminPassword string = newGuid()
 
 @secure()
 @description('The password for the SSL certificate.')
-param sslPassword string = newGuid()
+param sslPassword string
 
 // @description('Database administrator login name')
 // @minLength(1)
