@@ -247,7 +247,7 @@ resource nsg_AG 'Microsoft.Network/networkSecurityGroups@2022-11-01' = {
           destinationAddressPrefix: '*' 
           destinationPortRange: '65200-65535'
           access: 'Allow'
-          priority: 1100
+          priority: 1200
           direction: 'Inbound'
         }
       }        
