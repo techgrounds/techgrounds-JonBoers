@@ -23,7 +23,6 @@ param sslPassword string
 
 param Vnet1Name string
 param vnet1Subnet1Identity string
-@secure()
 
 // param nsg_AGName string
 
