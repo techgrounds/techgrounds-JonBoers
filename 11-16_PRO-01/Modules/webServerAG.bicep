@@ -100,7 +100,7 @@ param base64EncodedCert string = 'MIIKcQIBAzCCCi0GCSqGSIb3DQEHAaCCCh4EggoaMIIKFj
 //   name: diskEncryptionSetName
 // }
 
-resource vnet1 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
+resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
   name: Vnet1Name
 }
 
@@ -212,7 +212,7 @@ resource appGateway 'Microsoft.Network/applicationGateways@2022-11-01' = {
         name: 'appGatewayIpConfig'
         properties: {
           subnet: {
-            id: vnet1.properties.subnets[2].id
+            id: virtualNetwork1.properties.subnets[2].id
           }
         }
       }
@@ -338,7 +338,7 @@ resource appGateway 'Microsoft.Network/applicationGateways@2022-11-01' = {
     }
   }
   dependsOn: [
-    vnet1
+    virtualNetwork1
     // nsg_AG
   ]
 }
