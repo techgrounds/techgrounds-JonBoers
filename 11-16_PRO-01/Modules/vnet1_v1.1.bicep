@@ -264,6 +264,6 @@ output vnet1mySqlSubnetID string = virtualNetwork1.properties.subnets[1].name
 output vnet1AGSubnetID string = virtualNetwork1.properties.subnets[2].name
 // output nsg_AGName string = nsg_AG.name
 
-//output the storage account id
+// output the storage account id:
 output storageAccountName string = storageAccount.name
 output storageAccountBlobEndpoint string = storageAccount.properties.primaryEndpoints.blob

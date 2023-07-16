@@ -23,6 +23,13 @@ param ManadminUsername string = 'MobyWan'
 @minLength(6)
 param ManadminPassword string = newGuid()
 
+
+@description('The object ID of the service principal that will be granted access to the Key Vault.')
+param principalId string
+
+@description('The name for the Managed Identity.')
+param managedIdName string = 'keyVaultManagedIdentity'
+
 @secure()
 @description('The password for the SSL certificate.')
 param sslPassword string
@@ -49,19 +56,21 @@ resource rootgroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   location: location
 }
 
-@description('deploy vnet1') 
+/* -------------------------------------------------------------------------- */
+/*                                Vnet1 module                                */
+/* -------------------------------------------------------------------------- */
 
 module appVnetName 'Modules/vnet1_v1.1.bicep' = {
   name: 'webserverVnet'
   scope: rootgroup
   params: {
-    // webadmin_username: webadmin_username
-    // webadmin_password: webadmin_password
     location: location
   }
 }
 
-@description('deploy vnet2') 
+/* -------------------------------------------------------------------------- */
+/*                                Vnet2 module                                */
+/* -------------------------------------------------------------------------- */
 
 module ManagementVnetName 'Modules/vnet2_v1.1.bicep' = {
   name: 'adminvnet'
@@ -75,6 +84,21 @@ module ManagementVnetName 'Modules/vnet2_v1.1.bicep' = {
     storageAccountBlobEndpoint: appVnetName.outputs.storageAccountBlobEndpoint 
   }
 
+}
+/* -------------------------------------------------------------------------- */
+/*                               Keyvault module                              */
+/* -------------------------------------------------------------------------- */
+module keyvault 'modules/keyvault.bicep' = {
+  name: 'keyvault-${location}'
+  scope: rootgroup
+  params: {
+    envName: envName
+    location: location
+    ManadminPassword: ManadminPassword
+    ManadminUsername: ManadminUsername
+        principalId: principalId
+    managedIdName: managedIdName
+  }
 }
 
 @description('deploy VMSS webserver and application gateway')
