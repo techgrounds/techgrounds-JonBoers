@@ -23,13 +23,6 @@ param ManadminUsername string = 'MobyWan'
 @minLength(6)
 param ManadminPassword string = newGuid()
 
-
-@description('The object ID of the service principal that will be granted access to the Key Vault.')
-param principalId string
-
-@description('The name for the Managed Identity.')
-param managedIdName string = 'keyVaultManagedIdentity'
-
 @secure()
 @description('The password for the SSL certificate.')
 param sslPassword string
@@ -88,20 +81,20 @@ module ManagementVnetName 'Modules/vnet2_v1.1.bicep' = {
 /* -------------------------------------------------------------------------- */
 /*                               Keyvault module                              */
 /* -------------------------------------------------------------------------- */
-module keyvault 'modules/keyvault.bicep' = {
-  name: 'keyvault-${location}'
+@description('Deploy keyvault and encryption module')   // deploys with encrypted diskset - need to fix passwords at other time
+// Deploy Keyvault & encryption module
+module keyvault 'Modules/keyvault.bicep' = {
   scope: rootgroup
+  name: 'keyvault_deployment'
   params: {
-    envName: envName
     location: location
-    ManadminPassword: ManadminPassword
-    ManadminUsername: ManadminUsername
-        principalId: principalId
-    managedIdName: managedIdName
+    envName: envName
   }
 }
 
-@description('deploy VMSS webserver and application gateway')
+/* -------------------------------------------------------------------------- */
+/*                Deploy VMSS webserver and application gateway               */
+/* -------------------------------------------------------------------------- */
 module webServer 'modules/webserverAG.bicep' = {
   name: 'webServer-${location}'
   scope: rootgroup
