@@ -21,11 +21,11 @@ param ManadminUsername string = 'MobyWan'
 @description('Management server password')
 @secure()
 @minLength(6)
-param ManadminPassword string = newGuid()
+param ManadminPassword string 
 
 @secure()
 @description('The password for the SSL certificate.')
-param sslPassword string
+param sslPassword string = '1234'
 
 // @description('Database administrator login name')
 // @minLength(1)
@@ -38,8 +38,14 @@ param dbAdminLoginPassword string = newGuid()
 
 // param serverName string = 'serverName'
 
+/* -------------------------------------------------------------------------- */
+/*             Acces to Admin server only allowed for trusted sources:        */
+/* -------------------------------------------------------------------------- */
+
 @description('Declare allowed IP range via SSH and RDP.')
-param allowedIpRange array = ['145.53.122.18']
+param allowedIpRange array = ['145.53.122.18'] //my own IP for testing purposes
+
+///
 
 @description('Make general resource group for deployment in certain region')
 param resourceGroupName string = 'testrgV1.1'
@@ -81,8 +87,8 @@ module ManagementVnetName 'Modules/vnet2_v1.1.bicep' = {
 /* -------------------------------------------------------------------------- */
 /*                               Keyvault module                              */
 /* -------------------------------------------------------------------------- */
-@description('Deploy keyvault and encryption module')   // deploys with encrypted diskset - need to fix passwords at other time
-// Deploy Keyvault & encryption module
+
+@description('Deploy keyvault and encryption module')
 module keyvault 'Modules/keyvault.bicep' = {
   scope: rootgroup
   name: 'keyvault_deployment'
@@ -107,9 +113,9 @@ module webServer 'modules/webserverAG.bicep' = {
     // nsg_AGName: appVnetName.outputs.nsg_AGName
     Vnet1Name : appVnetName.outputs.vnet1Name
     vnet1Subnet1Identity: appVnetName.outputs.vnet1Subnet1ID
-    // diskEncryptionSetName: keyvault.outputs.diskEncryptionSetName
-    // storageAccountName: storage.outputs.storageAccountName
-    // StorageAccBlobEndpoint: storage.outputs.storageAccountBlobEndpoint
+    diskEncryptionSetName: keyvault.outputs.diskencryptset_id
+    // storageAccountName: appVnetName.outputs.storageAccountName
+    // StorageAccBlobEndpoint: appVnetName.outputs.storageAccountBlobEndpoint
   }
   
 }
