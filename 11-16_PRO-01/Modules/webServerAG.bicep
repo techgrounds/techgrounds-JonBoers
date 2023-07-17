@@ -193,6 +193,16 @@ resource appGateway 'Microsoft.Network/applicationGateways@2022-11-01' = {
       name: 'Standard_v2'
       tier: 'Standard_v2'
     }
+    sslPolicy: {
+      policyType: 'Custom'
+      minProtocolVersion: 'TLSv1_2'
+      cipherSuites: [
+        'TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384'
+        'TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256'
+        'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384'
+        'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256'
+      ]
+    }
     sslCertificates: [
       {
         name: 'appGatewaySslCert'
