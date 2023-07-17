@@ -106,80 +106,80 @@ resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2022-11-01' existing
 /* -------------------------------------------------------------------------- */
 /*           A load balancer connected to the vmss with a public IP.          */
 /* -------------------------------------------------------------------------- */
-resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
-  name: loadBalancerName
-  location: location
-  sku: {
-    name: 'Standard'
-  }
-  tags: {
-    Environment: envName
-    Location: location
-  }
-  properties: {
-    frontendIPConfigurations: [
-      {
-        name: 'LoadBalancerFrontEnd'
-        properties: {
-          publicIPAddress: {
-            id: publicIPAddressID
-          }
-        }
-      }
-    ]
-    backendAddressPools: [
-      {
-        name: bePoolName
-      }
-    ]
-    inboundNatPools: [
-      {
-        name: natPoolName
-        properties: {
-          frontendIPConfiguration: {
-            id: frontEndIPConfigID
-          }
-          protocol: 'Tcp'
-          frontendPortRangeStart: natStartPort
-          frontendPortRangeEnd: natEndPort
-          backendPort: natBackendPort
-        }
-      }
-    ]
-    loadBalancingRules: [
-      {
-        name: 'LBRule'
-        properties: {
-          frontendIPConfiguration: {
-            id: frontEndIPConfigID
-          }
-          backendAddressPool: {
-            id: lbPoolID
-          }
-          protocol: 'Tcp'
-          frontendPort: 80
-          backendPort: 80
-          enableFloatingIP: false
-          idleTimeoutInMinutes: 5
-          probe: {
-            id: lbProbeID
-          }
-        }
-      }
-    ]
-    probes: [
-      {
-        name: 'tcpProbe'
-        properties: {
-          protocol: 'Tcp'
-          port: 80
-          intervalInSeconds: 5
-          numberOfProbes: 2
-        }
-      }
-    ]
-  }
-}
+// resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
+//   name: loadBalancerName
+//   location: location
+//   sku: {
+//     name: 'Standard'
+//   }
+//   tags: {
+//     Environment: envName
+//     Location: location
+//   }
+//   properties: {
+//     frontendIPConfigurations: [
+//       {
+//         name: 'LoadBalancerFrontEnd'
+//         properties: {
+//           publicIPAddress: {
+//             id: publicIPAddressID
+//           }
+//         }
+//       }
+//     ]
+//     backendAddressPools: [
+//       {
+//         name: bePoolName
+//       }
+//     ]
+//     inboundNatPools: [
+//       {
+//         name: natPoolName
+//         properties: {
+//           frontendIPConfiguration: {
+//             id: frontEndIPConfigID
+//           }
+//           protocol: 'Tcp'
+//           frontendPortRangeStart: natStartPort
+//           frontendPortRangeEnd: natEndPort
+//           backendPort: natBackendPort
+//         }
+//       }
+//     ]
+//     loadBalancingRules: [
+//       {
+//         name: 'LBRule'
+//         properties: {
+//           frontendIPConfiguration: {
+//             id: frontEndIPConfigID
+//           }
+//           backendAddressPool: {
+//             id: lbPoolID
+//           }
+//           protocol: 'Tcp'
+//           frontendPort: 80
+//           backendPort: 80
+//           enableFloatingIP: false
+//           idleTimeoutInMinutes: 5
+//           probe: {
+//             id: lbProbeID
+//           }
+//         }
+//       }
+//     ]
+//     probes: [
+//       {
+//         name: 'tcpProbe'
+//         properties: {
+//           protocol: 'Tcp'
+//           port: 80
+//           intervalInSeconds: 5
+//           numberOfProbes: 2
+//         }
+//       }
+//     ]
+//   }
+// }
 
 /* -------------------------------------------------------------------------- */
 /*   Application Gateway                                                      */
@@ -393,11 +393,16 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
                     subnet: {
                       id: resourceId('Microsoft.Network/virtualNetworks/subnets', Vnet1Name, vnet1Subnet1Identity)
                     }
-                    loadBalancerBackendAddressPools: [
+                    applicationGatewayBackendAddressPools: [
                       {
-                        id: lbPoolID
+                        id: bePoolID
                       }
-                    ]
+                    ]                    
+                    // loadBalancerBackendAddressPools: [
+                    //   {
+                    //     id: lbPoolID
+                    //   }
+                    // ]
                   }
                 }
               ]
@@ -408,7 +413,7 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
     }
   }
   dependsOn: [
-    loadBalancer
+    appGateway
   ]
 }
 

@@ -110,7 +110,6 @@ module webServer 'modules/webserverAG.bicep' = {
     adminUsername: webadmin_username
     adminPassword: webadmin_password
     sslPassword: sslPassword
-    // nsg_AGName: appVnetName.outputs.nsg_AGName
     Vnet1Name : appVnetName.outputs.vnet1Name
     vnet1Subnet1Identity: appVnetName.outputs.vnet1Subnet1ID
     disk_encryption: keyvault.outputs.diskencryptset_id
