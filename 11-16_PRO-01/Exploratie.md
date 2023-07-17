@@ -75,11 +75,11 @@ Een overzicht van alle diensten die gebruikt gaan worden.
 * Storage account
 * webserver
 * admin server
-* active directory (gratis variant)
-* conditional access, MFa
+* (active directory (gratis variant))
+* ( conditional access, MFa) niet nodig, opgelost met prive IP als allowed range
 * key vault
 * database voor nieuwsdienst 
-
+* application gateway
 * firewalls 
 
 
