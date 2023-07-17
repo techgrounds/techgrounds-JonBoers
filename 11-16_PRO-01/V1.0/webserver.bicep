@@ -19,7 +19,7 @@ param adminPassword string
 
 param Vnet1Name string
 param vnet1Subnet1Identity string
-// param diskEncryptionSetName string
+param diskEncryptionSetName string
 // param storageAccountName string
 ///////
 
@@ -29,9 +29,6 @@ param webServerName string = '${take(envName, 3)}${take(location, 6)}websv${take
 
 @description('The SKU size for the VMSS.')
 param webServerSku string = envName == 'dev' ? 'Standard_B1s' : 'Standard_B2s'
-
-// @description('The base URI where artifacts required by this template are located. For example, if stored on a public GitHub repo, you\'d use the following URI: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-windows-webapp-dsc-autoscale/.')
-// param _artifactsLocation string = deployment().properties.templateLink.uri
 
 @description('When true this limits the scale set to a single placement group, of max size 100 virtual machines. NOTE: If singlePlacementGroup is true, it may be modified to false. However, if singlePlacementGroup is false, it may not be modified to true.')
 param singlePlacementGroup bool = true
@@ -79,7 +76,8 @@ var scaleInInterval = '1'
 var launchScript = 'IyEvYmluL2Jhc2gKc3VkbyBzdQphcHQgdXBkYXRlCmFwdCBpbnN0YWxsIGFwYWNoZTIgLXkKdWZ3IGFsbG93ICdBcGFjaGUnCnN5c3RlbWN0bCBlbmFibGUgYXBhY2hlMgpzeXN0ZW1jdGwgcmVzdGFydCBhcGFjaGUy'
 ///////
 
-// resource diskEncryptionSet 'Microsoft.Compute/diskEncryptionSets@2022-07-02' existing = {
+//needed for V1.1
+// resource diskEncryptionSet 'Microsoft.Compute/diskEncryptionSets@2022-07-02' existing = { 
 //   name: diskEncryptionSetName
 // }
 
@@ -190,9 +188,9 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
           createOption: 'FromImage'
           managedDisk: {
             storageAccountType: 'StandardSSD_LRS'
-            // diskEncryptionSet: {
-            //   id: diskEncryptionSet.id
-            // }
+            diskEncryptionSet: {
+              id: diskEncryptionSet.id
+            }
           }
         }
         imageReference: imageReference

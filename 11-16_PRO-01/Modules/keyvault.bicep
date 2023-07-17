@@ -102,7 +102,7 @@ resource kv_key_resource 'Microsoft.KeyVault/vaults/keys@2023-02-01' = {
   }
 }
 
-resource diskEncryptionSet 'Microsoft.Compute/diskEncryptionSets@2021-08-01' = {
+resource disk_encryption 'Microsoft.Compute/diskEncryptionSets@2021-08-01' = {
   name: 'disk_encryption_sets'
   location: location
   identity: {
@@ -128,7 +128,7 @@ resource vault_access_policy 'Microsoft.KeyVault/vaults/accessPolicies@2021-10-0
     accessPolicies:[
       {
         tenantId: tenantId
-        objectId: diskEncryptionSet.identity.principalId
+        objectId: disk_encryption.identity.principalId
         permissions: {
           keys: [
             'get'
@@ -163,5 +163,5 @@ output key_vault_url string = keyvault_resource.properties.vaultUri
 output key_vault_name string = keyvault_resource.name
 output managed_id_out string = managed_identity.id
 output managed_id_name string = managed_identity_name
-output diskencryptset_id string = diskEncryptionSet.id
+output diskencryptset_id string = disk_encryption.id
 output kv_key_name string = kv_key_resource.name
