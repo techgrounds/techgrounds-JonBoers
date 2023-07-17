@@ -512,6 +512,40 @@ Different method: https://jackstromberg.com/2021/03/how-to-generate-base64-encod
 ..that helped. A LOT!
 
 ## Learnings
+---
 
+# Log 15/07
 
+## Dagverslag (1 zin)
+
+Application gateway deployed maar niet waarschijnlijk door certificaat, maar een vage foute code.
+
+## Obstakels
+
+- The resource write operation failed to complete successfully, because it reached terminal provisioning state   
+'Failed'. (Code: ResourceDeploymentFailure)
+
+## Oplossingen
+
+nog niet gevonden, geparkeerd en verder gegaan met keyvault
+
+## Learnings
+
+---
+
+# Log 16/07
+
+## Dagverslag (1 zin)
+
+Gewerkt aan keyvault en disk encryption
+
+## Obstakels
+
+moeite om de code in mijn bestaande modules te integreren.
+
+## Oplossingen
+
+alles deployed nu, maar nog niet kunnen testen.
+
+## Learnings
 

@@ -39,7 +39,7 @@ param dbAdminLoginPassword string = newGuid()
 // param serverName string = 'serverName'
 
 /* -------------------------------------------------------------------------- */
-/*             Acces to Admin server only allowed for trusted sources:        */
+/*             Acces to Admin server only allowed from trusted sources:        */
 /* -------------------------------------------------------------------------- */
 
 @description('Declare allowed IP range via SSH and RDP.')
