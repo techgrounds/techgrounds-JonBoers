@@ -548,4 +548,44 @@ moeite om de code in mijn bestaande modules te integreren.
 alles deployed nu, maar nog niet kunnen testen.
 
 ## Learnings
+---
+# Log 17/07
 
+## Dagverslag (1 zin)
+
+Mijn V1.1 gepresenteerd en gewerkt aan TLS1.2 en gateway problemen gefixt.
+
+## Obstakels
+
+## Oplossingen
+
+https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AppGw.SSLPolicy/
+
+## Learnings
+
+---
+
+# Log 18/07
+
+## Dagverslag (1 zin)
+
+
+## Obstakels
+
+## Oplossingen
+
+## Learnings
+
+---
+
+# Log 19/07
+
+## Dagverslag (1 zin)
+
+## Obstakels
+
+## Oplossingen
+
+## Learnings
+
+---
