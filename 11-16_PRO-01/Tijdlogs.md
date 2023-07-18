@@ -569,15 +569,16 @@ https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AppGw.SSLPolicy/
 
 ## Dagverslag (1 zin)
 
-Gewerkt aan health checks en diskencryption voor de adminvm.
+Gewerkt aan health checks en diskencryption voor de adminvm, 
+ook een succesvolle stresstest van de scaleset kunnen doen.
 
 ## Obstakels
-
-
 
 ## Oplossingen
 
 ## Learnings
+
+Disk encryption (set) bleek niet nodig omdat de managed disks bij default al encrypted zijn.
 
 ---
 
