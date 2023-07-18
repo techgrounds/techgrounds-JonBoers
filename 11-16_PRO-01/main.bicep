@@ -13,7 +13,7 @@ param webadmin_username string = 'MobyJon'
 @description('Webserver Admin password')
 @secure()
 @minLength(6)
-param webadmin_password string = newGuid()
+param webadmin_password string
 
 @description('ManagementServer username')
 param ManadminUsername string = 'MobyWan'

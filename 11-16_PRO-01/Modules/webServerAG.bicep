@@ -95,10 +95,6 @@ param base64EncodedCert string = 'MIIKcQIBAzCCCi0GCSqGSIb3DQEHAaCCCh4EggoaMIIKFj
 ///
 param disk_encryption string = resourceId('Microsoft.Compute/diskEncryptionSets', 'disk_encryption_sets')
 
-// resource disk_encryption 'Microsoft.Compute/diskEncryptionSets@2022-07-02' existing = {
-//   name: disk_encryption
-// }
-
 resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
   name: Vnet1Name
 }
@@ -370,7 +366,7 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                           Public IP load balancer                          */
+/*                           Public IP                                        */
 /* -------------------------------------------------------------------------- */
 
 resource webServerPublicIP 'Microsoft.Network/publicIPAddresses@2022-11-01' = {
