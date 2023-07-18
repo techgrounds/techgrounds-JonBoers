@@ -569,8 +569,11 @@ https://azure.github.io/PSRule.Rules.Azure/en/rules/Azure.AppGw.SSLPolicy/
 
 ## Dagverslag (1 zin)
 
+Gewerkt aan health checks en diskencryption voor de adminvm.
 
 ## Obstakels
+
+
 
 ## Oplossingen
 
