@@ -62,18 +62,18 @@ var imageReference = {
 var appGatewayName = '${vmScaleSetName}gateway'
 var bePoolID = resourceId('Microsoft.Network/applicationGateways/backendAddressPools', appGatewayName, bePoolName)
 var bePoolName = '${vmScaleSetName}bepool'
-var lbPoolID = resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, bePoolName)
+// var lbPoolID = resourceId('Microsoft.Network/loadBalancers/backendAddressPools', loadBalancerName, bePoolName)
 var publicIPAddressName = '${vmScaleSetName}pip'
-var publicIPAddressID = webServerPublicIP.id
-var loadBalancerName = '${vmScaleSetName}lb'
-var lbProbeID = resourceId('Microsoft.Network/loadBalancers/probes', loadBalancerName, 'tcpProbe')
-var natPoolName = '${vmScaleSetName}natpool'
-var natStartPort = 50000
-var natEndPort = 50119
-var natBackendPort = 3389
+// var publicIPAddressID = webServerPublicIP.id
+// var loadBalancerName = '${vmScaleSetName}lb'
+// var lbProbeID = resourceId('Microsoft.Network/loadBalancers/probes', loadBalancerName, 'tcpProbe')
+// var natPoolName = '${vmScaleSetName}natpool'
+// var natStartPort = 50000
+// var natEndPort = 50119
+// var natBackendPort = 3389
 var nicName = '${vmScaleSetName}nic'
 var ipConfigName = '${vmScaleSetName}ipconfig'
-var frontEndIPConfigID = resourceId('Microsoft.Network/loadBalancers/frontendIPConfigurations', loadBalancerName, 'loadBalancerFrontEnd')
+// var frontEndIPConfigID = resourceId('Microsoft.Network/loadBalancers/frontendIPConfigurations', loadBalancerName, 'loadBalancerFrontEnd')
 var publicIpSku = 'Standard'
 var autoScaleResourceName = '${webServerName}AutoScale'
 var autoScaleDefault = '1'
@@ -102,84 +102,6 @@ param disk_encryption string = resourceId('Microsoft.Compute/diskEncryptionSets'
 resource virtualNetwork1 'Microsoft.Network/virtualNetworks@2022-11-01' existing = {
   name: Vnet1Name
 }
-
-/* -------------------------------------------------------------------------- */
-/*           A load balancer connected to the vmss with a public IP.          */
-/* -------------------------------------------------------------------------- */
-// resource loadBalancer 'Microsoft.Network/loadBalancers@2022-11-01' = {
-//   name: loadBalancerName
-//   location: location
-//   sku: {
-//     name: 'Standard'
-//   }
-//   tags: {
-//     Environment: envName
-//     Location: location
-//   }
-//   properties: {
-//     frontendIPConfigurations: [
-//       {
-//         name: 'LoadBalancerFrontEnd'
-//         properties: {
-//           publicIPAddress: {
-//             id: publicIPAddressID
-//           }
-//         }
-//       }
-//     ]
-//     backendAddressPools: [
-//       {
-//         name: bePoolName
-//       }
-//     ]
-//     inboundNatPools: [
-//       {
-//         name: natPoolName
-//         properties: {
-//           frontendIPConfiguration: {
-//             id: frontEndIPConfigID
-//           }
-//           protocol: 'Tcp'
-//           frontendPortRangeStart: natStartPort
-//           frontendPortRangeEnd: natEndPort
-//           backendPort: natBackendPort
-//         }
-//       }
-//     ]
-//     loadBalancingRules: [
-//       {
-//         name: 'LBRule'
-//         properties: {
-//           frontendIPConfiguration: {
-//             id: frontEndIPConfigID
-//           }
-//           backendAddressPool: {
-//             id: lbPoolID
-//           }
-//           protocol: 'Tcp'
-//           frontendPort: 80
-//           backendPort: 80
-//           enableFloatingIP: false
-//           idleTimeoutInMinutes: 5
-//           probe: {
-//             id: lbProbeID
-//           }
-//         }
-//       }
-//     ]
-//     probes: [
-//       {
-//         name: 'tcpProbe'
-//         properties: {
-//           protocol: 'Tcp'
-//           port: 80
-//           intervalInSeconds: 5
-//           numberOfProbes: 2
-//         }
-//       }
-//     ]
-//   }
-// }
 
 /* -------------------------------------------------------------------------- */
 /*   Application Gateway                                                      */
@@ -365,8 +287,14 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
   }
   properties: {
     overprovision: true
+    automaticRepairsPolicy: {
+      enabled: true
+    }
     upgradePolicy: {
-      mode: 'Manual'
+      mode: 'Rolling'
+      rollingUpgradePolicy: {
+        prioritizeUnhealthyInstances: true
+      }
     }
     singlePlacementGroup: singlePlacementGroup
     platformFaultDomainCount: platformFaultDomainCount
@@ -407,12 +335,7 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
                       {
                         id: bePoolID
                       }
-                    ]                    
-                    // loadBalancerBackendAddressPools: [
-                    //   {
-                    //     id: lbPoolID
-                    //   }
-                    // ]
+                    ]
                   }
                 }
               ]
@@ -420,8 +343,27 @@ resource webServer 'Microsoft.Compute/virtualMachineScaleSets@2023-03-01' = {
           }
         ]
       }
+      extensionProfile: {
+        extensions: [
+          {
+            name: '${envName}-healthname'
+            properties: {
+              enableAutomaticUpgrade: true
+              autoUpgradeMinorVersion: false
+              publisher: 'Microsoft.ManagedServices'
+              type: 'ApplicationHealthLinux'
+              typeHandlerVersion: '1.0'
+              settings: {
+                port: 80
+                protocol: 'http'
+                requestPath: ''
+              }
+            }
+          }
+        ]
+      } 
     }
-  }
+  }  
   dependsOn: [
     appGateway
   ]
