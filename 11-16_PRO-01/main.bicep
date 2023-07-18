@@ -145,3 +145,12 @@ module peering 'Modules/peering.bicep' = {
 
     }
   }
+
+  module recoveryVault 'modules/recoveryServices.bicep' = {
+    name: 'recoveryVault-${location}'
+    params: {
+      envName: envName
+      location: location
+      mgmtServerName: mgmtServerName
+    }
+  }
