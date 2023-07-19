@@ -9,17 +9,17 @@ param envName string
 param location string
 
 @description('The name of the Management Server.')
-param mgmtServerName string
+param vmNamePrefix string
 
 @description('The name of the Recovery Services Vault')
 param recoveryVaultName string = '${take(envName, 3)}-${take(location, 6)}-recoveryvault${take(uniqueString(resourceGroup().id), 6)}'
 
 var backupFabric = 'Azure'
-var protectionContainer = 'iaasvmcontainer;iaasvmcontainerv2;${resourceGroup().name};${mgmtServerName}'
-var protectedItem = 'vm;iaasvmcontainerv2;${resourceGroup().name};${mgmtServerName}'
+var protectionContainer = 'iaasvmcontainer;iaasvmcontainerv2;${resourceGroup().name};${vmNamePrefix}'
+var protectedItem = 'vm;iaasvmcontainerv2;${resourceGroup().name};${vmNamePrefix}'
 
-resource mgmtServer 'Microsoft.Compute/virtualMachines@2023-03-01' existing = {
-  name: mgmtServerName
+resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' existing = {
+  name: vmNamePrefix
 }
 
 //Deploys a Recovery Services Vault.
@@ -49,7 +49,7 @@ resource recoveryVault 'Microsoft.RecoveryServices/vaults@2023-01-01' = {
     publicNetworkAccess: 'Disabled'
   }
   dependsOn: [
-    mgmtServer
+    virtualMachine1
   ]
 }
 
@@ -60,9 +60,9 @@ resource mgmtBackup 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionC
   properties: {
     protectedItemType: 'Microsoft.Compute/virtualMachines'
     policyId: '${recoveryVault.id}/backupPolicies/DefaultPolicy'
-    sourceResourceId: mgmtServer.id
+    sourceResourceId: virtualMachine1.id
   }
   dependsOn: [
-    mgmtServer
+    virtualMachine1
   ]
-} 
+}

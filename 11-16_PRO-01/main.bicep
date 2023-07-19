@@ -34,8 +34,12 @@ param sslPassword string = '1234'
 @description('Database administrator password')
 @minLength(6)
 @secure()
-param dbAdminLoginPassword string = newGuid()
+param dbAdminLoginPassword string
 
+//Mgmt Server parameters.
+@description('The name of the management server.')
+param vmNamePrefix string = 'AdminServer'
+//
 // param serverName string = 'serverName'
 
 /* -------------------------------------------------------------------------- */
@@ -146,11 +150,12 @@ module peering 'Modules/peering.bicep' = {
     }
   }
 
-  module recoveryVault 'modules/recoveryServices.bicep' = {
+  module recoveryVault 'Modules/recoveryServices.bicep' = {
     name: 'recoveryVault-${location}'
+    scope: rootgroup
     params: {
       envName: envName
       location: location
-      mgmtServerName: mgmtServerName
+      vmNamePrefix: vmNamePrefix
     }
   }

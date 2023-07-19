@@ -29,8 +29,8 @@ param name_nsg_manserver string = 'nsg_manserver'
 @description('Declare allowed IP range via SSH and RDP.')
 param allowedIpRange array
 
-@description('Declare disk encryption set')
-param disk_encryption string = resourceId('Microsoft.Compute/diskEncryptionSets', 'disk_encryption_sets')
+// @description('Declare disk encryption set')
+// param disk_encryption string = resourceId('Microsoft.Compute/diskEncryptionSets', 'disk_encryption_sets')
 
 param storageAccountBlobEndpoint string
 
@@ -133,9 +133,9 @@ resource virtualMachine1 'Microsoft.Compute/virtualMachines@2022-03-01' = {
         createOption: 'fromImage'
         managedDisk: {
           storageAccountType: osDiskType
-          diskEncryptionSet: {
-            id: disk_encryption
-          }
+          // diskEncryptionSet: {
+          //   id: disk_encryption
+          // }
         }
         deleteOption: osDiskDeleteOption
       }

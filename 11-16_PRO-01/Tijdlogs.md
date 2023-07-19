@@ -586,10 +586,17 @@ Disk encryption (set) bleek niet nodig omdat de managed disks bij default al enc
 
 ## Dagverslag (1 zin)
 
+Service recovery vault kunnen deployen, gewerkt aan blob voor de storageaccount, maar vanwege tijdgebrek laten vallen, presentatie voorbereid.
+
 ## Obstakels
+
+Naamgevingen en verwijzingen van de recovery vault kwamen zeer nauw en was een een gepuzzel.
+Vorm van de presentatie kwam in het gedrang vanwege code en requirements die ik voorrang gaf.
 
 ## Oplossingen
 
 ## Learnings
 
+Time management had beter gekund alsmede om hulp vragen, maar over het algemeen zeer tevreden en trots
+op wat ik bereikt hebt. De backlog op het trello board is leeg en op de database en blob na de rest afgekregen.
 ---
