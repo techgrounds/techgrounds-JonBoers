@@ -51,7 +51,7 @@ param vmSize string = 'Standard_D2s_v3'
 ])
 param securityType string = 'TrustedLaunch'
 
-var mySQL_Script = loadFileAsBase64('installMySqlScript.sh') //mySQL script in modules
+var launchmySQLscript = 'IyEvYmluL2Jhc2gKCiMgU2V0IE15U1FMIHJvb3QgcGFzc3dvcmQgZnJvbSB0aGUgcGFyYW1ldGVyCm15c3FsUGFzc3dvcmQ9Im15REB0QGJAc2UiCgojIFVwZGF0ZSBwYWNrYWdlIGxpc3RzIGFuZCB1cGdyYWRlIHBhY2thZ2VzCnN1ZG8gYXB0IHVwZGF0ZQpzdWRvIGFwdCB1cGdyYWRlIC15CgojIEluc3RhbGwgTXlTUUwgU2VydmVyCmlmIHN1ZG8gYXB0IGluc3RhbGwgLXkgbXlzcWwtc2VydmVyOyB0aGVuCiAgIyBTZXQgTXlTUUwgcm9vdCBwYXNzd29yZAogIHN1ZG8gbXlzcWwgLWUgIkFMVEVSIFVTRVIgJ3Jvb3QnQCdsb2NhbGhvc3QnIElERU5USUZJRUQgV0lUSCBteXNxbF9uYXRpdmVfcGFzc3dvcmQgQlkgJyRteXNxbFBhc3N3b3JkJzsgRkxVU0ggUFJJVklMRUdFUzsiCiAgZWNobyAiTXlTUUwgU2VydmVyIGluc3RhbGxlZCBhbmQgcm9vdCBwYXNzd29yZCBzZXQgc3VjY2Vzc2Z1bGx5LiIKZWxzZQogIGVjaG8gIkZhaWxlZCB0byBpbnN0YWxsIE15U1FMIFNlcnZlci4iCiAgZXhpdCAxCmZpCgojIENoZWNrIHRoZSBNeVNRTCBzZXJ2aWNlIHN0YXR1cwpzdWRvIHNlcnZpY2UgbXlzcWwgc3RhdHVzCg=='
 
 var imageReference = {
   'Ubuntu-1804': {
@@ -196,8 +196,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
   name: vmName
   location: location
   properties: {
-    userData: mySQL_Script
-    hardwareProfile: {
+      hardwareProfile: {
       vmSize: vmSize
     }
     storageProfile: {
@@ -239,6 +238,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
       computerName: vmName
       adminUsername: mySQLAdminUsername
       adminPassword: adminPasswordOrKey
+      customData: launchmySQLscript
       linuxConfiguration: ((authenticationType == 'password') ? null : linuxConfiguration)
     }
     securityProfile: ((securityType == 'TrustedLaunch') ? securityProfileJson : null)

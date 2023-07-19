@@ -74,5 +74,9 @@ var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'
 uitleg: Low cost sku for testing in a nonproduction environment.
 bron: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables (page 5/10, 'Selecting SKUs for resources')
 
+#  Proxy en autoscaling
+
+Er is gekozen voor een application gateway om the fungeren als proxy en het publiek IP af te schermen van het internet. Ook kan een application gateway geconfigureerd worden om http requests te rerouten naar https. Voor de initial deployment is er gebruik gemaakt van een self signed certificate, maar dit kan vervangen worden door uw eigen certificaat. Ook is besloten om te kiezen voor de V2 sku omdat autoscaling niet kan worden gekoppeld aan de V1 sku. Een ander voordeel van de V2 sku is dat er geschakeld kan worden tussen verschillende availability zones voor een verhoogde rendundancy. De koppeling met een availability set is ook geautomatiseerd in de template en zal per default deployed worden in de zone UK south omdat dit de goedkoopste zone is. Mocht u meer vragen hebben over de application gateway geeft deze link antwoord op [frequently asked questions](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-faq).
+
 
 

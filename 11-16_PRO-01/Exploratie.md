@@ -80,7 +80,7 @@ Een overzicht van alle diensten die gebruikt gaan worden.
 * key vault
 * database voor nieuwsdienst 
 * application gateway
-* firewalls 
+* firewalls > NSG's zijn genoeg
 
 
 
