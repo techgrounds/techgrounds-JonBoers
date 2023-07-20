@@ -1,15 +1,5 @@
 ### Beslissing Documentatie
 
-Tijdens het implementeren van het ontwerp zal je beslissingen maken over o.a. diensten die je gaat gebruiken.  
-
-In dit document zal je je overwegingen uitschrijven en je besluiten onderbouwen.  
-
-Dit document zal ook al je assumpties en verbeteringen bevatten.  
-
-Dit dient als basis voor je ontwerp documentatie.
----
-#### Als klant wil ik een werkende applicatie hebben waarmee ik een veilig netwerk kan deployen
-
 v1.0
 *Beschrijving*  
 
@@ -42,7 +32,8 @@ Ook overwoog ik om Conditional Access in te bouwen, maar dit is alleen beschikba
 
 #### app-prg-vnet
 
-* ~~~~Het gebruik van Bastion is een goede optie, dit ga ik in ieder geval in V1.0 inbouwen.~~~~ 29/06: Dit idee geschrapt omdat de webservers toch alleen maar vanuit de admin vm benaderd hoeven te worden en dit gaat via SSH.
+* ~~~~Het gebruik van Bastion is een goede optie, dit ga ik in ieder geval in V1.0 inbouwen.~~~~ 29/06: Dit idee geschrapt omdat de webservers toch alleen maar vanuit de admin vm benaderd hoeven te worden en dit gaat via SSH. Bovendien kost Bastion geld.
+
 * De regio wordt UK south omdat Azure aangeeft dat dit het goedkoopste is en dichtbij genoeg voor de scope van de klant.
 
 ---
