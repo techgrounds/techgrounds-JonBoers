@@ -70,7 +70,7 @@ Na het geven van het powershell commando zal er om de volgende parameters gevraa
 * mySQLAdminUsername:<een username naar keuze voor de database server>
 * dbAminLoginPassword: <password naar keuze voor de database server>
 
+Zodra deze stappen zijn doorlopen, zal Azure de resources implementeren op basis van de inhoud van het main.bicep-bestand.
 
+Vanuit dit bestand zullen er 7 modules worden aangeroepen die ieder een apart gedeelte van de applicatie zullen deployen. De resources die gecreeerd worden zullen vervolgens zichtbaar worden in de Azure portal waar met behulp van de GUI eventuele aanpassingen en settings kunnen worden gedaan. Hier een korte [handleiding](https://learn.microsoft.com/nl-nl/training/modules/tour-azure-portal/) hoe om te gaan met de portal.
 
-
-Zodra deze stappen zijn doorlopen, zal Azure de resources implementeren op basis van de inhoud van het main.bicep-bestand in de opgegeven regio.
