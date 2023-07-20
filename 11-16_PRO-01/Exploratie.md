@@ -83,5 +83,7 @@ Een overzicht van alle diensten die gebruikt gaan worden.
 * firewalls > NSG's zijn genoeg
 
 
+Mocht de webserver onder aanhoudende belasting komen te staan, dan zou er een tijdelijke extra server opgestart moeten worden. De klant denkt dat er nooit meer dan 3 servers totaal nodig zijn gezien de gebruikersaantallen in het verleden.
+
 
 

@@ -5,7 +5,7 @@ targetScope = 'subscription'
   'dev'
   'prod'
 ])
-param envName string = 'dev'
+param envName string
 
 @description('Webserver Admin username')
 param webadmin_username string = 'MobyJon'

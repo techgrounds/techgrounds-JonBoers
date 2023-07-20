@@ -129,53 +129,6 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2021-05-01' = {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                             Template resources:                            */
-/* -------------------------------------------------------------------------- */
-// resource networkSecurityGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
-//   name: networkSecurityGroupName
-//   location: location
-//   properties: {
-//     securityRules: [
-//       {
-//         name: 'SSH'
-//         properties: {
-//           priority: 1000
-//           protocol: 'Tcp'
-//           access: 'Allow'
-//           direction: 'Inbound'
-//           sourceAddressPrefix: '*'
-//           sourcePortRange: '*'
-//           destinationAddressPrefix: '*'
-//           destinationPortRange: '22'
-//         }
-//       }
-//     ]
-//   }
-// }
-
-// resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
-//   name: virtualNetworkName
-//   location: location
-//   properties: {
-//     addressSpace: {
-//       addressPrefixes: [
-//         addressPrefix
-//       ]
-//     }
-//   }
-// }
-
-// resource subnet 'Microsoft.Network/virtualNetworks/subnets@2021-05-01' = {
-//   parent: virtualNetwork
-//   name: subnetName
-//   properties: {
-//     addressPrefix: subnetAddressPrefix
-//     privateEndpointNetworkPolicies: 'Enabled'
-//     privateLinkServiceNetworkPolicies: 'Enabled'
-//   }
-// }
-
 resource publicIPAddress 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
   name: publicIPAddressName
   location: location
@@ -215,24 +168,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
           id: networkInterface.id
         }        
       ]
-      // networkInterfaceConfigurations: [
-      //   {
-      //     name: SqlNicName
-      //     properties: {
-      //       primary: true
-      //       ipConfigurations: [
-      //         {
-      //           name: ipConfigName
-      //           properties: {
-      //             subnet: {
-      //               id: resourceId('Microsoft.Network/virtualNetworks/subnets', Vnet1Name, vnet1mySqlSubnetIdentity)
-      //             }                  
-      //           }
-      //         }
-      //       ]
-      //     }
-      //   }
-      // ]
+      
     }
     osProfile: {
       computerName: vmName
