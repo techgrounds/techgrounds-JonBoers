@@ -12,7 +12,7 @@ Er moet over de juiste machtigingen beschikt kunnen worden om resources te imple
 
 Om het main.bicep-bestand te implementeren, heeft u de Azure Command-Line Interface (CLI) of Azure PowerShell nodig. Beide tools kunnen worden gebruikt om het implementatieproces uit te voeren.
 
-Bicep-bestand (main.bicep): Zorg ervoor dat het main.bicep-bestand is opgeslagen op uw lokale machine of een toegankelijke locatie in de cloud. U kunt het pad naar het bestand noteren of onthouden voor implementatiedoeleinden. Let erop dat de aparte modules ook in een aparte map "modules" in de bestandlocatie worden opgeslagen.
+Bicep-bestand (main.bicep): Zorg ervoor dat het main.bicep-bestand is opgeslagen op uw lokale machine of een toegankelijke locatie in de cloud. U kunt het pad naar het bestand noteren of onthouden voor implementatiedoeleinden. Let erop dat de aparte modules ook in een aparte map "modules" in de bestandslocatie worden opgeslagen.
 
 [Azure CLI installeren in Windows](https://learn.microsoft.com/nl-nl/cli/azure/install-azure-cli-windows?tabs=azure-cli)  
 
@@ -50,17 +50,18 @@ Nu kan het implementatieproces gestart worden:
 
 Open een opdrachtprompt of terminal en navigeer naar de locatie waar het main.bicep-bestand zich bevindt.
 
-Implementeer de main.bicep-template naar de vooraf geselecteerde regio (uksouth) en de resourcegroep die je al hebt aangemaakt in de main.bicep-template met behulp van de Azure CLI. Gebruik het volgende commando:
+Gebruik het volgende commando:
 
 powershell:
 ```
 New-AzSubscriptionDeployment -Location uksouth -TemplateFile main.bicep
 ```
-Er is hier gekozen voor de regio uksouth omdat de goedkoopste regio is. Mocht u in de toekomst willen switchen naar een andere regio dan kan dit door de location parameter aan te passen. Klik [hier voor een uitleg over Azure regions](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/)
+Er is hier gekozen voor de regio uksouth omdat dit de goedkoopste regio is. Mocht u in de toekomst willen switchen naar een andere regio dan kan dit door de -Location parameter aan te passen. Klik [hier voor een uitleg over Azure regions](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/)
 
 Na het geven van het powershell commando zal er om de volgende parameters gevraagd worden:
 
-* Environment: (voor een testomgeving voer 'dev' in, voor een productie omgeving voer 'prod' in) Het verschil in deze parameter zit 'm in de kosten en redundancy. Bij 'dev' zal er deployed worden met 'local rendundant storage'(LRS) wat 3 copy's maakt in hetzelfde datacenter, maar goedkopger dan 'geo redundant storage' (GRS) wat een hogere SLA geeft en fault tolerance, maar duurder is. Bij GRS worden er reserve copy's gemaakt als bij LRS plus extra copy's in een fysieke locatie in de secundaire regio. Binnen de secundaire regio worden uw gegevens drie keer synchroon gekopieerd met behulp van LRS.
+* Environment: (voor een testomgeving voer 'dev' in, voor een productie omgeving voer 'prod' in) Het verschil in deze parameter zit 'm in de kosten en redundancy. Bij 'dev' zal er deployed worden met 'local rendundant storage'(LRS) wat 3 copy's maakt in hetzelfde datacenter, maar goedkoper dan 'geo redundant storage' (GRS) wat een hogere SLA geeft en fault tolerance, maar duurder is. Bij GRS worden er reserve copy's gemaakt als bij LRS plus extra copy's in een fysieke locatie in de secundaire regio.  Binnen de secundaire regio worden uw gegevens drie keer synchroon gekopieerd met behulp van LRS. Dus LRS + LRS in de secundaire regio.
+
 * webadmin_username: <een username naar keuze voor de webserver>
 * webadmin_password: <passwodrd naar keuze voor de webserver>
 
